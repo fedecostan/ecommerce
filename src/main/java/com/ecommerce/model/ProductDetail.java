@@ -15,6 +15,22 @@ public class ProductDetail {
     @OneToOne(fetch = FetchType.LAZY, targetEntity = Product.class, cascade = CascadeType.ALL)
     private Product product;
 
+    @JoinColumn(name = "PRODUCT_TYPE_ID")
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = ProductType.class, cascade = CascadeType.ALL)
+    private ProductType productType;
+
+    @JoinColumn(name = "TV_INFO_ID")
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = TvInfo.class, cascade = CascadeType.ALL)
+    private TvInfo tvInfo;
+
+    @JoinColumn(name = "PHONE_INFO_ID")
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = PhoneInfo.class, cascade = CascadeType.ALL)
+    private PhoneInfo phoneInfo;
+
+    @JoinColumn(name = "LAPTOP_INFO_ID")
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = LaptopInfo.class, cascade = CascadeType.ALL)
+    private LaptopInfo laptopInfo;
+
     @Column(name = "NAME")
     private String name;
 
