@@ -1,7 +1,12 @@
 package com.ecommerce.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "PRODUCT_TYPE")
 public class ProductType {
