@@ -1,12 +1,7 @@
 package com.ecommerce.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "LAPTOP_INFO")
 public class LaptopInfo {
@@ -23,6 +18,9 @@ public class LaptopInfo {
     @JoinColumn(name = "MANUFACTURER_ID")
     @OneToOne(fetch = FetchType.LAZY, targetEntity = Manufacturer.class, cascade = CascadeType.ALL)
     private Manufacturer manufacturer;
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "laptopInfo", cascade = CascadeType.ALL)
+    private ProductDetail productDetail;
 
     @Column(name = "PROCESSOR")
     private String processor;
@@ -48,4 +46,91 @@ public class LaptopInfo {
     @Column(name = "WEIGHT")
     private Integer weight;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Screen getScreen() {
+        return screen;
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
+    }
+
+    public Manufacturer getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    public String getHardDriveSize() {
+        return hardDriveSize;
+    }
+
+    public void setHardDriveSize(String hardDriveSize) {
+        this.hardDriveSize = hardDriveSize;
+    }
+
+    public Integer getRamSize() {
+        return ramSize;
+    }
+
+    public void setRamSize(Integer ramSize) {
+        this.ramSize = ramSize;
+    }
+
+    public String getGraphics() {
+        return graphics;
+    }
+
+    public void setGraphics(String graphics) {
+        this.graphics = graphics;
+    }
+
+    public String getCamera() {
+        return camera;
+    }
+
+    public void setCamera(String camera) {
+        this.camera = camera;
+    }
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
 }

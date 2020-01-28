@@ -2,6 +2,8 @@ package com.ecommerce.controller;
 
 import com.ecommerce.model.Product;
 import com.ecommerce.service.ProductService;
+import com.ecommerce.service.dto.FullProductDTO;
+import com.ecommerce.service.dto.GenericResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +27,16 @@ public class ProductController {
     public @ResponseBody
     Optional<Product> getById(@PathVariable Long id) {
         return productService.getById(id);
+    }
+
+    @PostMapping(value = "/newProduct")
+    public GenericResponse newProduct(@RequestBody FullProductDTO fullProductDTO) {
+        return productService.createProduct(fullProductDTO);
+    }
+
+    @PostMapping(value = "/editProduct/{id}")
+    public GenericResponse editProduct(@PathVariable Long id, @RequestBody FullProductDTO fullProductDTO) {
+        return productService.editProduct(id, fullProductDTO);
     }
 
 }

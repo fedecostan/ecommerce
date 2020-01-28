@@ -1,12 +1,8 @@
 package com.ecommerce.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
+import java.util.List;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "PRODUCT_TYPE")
 public class ProductType {
@@ -19,4 +15,30 @@ public class ProductType {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "productType")
+    private List<ProductDetail> productDetails;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<ProductDetail> getProductDetails() {
+        return productDetails;
+    }
+
+    public void setProductDetails(List<ProductDetail> productDetails) {
+        this.productDetails = productDetails;
+    }
 }
