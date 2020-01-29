@@ -16,6 +16,8 @@ public interface ProductService {
 
     Optional<ProductDetail> getDetailsById(Long id);
 
+    GenericResponse deleteById(Long id);
+
     GenericResponse createProduct(FullProductDTO fullProductDTO);
 
     GenericResponse editProduct(Long id, FullProductDTO fullProductDTO);

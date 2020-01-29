@@ -1,7 +1,5 @@
 package com.ecommerce.model;
 
-import com.ecommerce.service.dto.FullProductDTO;
-
 import javax.persistence.*;
 
 @Entity
@@ -33,18 +31,7 @@ public class ProductDetail {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private LaptopInfo laptopInfo;
 
-    @Column(name = "NAME")
-    private String name;
-
-    @Column(name = "DESCRIPTION")
-    private String description;
-
     public ProductDetail() {
-    }
-
-    public ProductDetail(FullProductDTO fullProductDTO) {
-        this.name = fullProductDTO.getName();
-        this.description = fullProductDTO.getDescription();
     }
 
     public Long getId() {
@@ -95,19 +82,4 @@ public class ProductDetail {
         this.laptopInfo = laptopInfo;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

@@ -27,23 +27,23 @@ VALUES ('1', 'NO', 'RTX 2060', '1 TB', 'NO', 'i7', '16', '1', '5', '5');
 INSERT INTO ecommerce.laptop_info (id, camera, graphics, hard_drive_size, operating_system, processor, ram_size, weight, manufacturer_id, screen_id)
 VALUES ('2', '720p', 'RTX 2080', '1 TB', 'Windows 10', 'i9', '16', '1', '6', '6');
 
-INSERT INTO ecommerce.product (id, code, discount, price, stock) VALUES ('1', 'A', '0', '400', '2');
-INSERT INTO ecommerce.product (id, code, discount, price, stock) VALUES ('2', 'B', '15', '300', '1');
-INSERT INTO ecommerce.product (id, code, discount, price, stock) VALUES ('3', 'C', '0', '1000', '5');
-INSERT INTO ecommerce.product (id, code, discount, price, stock) VALUES ('4', 'D', '10', '900', '3');
-INSERT INTO ecommerce.product (id, code, discount, price, stock) VALUES ('5', 'E', '10', '1400', '2');
-INSERT INTO ecommerce.product (id, code, discount, price, stock) VALUES ('6', 'F', '0', '3000', '1');
+INSERT INTO ecommerce.product (id, code, discount, price, stock, description, name) VALUES ('1', 'A', '0', '400', '2', 'TV LG LCD 55 Inches', 'TV LG 55');
+INSERT INTO ecommerce.product (id, code, discount, price, stock, description, name) VALUES ('2', 'B', '15', '300', '1', 'TV Samsung LCD 32 Inches Used', 'TV Samsung 32');
+INSERT INTO ecommerce.product (id, code, discount, price, stock, description, name) VALUES ('3', 'C', '0', '1000', '5', 'IPhone 11 PRO Max 256 GB', 'IPhone 11');
+INSERT INTO ecommerce.product (id, code, discount, price, stock, description, name) VALUES ('4', 'D', '10', '900', '3', 'Google Pixel 4 smartphone 128GB', 'Pixel 4');
+INSERT INTO ecommerce.product (id, code, discount, price, stock, description, name) VALUES ('5', 'E', '10', '1400', '2', 'i7, RTX 2060, 16, 1TB', 'Asus ROG Strix');
+INSERT INTO ecommerce.product (id, code, discount, price, stock, description, name) VALUES ('6', 'F', '0', '3000', '1', 'i9, RTX 2080, 16, 1TB', 'Asus ROG Zephyrus');
 
 
-INSERT INTO ecommerce.product_detail (id, description, name, product_id, product_type_id, tv_info_id)
-VALUES ('1', 'TV LG LCD 55 Inches', 'TV LG 55', '1', '1', '1');
-INSERT INTO ecommerce.product_detail (id, description, name, product_id, product_type_id, tv_info_id)
-VALUES ('2', 'TV Samsung LCD 32 Inches Used', 'TV Samsung 32', '2', '1', '2');
-INSERT INTO ecommerce.product_detail (id, description, name, product_id, product_type_id, phone_info_id)
-VALUES ('3', 'IPhone 11 PRO Max 256 GB', 'IPhone 11', '3', '2', '1');
-INSERT INTO ecommerce.product_detail (id, description, name, product_id, product_type_id, phone_info_id)
-VALUES ('4', 'Google Pixel 4 smartphone 128GB', 'Pixel 4', '4', '2', '2');
-INSERT INTO ecommerce.product_detail (id, description, name, product_id, product_type_id, laptop_info_id)
-VALUES ('5', 'i7, RTX 2060, 16, 1TB', 'Asus ROG Strix', '5', '3', '1');
-INSERT INTO ecommerce.product_detail (id, description, name, product_id, product_type_id, laptop_info_id)
-VALUES ('6', 'i9, RTX 2080, 16, 1TB', 'Asus ROG Zephyrus', '6', '3', '2');
+INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, tv_info_id)
+VALUES ('1', '1', '1', '1');
+INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, tv_info_id)
+VALUES ('2', '2', '1', '2');
+INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, phone_info_id)
+VALUES ('3', '3', '2', '1');
+INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, phone_info_id)
+VALUES ('4', '4', '2', '2');
+INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, laptop_info_id)
+VALUES ('5', '5', '3', '1');
+INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, laptop_info_id)
+VALUES ('6', '6', '3', '2');

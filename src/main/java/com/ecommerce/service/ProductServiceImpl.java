@@ -42,26 +42,38 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public GenericResponse deleteById(Long id) {
+        try {
+            ProductDetail productDetail = productDetailRepository.findByProductId(id).orElse(null);
+            productDetail.setProductType(null);
+            productDetailRepository.deleteById(id);
+        } catch (Exception e) {
+            return new GenericResponse(ErrorEnum.GENERIC_ERROR.getErrorMessage());
+        }
+        return new GenericResponse();
+    }
+
+    @Override
     public GenericResponse createProduct(FullProductDTO fullProductDTO) {
         try {
             Product product = new Product(fullProductDTO);
-            ProductDetail productDetail = new ProductDetail(fullProductDTO);
+            ProductDetail productDetail = new ProductDetail();
             productDetail.setProduct(product);
             ProductType productType = getProductType(fullProductDTO);
             productDetail.setProductType(productType);
             Screen screen = new Screen(fullProductDTO);
             Manufacturer manufacturer = new Manufacturer(fullProductDTO);
-            if (productType.getId() == 1) {
+            if (productType.getId() == 1L) {
                 TvInfo tvInfo = new TvInfo(fullProductDTO);
                 tvInfo.setScreen(screen);
                 tvInfo.setManufacturer(manufacturer);
                 productDetail.setTvInfo(tvInfo);
-            } else if (productType.getId() == 2) {
+            } else if (productType.getId() == 2L) {
                 PhoneInfo phoneInfo = new PhoneInfo(fullProductDTO);
                 phoneInfo.setScreen(screen);
                 phoneInfo.setManufacturer(manufacturer);
                 productDetail.setPhoneInfo(phoneInfo);
-            } else if (productType.getId() == 3) {
+            } else if (productType.getId() == 3L) {
                 LaptopInfo laptopInfo = new LaptopInfo(fullProductDTO);
                 laptopInfo.setScreen(screen);
                 laptopInfo.setManufacturer(manufacturer);
@@ -76,16 +88,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public GenericResponse editProduct(Long id, FullProductDTO fullProductDTO) {
-        Product product = productRepository.findById(id).orElse(null);
-        GenericResponse genericResponse = new GenericResponse();
-        genericResponse.setError(false);
-        if (product == null) {
-            genericResponse.setError(true);
-            genericResponse.setErrorMessage("ERROR MSG");
+        ProductDetail productDetail = productDetailRepository.findByProductId(id).orElse(null);
+        if (productDetail == null) {
+            return new GenericResponse(ErrorEnum.GENERIC_ERROR.getErrorMessage());
         } else {
-            updateProductInformation(product, fullProductDTO);
+            updateProductInformation(productDetail, fullProductDTO);
         }
-        return genericResponse;
+        return new GenericResponse();
     }
 
     private ProductType getProductType(FullProductDTO fullProductDTO) {
@@ -99,7 +108,63 @@ public class ProductServiceImpl implements ProductService {
         return productTypeRepository.findById(productTypeEnum.getProductTypeId()).orElse(null);
     }
 
-    private void updateProductInformation(Product product, FullProductDTO fullProductDTO) {
-        //TODO: updateProductInformation
+    private void updateProductInformation(ProductDetail productDetail, FullProductDTO fullProductDTO) {
+        productDetail.getProduct().setCode(fullProductDTO.getCode());
+        productDetail.getProduct().setPrice(fullProductDTO.getPrice());
+        productDetail.getProduct().setDiscount(fullProductDTO.getDiscount());
+        productDetail.getProduct().setStock(fullProductDTO.getStock());
+        productDetail.getProduct().setName(fullProductDTO.getName());
+        productDetail.getProduct().setDescription(fullProductDTO.getDescription());
+        if (productDetail.getProductType().getId() == 1L) {
+            productDetail.getTvInfo().getScreen().setInches(fullProductDTO.getScreenInches());
+            productDetail.getTvInfo().getScreen().setTechnology(fullProductDTO.getScreenTechnology());
+            productDetail.getTvInfo().getScreen().setType(fullProductDTO.getScreenType());
+            productDetail.getTvInfo().getScreen().setResolution(fullProductDTO.getScreenResolution());
+            productDetail.getTvInfo().getScreen().setRefreshRate(fullProductDTO.getScreenRefreshRate());
+            productDetail.getTvInfo().getScreen().setAdditionalInfo(fullProductDTO.getScreenAdditionalInfo());
+            productDetail.getTvInfo().getManufacturer().setName(fullProductDTO.getManufacturerName());
+            productDetail.getTvInfo().getManufacturer().setModel(fullProductDTO.getManufacturerModel());
+            productDetail.getTvInfo().getManufacturer().setCode(fullProductDTO.getManufacturerCode());
+            productDetail.getTvInfo().setSmartTv(fullProductDTO.getSmartTv());
+            productDetail.getTvInfo().setYear(fullProductDTO.getYear());
+        } else if (productDetail.getProductType().getId() == 2L) {
+            productDetail.getPhoneInfo().getScreen().setInches(fullProductDTO.getScreenInches());
+            productDetail.getPhoneInfo().getScreen().setTechnology(fullProductDTO.getScreenTechnology());
+            productDetail.getPhoneInfo().getScreen().setType(fullProductDTO.getScreenType());
+            productDetail.getPhoneInfo().getScreen().setResolution(fullProductDTO.getScreenResolution());
+            productDetail.getPhoneInfo().getScreen().setRefreshRate(fullProductDTO.getScreenRefreshRate());
+            productDetail.getPhoneInfo().getScreen().setAdditionalInfo(fullProductDTO.getScreenAdditionalInfo());
+            productDetail.getPhoneInfo().getManufacturer().setName(fullProductDTO.getManufacturerName());
+            productDetail.getPhoneInfo().getManufacturer().setModel(fullProductDTO.getManufacturerModel());
+            productDetail.getPhoneInfo().getManufacturer().setCode(fullProductDTO.getManufacturerCode());
+            productDetail.getPhoneInfo().setOperatingSystem(fullProductDTO.getOperatingSystem());
+            productDetail.getPhoneInfo().setHardDriveSize(fullProductDTO.getHardDriveSize());
+            productDetail.getPhoneInfo().setRamSize(fullProductDTO.getRamSize());
+            productDetail.getPhoneInfo().setBattery(fullProductDTO.getBattery());
+            productDetail.getPhoneInfo().setBackCamera(fullProductDTO.getBackCamera());
+            productDetail.getPhoneInfo().setFrontCamera(fullProductDTO.getFrontCamera());
+            productDetail.getPhoneInfo().setSimType(fullProductDTO.getSimType());
+            productDetail.getPhoneInfo().setVideoRecorder(fullProductDTO.getVideoRecorder());
+            productDetail.getPhoneInfo().setNfcCapable(fullProductDTO.getNfcCapable());
+        } else if (productDetail.getProductType().getId() == 3L) {
+            productDetail.getLaptopInfo().getScreen().setInches(fullProductDTO.getScreenInches());
+            productDetail.getLaptopInfo().getScreen().setTechnology(fullProductDTO.getScreenTechnology());
+            productDetail.getLaptopInfo().getScreen().setType(fullProductDTO.getScreenType());
+            productDetail.getLaptopInfo().getScreen().setResolution(fullProductDTO.getScreenResolution());
+            productDetail.getLaptopInfo().getScreen().setRefreshRate(fullProductDTO.getScreenRefreshRate());
+            productDetail.getLaptopInfo().getScreen().setAdditionalInfo(fullProductDTO.getScreenAdditionalInfo());
+            productDetail.getLaptopInfo().getManufacturer().setName(fullProductDTO.getManufacturerName());
+            productDetail.getLaptopInfo().getManufacturer().setModel(fullProductDTO.getManufacturerModel());
+            productDetail.getLaptopInfo().getManufacturer().setCode(fullProductDTO.getManufacturerCode());
+            productDetail.getLaptopInfo().setOperatingSystem(fullProductDTO.getOperatingSystem());
+            productDetail.getLaptopInfo().setHardDriveSize(fullProductDTO.getHardDriveSize());
+            productDetail.getLaptopInfo().setRamSize(fullProductDTO.getRamSize());
+            productDetail.getLaptopInfo().setProcessor(fullProductDTO.getProcessor());
+            productDetail.getLaptopInfo().setGraphics(fullProductDTO.getGraphics());
+            productDetail.getLaptopInfo().setCamera(fullProductDTO.getFrontCamera());
+            productDetail.getLaptopInfo().setSize(fullProductDTO.getSize());
+            productDetail.getLaptopInfo().setWeight(fullProductDTO.getWeight());
+        }
+        productDetailRepository.save(productDetail);
     }
 }

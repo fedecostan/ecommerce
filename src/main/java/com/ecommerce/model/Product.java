@@ -25,6 +25,12 @@ public class Product {
     @Column(name = "STOCK")
     private Integer stock;
 
+    @Column(name = "NAME")
+    private String name;
+
+    @Column(name = "DESCRIPTION")
+    private String description;
+
     public Product() {
     }
 
@@ -33,6 +39,8 @@ public class Product {
         this.price = fullProductDTO.getPrice();
         this.discount = fullProductDTO.getDiscount();
         this.stock = fullProductDTO.getStock();
+        this.name = fullProductDTO.getName();
+        this.description = fullProductDTO.getDescription();
     }
 
     public Long getId() {
@@ -75,4 +83,19 @@ public class Product {
         this.stock = stock;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

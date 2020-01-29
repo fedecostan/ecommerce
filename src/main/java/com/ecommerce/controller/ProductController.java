@@ -36,6 +36,12 @@ public class ProductController {
         return productService.getDetailsById(id);
     }
 
+    @GetMapping(value = "/delete/{id}")
+    public @ResponseBody
+    GenericResponse deleteById(@PathVariable Long id) {
+        return productService.deleteById(id);
+    }
+
     @PostMapping(value = "/newProduct")
     public GenericResponse newProduct(@RequestBody FullProductDTO fullProductDTO) {
         return productService.createProduct(fullProductDTO);
