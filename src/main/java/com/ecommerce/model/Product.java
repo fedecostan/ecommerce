@@ -25,8 +25,8 @@ public class Product {
     @Column(name = "STOCK")
     private Integer stock;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.ALL)
-    private ProductDetail productDetail;
+    public Product() {
+    }
 
     public Product(FullProductDTO fullProductDTO) {
         this.code = fullProductDTO.getCode();
@@ -75,11 +75,4 @@ public class Product {
         this.stock = stock;
     }
 
-    public ProductDetail getProductDetail() {
-        return productDetail;
-    }
-
-    public void setProductDetail(ProductDetail productDetail) {
-        this.productDetail = productDetail;
-    }
 }

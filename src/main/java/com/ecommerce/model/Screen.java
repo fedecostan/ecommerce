@@ -1,5 +1,7 @@
 package com.ecommerce.model;
 
+import com.ecommerce.service.dto.FullProductDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -28,6 +30,18 @@ public class Screen {
 
     @Column(name = "ADDITIONAL_INFO")
     private String additionalInfo;
+
+    public Screen() {
+    }
+
+    public Screen(FullProductDTO fullProductDTO) {
+        this.inches = fullProductDTO.getScreenInches();
+        this.technology = fullProductDTO.getScreenTechnology();
+        this.type = fullProductDTO.getScreenType();
+        this.resolution = fullProductDTO.getScreenResolution();
+        this.refreshRate = fullProductDTO.getScreenRefreshRate();
+        this.additionalInfo = fullProductDTO.getScreenAdditionalInfo();
+    }
 
     public Long getId() {
         return id;

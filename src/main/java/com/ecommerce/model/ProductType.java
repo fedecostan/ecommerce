@@ -1,7 +1,6 @@
 package com.ecommerce.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "PRODUCT_TYPE")
@@ -15,8 +14,8 @@ public class ProductType {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "productType")
-    private List<ProductDetail> productDetails;
+    public ProductType() {
+    }
 
     public Long getId() {
         return id;
@@ -34,11 +33,4 @@ public class ProductType {
         this.description = description;
     }
 
-    public List<ProductDetail> getProductDetails() {
-        return productDetails;
-    }
-
-    public void setProductDetails(List<ProductDetail> productDetails) {
-        this.productDetails = productDetails;
-    }
 }

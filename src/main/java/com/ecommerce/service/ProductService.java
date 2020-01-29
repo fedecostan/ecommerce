@@ -1,6 +1,7 @@
 package com.ecommerce.service;
 
 import com.ecommerce.model.Product;
+import com.ecommerce.model.ProductDetail;
 import com.ecommerce.service.dto.FullProductDTO;
 import com.ecommerce.service.dto.GenericResponse;
 
@@ -13,7 +14,10 @@ public interface ProductService {
 
     Optional<Product> getById(Long id);
 
+    Optional<ProductDetail> getDetailsById(Long id);
+
     GenericResponse createProduct(FullProductDTO fullProductDTO);
 
     GenericResponse editProduct(Long id, FullProductDTO fullProductDTO);
+
 }

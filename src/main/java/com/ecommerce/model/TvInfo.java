@@ -1,5 +1,7 @@
 package com.ecommerce.model;
 
+import com.ecommerce.service.dto.FullProductDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,14 +21,19 @@ public class TvInfo {
     @OneToOne(fetch = FetchType.LAZY, targetEntity = Manufacturer.class, cascade = CascadeType.ALL)
     private Manufacturer manufacturer;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "tvInfo", cascade = CascadeType.ALL)
-    private ProductDetail productDetail;
-
     @Column(name = "SMART_TV")
     private Boolean smartTv;
 
     @Column(name = "YEAR")
     private Integer year;
+
+    public TvInfo() {
+    }
+
+    public TvInfo(FullProductDTO fullProductDTO) {
+        this.smartTv = fullProductDTO.getSmartTv();
+        this.year = fullProductDTO.getYear();
+    }
 
     public Long getId() {
         return id;
@@ -68,11 +75,4 @@ public class TvInfo {
         this.year = year;
     }
 
-    public ProductDetail getProductDetail() {
-        return productDetail;
-    }
-
-    public void setProductDetail(ProductDetail productDetail) {
-        this.productDetail = productDetail;
-    }
 }

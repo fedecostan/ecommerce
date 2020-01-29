@@ -1,5 +1,7 @@
 package com.ecommerce.model;
 
+import com.ecommerce.service.dto.FullProductDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +21,15 @@ public class Manufacturer {
 
     @Column(name = "CODE")
     private String code;
+
+    public Manufacturer() {
+    }
+
+    public Manufacturer(FullProductDTO fullProductDTO) {
+        this.name = fullProductDTO.getManufacturerName();
+        this.model = fullProductDTO.getManufacturerModel();
+        this.code = fullProductDTO.getManufacturerCode();
+    }
 
     public Long getId() {
         return id;

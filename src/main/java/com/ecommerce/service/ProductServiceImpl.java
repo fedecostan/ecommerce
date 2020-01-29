@@ -1,8 +1,7 @@
 package com.ecommerce.service;
 
-import com.ecommerce.model.Product;
-import com.ecommerce.model.ProductDetail;
-import com.ecommerce.model.ProductType;
+import com.ecommerce.model.*;
+import com.ecommerce.repository.ProductDetailRepository;
 import com.ecommerce.repository.ProductRepository;
 import com.ecommerce.repository.ProductTypeRepository;
 import com.ecommerce.service.dto.ErrorEnum;
@@ -24,6 +23,9 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductTypeRepository productTypeRepository;
 
+    @Autowired
+    private ProductDetailRepository productDetailRepository;
+
     @Override
     public List<Product> getAll() {
         return productRepository.findAll();
@@ -35,14 +37,37 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Optional<ProductDetail> getDetailsById(Long id) {
+        return productDetailRepository.findByProductId(id);
+    }
+
+    @Override
     public GenericResponse createProduct(FullProductDTO fullProductDTO) {
         try {
             Product product = new Product(fullProductDTO);
             ProductDetail productDetail = new ProductDetail(fullProductDTO);
-            productDetail.setProductType(getProductType(fullProductDTO));
-            //TODO: SET REST OF ENTITIES
-            product.setProductDetail(productDetail);
-            productRepository.save(product);
+            productDetail.setProduct(product);
+            ProductType productType = getProductType(fullProductDTO);
+            productDetail.setProductType(productType);
+            Screen screen = new Screen(fullProductDTO);
+            Manufacturer manufacturer = new Manufacturer(fullProductDTO);
+            if (productType.getId() == 1) {
+                TvInfo tvInfo = new TvInfo(fullProductDTO);
+                tvInfo.setScreen(screen);
+                tvInfo.setManufacturer(manufacturer);
+                productDetail.setTvInfo(tvInfo);
+            } else if (productType.getId() == 2) {
+                PhoneInfo phoneInfo = new PhoneInfo(fullProductDTO);
+                phoneInfo.setScreen(screen);
+                phoneInfo.setManufacturer(manufacturer);
+                productDetail.setPhoneInfo(phoneInfo);
+            } else if (productType.getId() == 3) {
+                LaptopInfo laptopInfo = new LaptopInfo(fullProductDTO);
+                laptopInfo.setScreen(screen);
+                laptopInfo.setManufacturer(manufacturer);
+                productDetail.setLaptopInfo(laptopInfo);
+            }
+            productDetailRepository.save(productDetail);
         } catch (Exception e) {
             return new GenericResponse(ErrorEnum.GENERIC_ERROR.getErrorMessage());
         }

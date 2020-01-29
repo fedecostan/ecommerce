@@ -1,6 +1,7 @@
 package com.ecommerce.controller;
 
 import com.ecommerce.model.Product;
+import com.ecommerce.model.ProductDetail;
 import com.ecommerce.service.ProductService;
 import com.ecommerce.service.dto.FullProductDTO;
 import com.ecommerce.service.dto.GenericResponse;
@@ -27,6 +28,12 @@ public class ProductController {
     public @ResponseBody
     Optional<Product> getById(@PathVariable Long id) {
         return productService.getById(id);
+    }
+
+    @GetMapping(value = "/details/{id}")
+    public @ResponseBody
+    Optional<ProductDetail> getDetailsById(@PathVariable Long id) {
+        return productService.getDetailsById(id);
     }
 
     @PostMapping(value = "/newProduct")

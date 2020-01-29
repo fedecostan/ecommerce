@@ -1,5 +1,7 @@
 package com.ecommerce.model;
 
+import com.ecommerce.service.dto.FullProductDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,9 +20,6 @@ public class LaptopInfo {
     @JoinColumn(name = "MANUFACTURER_ID")
     @OneToOne(fetch = FetchType.LAZY, targetEntity = Manufacturer.class, cascade = CascadeType.ALL)
     private Manufacturer manufacturer;
-
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "laptopInfo", cascade = CascadeType.ALL)
-    private ProductDetail productDetail;
 
     @Column(name = "PROCESSOR")
     private String processor;
@@ -45,6 +44,20 @@ public class LaptopInfo {
 
     @Column(name = "WEIGHT")
     private Integer weight;
+
+    public LaptopInfo() {
+    }
+
+    public LaptopInfo(FullProductDTO fullProductDTO) {
+        this.processor = fullProductDTO.getProcessor();
+        this.hardDriveSize = fullProductDTO.getHardDriveSize();
+        this.ramSize = fullProductDTO.getRamSize();
+        this.graphics = fullProductDTO.getGraphics();
+        this.camera = fullProductDTO.getFrontCamera();
+        this.operatingSystem = fullProductDTO.getOperatingSystem();
+        this.size = fullProductDTO.getSize();
+        this.weight = fullProductDTO.getWeight();
+    }
 
     public Long getId() {
         return id;

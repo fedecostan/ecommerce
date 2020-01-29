@@ -9,11 +9,11 @@ public class FullProductDTO {
     private Integer stock;
     private String name;
     private String description;
-    private Double screenSize;
+    private Double screenInches;
     private String screenTechnology;
     private String screenType;
     private String screenResolution;
-    private Integer screenRefreshRate;
+    private String screenRefreshRate;
     private String screenAdditionalInfo;
     private String manufacturerName;
     private String manufacturerModel;
@@ -21,7 +21,7 @@ public class FullProductDTO {
     private Boolean smartTv;
     private Integer year;
     private String operatingSystem;
-    private Integer hardDriveSize;
+    private String hardDriveSize;
     private Integer ramSize;
     private Integer battery;
     private String backCamera;
@@ -90,12 +90,12 @@ public class FullProductDTO {
         this.description = description;
     }
 
-    public Double getScreenSize() {
-        return screenSize;
+    public Double getScreenInches() {
+        return screenInches;
     }
 
-    public void setScreenSize(Double screenSize) {
-        this.screenSize = screenSize;
+    public void setScreenInches(Double screenInches) {
+        this.screenInches = screenInches;
     }
 
     public String getScreenTechnology() {
@@ -122,11 +122,11 @@ public class FullProductDTO {
         this.screenResolution = screenResolution;
     }
 
-    public Integer getScreenRefreshRate() {
+    public String getScreenRefreshRate() {
         return screenRefreshRate;
     }
 
-    public void setScreenRefreshRate(Integer screenRefreshRate) {
+    public void setScreenRefreshRate(String screenRefreshRate) {
         this.screenRefreshRate = screenRefreshRate;
     }
 
@@ -186,11 +186,11 @@ public class FullProductDTO {
         this.operatingSystem = operatingSystem;
     }
 
-    public Integer getHardDriveSize() {
+    public String getHardDriveSize() {
         return hardDriveSize;
     }
 
-    public void setHardDriveSize(Integer hardDriveSize) {
+    public void setHardDriveSize(String hardDriveSize) {
         this.hardDriveSize = hardDriveSize;
     }
 

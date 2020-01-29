@@ -39,6 +39,9 @@ public class ProductDetail {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    public ProductDetail() {
+    }
+
     public ProductDetail(FullProductDTO fullProductDTO) {
         this.name = fullProductDTO.getName();
         this.description = fullProductDTO.getDescription();

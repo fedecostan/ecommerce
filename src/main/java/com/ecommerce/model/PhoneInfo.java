@@ -1,5 +1,7 @@
 package com.ecommerce.model;
 
+import com.ecommerce.service.dto.FullProductDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,14 +21,11 @@ public class PhoneInfo {
     @OneToOne(fetch = FetchType.LAZY, targetEntity = Manufacturer.class, cascade = CascadeType.ALL)
     private Manufacturer manufacturer;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "phoneInfo", cascade = CascadeType.ALL)
-    private ProductDetail productDetail;
-
     @Column(name = "OPERATING_SYSTEM")
     private String operatingSystem;
 
     @Column(name = "HARD_DRIVE_SIZE")
-    private Integer hardDriveSize;
+    private String hardDriveSize;
 
     @Column(name = "RAM_SIZE")
     private Integer ramSize;
@@ -48,6 +47,21 @@ public class PhoneInfo {
 
     @Column(name = "NFC_CAPABLE")
     private Boolean nfcCapable;
+
+    public PhoneInfo() {
+    }
+
+    public PhoneInfo(FullProductDTO fullProductDTO) {
+        this.operatingSystem = fullProductDTO.getOperatingSystem();
+        this.hardDriveSize = fullProductDTO.getHardDriveSize();
+        this.ramSize = fullProductDTO.getRamSize();
+        this.battery = fullProductDTO.getBattery();
+        this.backCamera = fullProductDTO.getBackCamera();
+        this.frontCamera = fullProductDTO.getFrontCamera();
+        this.simType = fullProductDTO.getSimType();
+        this.videoRecorder = fullProductDTO.getVideoRecorder();
+        this.nfcCapable = fullProductDTO.getNfcCapable();
+    }
 
     public Long getId() {
         return id;
@@ -81,11 +95,11 @@ public class PhoneInfo {
         this.operatingSystem = operatingSystem;
     }
 
-    public Integer getHardDriveSize() {
+    public String getHardDriveSize() {
         return hardDriveSize;
     }
 
-    public void setHardDriveSize(Integer hardDriveSize) {
+    public void setHardDriveSize(String hardDriveSize) {
         this.hardDriveSize = hardDriveSize;
     }
 
