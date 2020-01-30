@@ -1,0 +1,476 @@
+ /******************************************** 
+ 			ESTILOS GENERALES
+*******************************************/
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: cooper_hewittbook, Arial, Helvetica,sans-serif;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	justify-content: flex-end;
+	text-decoration: none;
+	list-style: none;
+	color: black;
+	font-weight: 700;
+	display: block;
+}
+
+/****************************************************
+		ESTILOS DE BOTONES ANIMADOS
+**************************************************/
+/* Boton que rota con ok...
+HTML
+<td>
+	<div class="button">
+		<div class="container">
+			<div class="tick">
+		</div>
+	</div>
+</div>
+
+CSS
+.button, .tick {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+}
+
+.button {
+	padding: 0.5em;
+	background: rgb(15, 2, 197);
+	border-radius: 6px;
+	transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+}
+  
+.button svg {
+	transform: rotate(180deg);
+	transition: all .5s;
+}
+  
+.button__circle {
+	width: 80px;
+	height: 50px;
+	background: rgb(21, 201, 102);
+	border-radius: 90%;
+	transform: rotate(-180deg);
+}
+  
+.button:hover {
+	cursor: pointer;
+}
+  
+.tick {
+	color: white;
+	font-size: 1em;
+	transition: all .9s;
+}
+
+*/
+/* ****************************** 
+			TABLA
+****************************** */
+button{
+	justify-content: flex-end;
+	padding: 5px;
+	margin: 0 5px;
+	border: none;
+	border-radius: 5px;
+	color: rgb(221, 247, 250);
+}
+
+.bot-detalle{
+	background: blue;
+	box-shadow: 0 2px 25px rgba(25, 3, 223, 0.2);
+}
+
+.bot-editar{
+	background: rgb(241, 237, 3);
+}
+
+.bot-borrar{
+	background: red;
+}
+
+#padre {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+
+	padding: 2em;
+	margin: 1em auto;
+	width: 80vw;
+}
+
+#boton-mensaje{
+	margin-bottom: 2em;
+	rota
+}
+
+#boton-mensaje input[type="submit"]{
+	padding: 0.5em 0;
+	margin: 1em;
+	width: 10em;
+
+	background: rgb(36, 39, 221);
+	color: #fff;  
+	border: #7d87ee;
+	border-radius: 0.5em;
+	box-shadow: 3px 4px 10px 0px #e7e5fd;
+	transform: scale(1);
+}
+
+#boton-mensaje input[type="submit"]:hover{
+	background: rgb(11, 0, 156);
+	color: rgb(221, 247, 250);
+	transform: scale(1.1);
+	transition: 1s;
+}
+table{
+	border-spacing: 0px;
+}
+
+th, td{
+	width: 30em;
+	text-align: left;
+	padding: 0.7em;
+}
+
+th{
+	background: rgb(8, 1, 90);
+	color: #fff;
+}
+
+table td:nth-child(3), th{
+	text-align: center;
+}
+
+table th:nth-child(1){
+	border-radius: 10px 0 0 0;
+}
+
+table th:nth-child(4){
+	border-radius: 0 10px 0 0;
+}
+
+table tbody tr:nth-child(odd){
+	background: rgb(235, 235, 235);
+}
+
+/******************************* 
+		VENTANA MODAL
+*******************************/
+.fondoModal{
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+}
+.contenedorModal{
+	min-height: 90vh;
+	margin: 2% 30%; 
+	background: rgb(241, 241, 241);
+	border-radius: 5px;
+}
+
+.contenidoModal{
+	overflow: auto; /* auto, scroll, hidden, visible, */ 
+	padding: 0;
+	height: 80vh;/* define el alto del elemento */
+	background: rgb(241, 241, 241);
+	border-radius: 5px;
+	
+}
+
+.zonaSuperiorVentana{
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	padding: 1em;
+	/* border-bottom: 1px solid gray;
+	border-radius: 0 0 120px 120px / 0 0 6px 6px;
+	box-shadow:0 1px 4px rgba(1, 0, 66, 0.5), 0 0 40px rgba(15, 2, 116, 0.1) inset; */
+
+	letter-spacing: 1px;
+	font-size: 1.1em;
+	color: rgb(11, 0, 156);
+}
+
+/************************************ 
+		BOTON CERRAR MODAL
+***********************************/
+
+#bot-cerrar-modal{
+	cursor: pointer;
+	justify-content: flex-end;
+
+	transform: scale(1);
+}
+
+#bot-cerrar-modal:hover{
+	transform: scale(1.1);
+	transition: 1s;
+}
+
+/***************************************************** 
+        BOTONES DE PRODUCTOS VENTANA EMERGENTE
+***************************************************/
+.opciones{
+	display: flex;
+	justify-content: center;
+	margin-left: 25px;
+	margin-top: 16px;
+	margin-bottom: 30px;
+	text-align: center;
+	max-width: 35vw;
+}
+  
+.opcion{
+	display: none;
+}
+
+.bot-opcion{
+	justify-content: center;
+	width: -webkit-fill-available; 
+	padding: 0.5em;
+	cursor: pointer;
+
+	background: rgb(36, 39, 221);
+	color: rgb(233, 233, 233);
+	font-size: 1.2em;
+	letter-spacing: 2px;
+}
+
+#bot-uno{
+	border-radius: 10px 0 0 10px;
+}
+
+#bot-tres{
+	border-radius: 0 10px 10px 0;
+}
+
+.bot-opcion:hover,
+.bot-opcion.activa{
+	background: rgb(11, 0, 156);
+	color: rgb(245, 245, 245);
+}
+
+.bot-opcion.activa,
+.opcion.activa{
+	display: block;
+}
+
+
+/************************************ 
+			FORMULARIO 
+***********************************/
+.cajaCamposFormulario{
+	display: list-item;
+	list-style: none;
+	margin: 0 1em;
+	background: rgb(241, 241, 241);
+}
+	
+.campoFormulario{
+	/* margin-bottom: 1em; */
+	display: flex;
+	justify-content: space-around;
+}
+
+.campoFormulario label{
+	display: inline-block;
+	width: 280px;
+	margin: 2em 1em 0;
+
+	color: rgb(18, 1, 51);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-weight: 700;
+}
+
+.campoFormulario input:not([type="checkbox"]), .campoFormulario textarea, select {
+	display: inline-block;
+	width: 30vw;
+	height: 5vh;
+	padding-left: 0.5em;
+	margin-top: 0.3em;
+	border: 1px solid rgb(163, 163, 163);
+	border-radius: 3px;
+	
+	background: rgba(255,255,255,0.8);
+	color:rgb(18, 1, 51);
+	font-family: 'cooper_hewittsemibold';
+	font-size: 1.2em;
+}
+
+.campoFormulario.condiciones input{
+	margin-left: 0.5em;
+	transform: scale(3);
+}
+
+.campoFormulario.condiciones{
+	margin-top: 2em;
+}
+
+.campoFormulario input:focus, .campoFormulario textarea:focus {
+	background: rgba(255,255,255,1);
+}
+
+.campoFormulario textarea{
+	height: 7em;
+}
+
+/*******************************************
+		 BOTON GUARDAR Y CANCELAR 
+******************************************/
+
+#botonGuarda{
+	margin-top: 15px;
+	margin-left: 8px;
+}
+
+.bot-guardar{
+	justify-content: flex-end;
+	min-width: 5em;
+	cursor: pointer;
+	padding: 0.5em;
+	margin-right: 0.5em;
+	border: none;
+	border-radius: 0.5em;
+	background: rgb(36, 39, 221);
+	color: #FFF;
+	font-size: 1em;
+	font-weight: 500;
+	letter-spacing: 1px;
+	transform: scale(1);
+}
+
+.bot-guardar:hover{
+	transform: scale(1.1);
+	transition: all 1s;
+}
+
+.bot-cancelar{
+	justify-content: flex-end;
+	min-width: 5em;
+	cursor: pointer;
+	padding: 0.5em;
+	margin-right: 0.5em;
+	border: none;
+	border-radius: 0.5em;
+	background: rgb(233, 9, 9);
+	color: #FFF;
+	font-size: 1em;
+	font-weight: 500;
+	letter-spacing: 1px;
+	transform: scale(1);
+}
+
+.bot-cancelar:hover{
+	transform: scale(1.1);
+	transition: 1s;
+}
+/* ****************************** 
+        media queries
+****************************** */
+@media screen and (max-width: 900px){
+	/*cabecera*/
+	.header-top{
+		padding-right: 0;
+		padding-left: 0;
+		display: block;
+		text-align: center;
+	}
+	
+	.header-top ul{		 
+		justify-content: center;	 
+	}
+
+	.logo{
+		margin-top: 1em;
+	}
+
+	.header-bottom{
+		min-height: auto;
+		padding: 1em 1.5em;
+	}
+
+	.header-bottom h1{
+		font-size: 1.6em;
+	}
+
+	.header-bottom p{
+		width: 100%;
+		font-size: 1.3em;
+	}
+
+	/*seccion, contenido principal del main*/
+	section {
+		padding: 1em;
+	}
+
+	section h1{
+		font-size: 1.8em;
+	}
+
+	section h2{
+			padding: 0.5em;
+	}
+
+	section p{
+		font-size: 0.9em;
+	}
+
+	/*footer*/
+	footer {		   
+		padding: 1em;
+	}
+
+	footer p{
+		margin:0;
+	}
+
+	/* formulario*/
+		.contacto{
+		width: 100%;	
+	}
+}
+@media screen and (max-width: 390px){
+
+	section h2{
+		font-size: 1.2em;
+		padding:   0.5em;
+	}
+
+	/*formulario*/
+
+	.cajaCamposFormulario{
+		padding:1em;
+	}
+
+	.contacto h2 {
+		padding:1em;
+		font-size: 0.9em;
+	}
+	.campoFormulario label {
+		font-size: 0.7em;
+	}
+
+	.campoFormulario label[for="condiciones"]{
+		display: block;
+		margin-top: 1em;
+		font-size: 0.8em;
+	}
+}
