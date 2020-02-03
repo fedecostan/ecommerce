@@ -1,0 +1,29 @@
+<form name="$ctrl.form">
+    Input: <input name="input" ng-model="$ctrl.name" ng-model-options="$ctrl.options" type="text"/>
+</form>
+Model: <tt>{{$ctrl.name}}</tt>
+<hr>
+<button ng-click="$ctrl.form.input.$setViewValue('some value', 'custom')">Trigger setViewValue with 'some value' and
+    'custom' event
+</button>
+
+<hr>
+<form ng-submit="$ctrl.updateOptions()">
+    <b>updateOn</b><br>
+    <input ng-change="$ctrl.updateEvents()" ng-model="$ctrl.options.updateOn" ng-model-options="{debounce: 500}"
+           type="text">
+
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Debounce value</th>
+        </tr>
+        <tr ng-repeat="(key, value) in $ctrl.events">
+            <td>{{key}}</td>
+            <td><input ng-model="$ctrl.events[key]" type="number"/></td>
+        </tr>
+    </table>
+
+    <br>
+    <input type="submit" value="Update options">
+</form>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-ngController-production</title>
+
+
+    <script src="//code.angularjs.org/1.7.9/angular.min.js"></script>
+    <script src="app.js"></script>
+
+
+</head>
+<body ng-app="controllerExample">
+<div id="ctrl-exmpl" ng-controller="SettingsController2">
+    <label>Name: <input ng-model="name" type="text"/></label>
+    <button ng-click="greet()">greet</button>
+    <br/>
+    Contact:
+    <ul>
+        <li ng-repeat="contact in contacts">
+            <select id="select_{{$index}}" ng-model="contact.type">
+                <option>phone</option>
+                <option>email</option>
+            </select>
+            <input aria-labelledby="select_{{$index}}" ng-model="contact.value" type="text"/>
+            <button ng-click="clearContact(contact)">clear</button>
+            <button ng-click="removeContact(contact)">X</button>
+        </li>
+        <li>[
+            <button ng-click="addContact()">add</button>
+            ]
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-ng-checked-jquery</title>
+
+
+    <script src="../../components/jquery-3.4.0/jquery.js"></script>
+    <script src="../../../angular.js"></script>
+
+
+</head>
+<body ng-app="">
+<label>Check me to check both: <input ng-model="leader" type="checkbox"></label><br/>
+<input aria-label="Follower input" id="checkFollower" ng-checked="leader" type="checkbox">
+</body>
+</html>

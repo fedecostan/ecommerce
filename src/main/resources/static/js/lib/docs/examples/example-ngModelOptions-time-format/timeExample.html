@@ -1,0 +1,20 @@
+<form name="$ctrl.timeForm">
+    <strong>Default</strong>:
+    <input ng-model="$ctrl.time" step="any" type="time"/><br>
+    <strong>With options</strong>:
+    <input name="timeFormatted" ng-model="$ctrl.time" ng-model-options="$ctrl.options" step="any" type="time"/>
+    <br>
+
+    Options:<br>
+    <code>timeSecondsFormat</code>:
+    <input
+            ng-change="$ctrl.optionChange()"
+            ng-model="$ctrl.options.timeSecondsFormat"
+            type="text">
+    <br>
+    <code>timeStripZeroSeconds</code>:
+    <input
+            ng-change="$ctrl.optionChange()"
+            ng-model="$ctrl.options.timeStripZeroSeconds"
+            type="checkbox">
+</form>

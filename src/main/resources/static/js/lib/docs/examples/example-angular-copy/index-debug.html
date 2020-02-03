@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-angular-copy-debug</title>
+
+
+    <script src="../../../angular.js"></script>
+    <script src="script.js"></script>
+
+
+</head>
+<body ng-app="copyExample">
+<div ng-controller="ExampleController">
+    <form class="simple-form" novalidate>
+        <label>Name: <input ng-model="user.name" type="text"/></label><br/>
+        <label>Age: <input ng-model="user.age" type="number"/></label><br/>
+        Gender: <label><input ng-model="user.gender" type="radio" value="male"/>male</label>
+        <label><input ng-model="user.gender" type="radio" value="female"/>female</label><br/>
+        <button ng-click="reset()">RESET</button>
+        <button ng-click="update(user)">SAVE</button>
+    </form>
+    <pre>form = {{user | json}}</pre>
+    <pre>leader = {{leader | json}}</pre>
+</div>
+</body>
+</html>

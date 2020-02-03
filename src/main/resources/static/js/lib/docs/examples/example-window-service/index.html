@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-window-service</title>
+
+
+    <script src="../../../angular.min.js"></script>
+
+
+</head>
+<body ng-app="windowExample">
+<script>
+  angular.module('windowExample', [])
+    .controller('ExampleController', ['$scope', '$window', function($scope, $window) {
+      $scope.greeting = 'Hello, World!';
+      $scope.doGreeting = function(greeting) {
+        $window.alert(greeting);
+      };
+    }]);
+
+</script>
+<div ng-controller="ExampleController">
+    <input aria-label="greeting" ng-model="greeting" type="text"/>
+    <button ng-click="doGreeting(greeting)">ALERT</button>
+</div>
+</body>
+</html>
