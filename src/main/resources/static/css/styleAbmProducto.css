@@ -85,6 +85,7 @@ button{
 	border: none;
 	border-radius: 5px;
 	color: rgb(221, 247, 250);
+	cursor: pointer;
 }
 
 .bot-detalle{
