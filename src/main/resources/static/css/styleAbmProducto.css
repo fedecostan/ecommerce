@@ -75,11 +75,11 @@ CSS
 }
 
 */
+
 /* ****************************** 
 			TABLA
 ****************************** */
 button{
-	justify-content: flex-end;
 	padding: 5px;
 	margin: 0 5px;
 	border: none;
@@ -88,16 +88,30 @@ button{
 }
 
 .bot-detalle{
-	background: blue;
-	box-shadow: 0 2px 25px rgba(25, 3, 223, 0.2);
+	background: rgb(0, 0, 255);
+}
+
+.bot-detalle:hover{
+	transition: all ease 1.5s;
+	box-shadow: inset 0 70px 0 0 rgb(36, 4, 139);
 }
 
 .bot-editar{
-	background: rgb(241, 237, 3);
+	background: rgb(204, 201, 17);
+}
+
+.bot-editar:hover{
+	transition: all ease 1.5s;
+	box-shadow: inset 0 70px 0 0 rgb(171, 173, 5);
 }
 
 .bot-borrar{
 	background: red;
+}
+
+.bot-borrar:hover{
+	transition: all ease 1.5s;
+	box-shadow: inset 0 70px 0 0 rgb(161, 5, 5);
 }
 
 #padre {
@@ -110,30 +124,10 @@ button{
 	width: 80vw;
 }
 
-#boton-mensaje{
-	margin-bottom: 2em;
-	rota
-}
-
-#boton-mensaje input[type="submit"]{
-	padding: 0.5em 0;
+.boton-mensaje{
 	margin: 1em;
-	width: 10em;
-
-	background: rgb(36, 39, 221);
-	color: #fff;  
-	border: #7d87ee;
-	border-radius: 0.5em;
-	box-shadow: 3px 4px 10px 0px #e7e5fd;
-	transform: scale(1);
 }
 
-#boton-mensaje input[type="submit"]:hover{
-	background: rgb(11, 0, 156);
-	color: rgb(221, 247, 250);
-	transform: scale(1.1);
-	transition: 1s;
-}
 table{
 	border-spacing: 0px;
 }
@@ -149,15 +143,25 @@ th{
 	color: #fff;
 }
 
-table td:nth-child(3), th{
+table td:nth-child(3), table td:nth-child(4), table td:nth-child(5), th{
 	text-align: center;
+}
+
+table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table td:nth-child(3), table td:nth-child(4), table td:nth-child(5){
+	width: 10em;
+} 
+
+table th:nth-child(6), table td:nth-child(6){
+	padding: 0;
+	width: 20em;
+	text-align: end;
 }
 
 table th:nth-child(1){
 	border-radius: 10px 0 0 0;
 }
 
-table th:nth-child(4){
+table th:nth-child(6){
 	border-radius: 0 10px 0 0;
 }
 
@@ -354,12 +358,12 @@ table tbody tr:nth-child(odd){
 	font-size: 1em;
 	font-weight: 500;
 	letter-spacing: 1px;
-	transform: scale(1);
+
 }
 
 .bot-guardar:hover{
-	transform: scale(1.1);
-	transition: all 1s;
+	transition: all ease 1s;
+	box-shadow: inset 0 70px 0 0 rgb(36, 4, 139);
 }
 
 .bot-cancelar{
@@ -375,13 +379,13 @@ table tbody tr:nth-child(odd){
 	font-size: 1em;
 	font-weight: 500;
 	letter-spacing: 1px;
-	transform: scale(1);
 }
 
 .bot-cancelar:hover{
-	transform: scale(1.1);
-	transition: 1s;
+	transition: all ease 1s;
+	box-shadow: inset 0 70px 0 0 rgb(173, 6, 6);
 }
+
 /* ****************************** 
         media queries
 ****************************** */

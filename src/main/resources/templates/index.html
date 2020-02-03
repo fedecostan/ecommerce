@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>ECOMMERCE NUEVO CAMBIO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styleIndex.css">
+    <link rel="stylesheet" href="sass/style.css">
+
+    <title>Awesome</title>
 </head>
+
 <body>
-    <p>EL INDEX DE LA TIENDA ONLINE VIVE!!</p>
+    <header class="menu1">
+        <div id="header-position">
+            <form class="formulariodemo cf">
+                <input type="text" placeholder="Buscar en Awesome...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="menu">
+        </div>
+        <span class="boton-responsive">
+            &equiv;
+            <!-- pone las lineas para el menu -->
+        </span>
+    </header>
+
+    <main>
+        <div id="botones-descuentos">
+            <div class="bot-descuentos">
+                <button class="button">
+                    Ofertas
+                    <div class="button__horizontal"></div>
+                    <div class="button__vertical"></div>
+                </button>
+            </div>
+            <div class="bot-descuentos">
+                <button class="button">
+                    Configurador
+                    <div class="button__horizontal"></div>
+                    <div class="button__vertical"></div>
+                </button>
+            </div>
+            <div class="bot-descuentos">
+                <button class="button">
+                    Promociones
+                    <div class="button__horizontal"></div>
+                    <div class="button__vertical"></div>
+                </button>
+            </div>
+            <div class="bot-descuentos">
+                <button class="button">
+                    Outlet
+                    <div class="button__horizontal"></div>
+                    <div class="button__vertical"></div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // script menu responsive
+        $('.boton-responsive').on('click', function () {
+            $('.menu').toggleClass('abierto');
+        });
+
+
+        // script menu retractil
+		$(window).on('scroll', retraerMenu);
+
+		var ultimoValorScroll=0;
+
+		function retraerMenu(){
+
+			var scrollActual = $(window).scrollTop()
+			console.log(scrollActual);
+
+			// chequear posicion del escroll y reducir menu
+			if(scrollActual>ultimoValorScroll){
+				$('.menu1').addClass('oculto');
+			}else{
+				$('.menu1').removeClass('oculto');			
+			}
+
+			// despues de chequear si estoy bajando, actualizo el valor de la variable ultimaValorScroll para que asi, cuando vuelva a general la llamada a la funcion y se genere un nuevo valor de scroll actual tenga datos actualizados.
+			ultimoValorScroll=scrollActual;
+		}
+    </script>
 </body>
+
+<footer>
+
+</footer>
+
 </html>

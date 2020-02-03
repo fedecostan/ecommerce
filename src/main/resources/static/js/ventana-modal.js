@@ -1,5 +1,7 @@
-// detectar eventos
-$('#boton-mensaje').on('click', mostrarModal);
+////////////////////////////////////////
+// VENTANA MODAL BOTON NUEVO PRODUCTO//
+//////////////////////////////////////
+$('.boton-mensaje').on('click', mostrarModal);
 $('#bot-cerrar-modal').on('click', cerrarModal);
 $(document).on('keydown', comprobarTecla);
 
