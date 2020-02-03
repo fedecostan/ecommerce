@@ -355,7 +355,7 @@
 
                         <div class="campoFormulario">
                             <label for="type">Tipe</label>
-                            <select required name="type" id="type" required>
+                            <select name="type" id="type" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -440,7 +440,7 @@
 
                         <div class="campoFormulario">
                             <label for="smarttv">SmartTv</label>
-                            <select required name="smarttv" id="smarttv" required>
+                            <select name="smarttv" id="smarttv" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -455,7 +455,7 @@
 
                         <div class="campoFormulario">
                             <label for="years">Years</label>
-                            <select required name="years" id="years" required>
+                            <select name="years" id="years" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -470,7 +470,7 @@
 
                         <div class="campoFormulario">
                             <label for="operatingsystem">OperatingSystem</label>
-                            <select required name="operatingsystem" id="operatingsystem" required>
+                            <select name="operatingsystem" id="operatingsystem" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -510,7 +510,7 @@
 
                         <div class="campoFormulario">
                             <label for="simtype">SimType</label>
-                            <select required name="simtype" id="simtype" required>
+                            <select name="simtype" id="simtype" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -530,7 +530,7 @@
 
                         <div class="campoFormulario">
                             <label for="nfccapable">NfcCapable</label>
-                            <select required name="nfccapable" id="nfccapable" required>
+                            <select name="nfccapable" id="nfccapable" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -560,7 +560,7 @@
 
                         <div class="campoFormulario">
                             <label for="weight">Weight</label>
-                            <select required name="weight" id="weight" required>
+                            <select name="weight" id="weight" required>
                                 <option value="">Elija una opción</option>
                                 <!-- si no tengo value el navegador interpreta que no hay una opción -->
                                 <option value="29">29"</option>
@@ -587,24 +587,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
 
     <!-- Luego cargo mis scripts -->
-    <script src="js/mostrar-ocultar-boton.js"></script>
-
-    <script src="js/ventana-modal.js"></script>
-
-
-    <script>
-        var $btn = document.querySelector('.btn');
-
-        $btn.addEventListener('click', e => {
-            window.requestAnimationFrame(() => {
-                $btn.classList.remove('is-animating');
-
-                window.requestAnimationFrame(() => {
-                    $btn.classList.add('is-animating');
-                });
-            });
-        });
-    </script>
+    <script src="js/abmProducto.js"></script>
 </body>
 
 </html>
