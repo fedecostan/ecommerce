@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-ng-class1-debug</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+
+    <script src="../../../angular.js"></script>
+    <script src="../../../angular-animate.js"></script>
+
+
+</head>
+<body ng-app="ngAnimate">
+<input id="setbtn" ng-click="myVar='my-class'" type="button" value="set">
+<input id="clearbtn" ng-click="myVar=''" type="button" value="clear">
+<br>
+<span class="base-class" ng-class="myVar">Sample Text</span>
+</body>
+</html>

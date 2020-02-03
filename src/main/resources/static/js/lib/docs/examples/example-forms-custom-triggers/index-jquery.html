@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-forms-custom-triggers-jquery</title>
+
+
+    <script src="../../components/jquery-3.4.0/jquery.js"></script>
+    <script src="../../../angular.js"></script>
+    <script src="script.js"></script>
+
+
+</head>
+<body ng-app="customTriggerExample">
+<div ng-controller="ExampleController">
+    <form>
+        <label>Name:
+            <input ng-model="user.name" ng-model-options="{ updateOn: 'blur' }" type="text"/></label><br/>
+        <label>
+            Other data:
+            <input ng-model="user.data" type="text"/></label><br/>
+    </form>
+    <pre>username = "{{user.name}}"</pre>
+    <pre>userdata = "{{user.data}}"</pre>
+</div>
+</body>
+</html>

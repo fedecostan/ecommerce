@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-ngControllerAs</title>
+
+
+    <script src="../../../angular.min.js"></script>
+    <script src="app.js"></script>
+
+
+</head>
+<body ng-app="controllerAsExample">
+<div id="ctrl-as-exmpl" ng-controller="SettingsController1 as settings">
+    <label>Name: <input ng-model="settings.name" type="text"/></label>
+    <button ng-click="settings.greet()">greet</button>
+    <br/>
+    Contact:
+    <ul>
+        <li ng-repeat="contact in settings.contacts">
+            <select aria-label="Contact method" id="select_{{$index}}" ng-model="contact.type">
+                <option>phone</option>
+                <option>email</option>
+            </select>
+            <input aria-labelledby="select_{{$index}}" ng-model="contact.value" type="text"/>
+            <button ng-click="settings.clearContact(contact)">clear</button>
+            <button aria-label="Remove" ng-click="settings.removeContact(contact)">X</button>
+        </li>
+        <li>
+            <button ng-click="settings.addContact()">add</button>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

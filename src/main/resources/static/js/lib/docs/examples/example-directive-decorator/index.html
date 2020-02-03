@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-directive-decorator</title>
+
+
+    <script src="../../../angular.min.js"></script>
+    <script src="script.js"></script>
+
+
+</head>
+<body ng-app="urlDecorator">
+<div ng-controller="Ctrl">
+    <a id="id3" ng-href="/products/{{ id }}/view">View Product {{ id }}</a>
+    - <strong>id === 3</strong>, so no warning<br>
+    <a id="id8" ng-href="/products/{{ id + 5 }}/view">View Product {{ id + 5 }}</a>
+    - <strong>id + 5 === 8</strong>, so no warning<br>
+    <a id="someOtherId" ng-href="/products/{{ someOtherId }}/view">View Product {{ someOtherId }}</a>
+    - <strong style="background-color: #ffff00;">someOtherId === undefined</strong>, so warn<br>
+    <a id="someOtherId5" ng-href="/products/{{ someOtherId + 5 }}/view">View Product {{ someOtherId + 5 }}</a>
+    - <strong>someOtherId + 5 === 5</strong>, so no warning<br>
+    <div>Warn Count: {{ warnCount }}</div>
+</div>
+</body>
+</html>

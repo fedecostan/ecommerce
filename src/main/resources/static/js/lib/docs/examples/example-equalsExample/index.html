@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-equalsExample</title>
+
+
+    <script src="../../../angular.min.js"></script>
+    <script src="script.js"></script>
+
+
+</head>
+<body ng-app="equalsExample">
+<div ng-controller="ExampleController">
+    <form novalidate>
+        <h3>User 1</h3>
+        Name: <input ng-model="user1.name" type="text">
+        Age: <input ng-model="user1.age" type="number">
+
+        <h3>User 2</h3>
+        Name: <input ng-model="user2.name" type="text">
+        Age: <input ng-model="user2.age" type="number">
+
+        <div>
+            <br/>
+            <input ng-click="compare()" type="button" value="Compare">
+        </div>
+        User 1:
+        <pre>{{user1 | json}}</pre>
+        User 2:
+        <pre>{{user2 | json}}</pre>
+        Equal:
+        <pre>{{result}}</pre>
+    </form>
+</div>
+</body>
+</html>
