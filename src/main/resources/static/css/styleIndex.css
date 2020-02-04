@@ -4,174 +4,219 @@
 ******************************/
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-main{
-  margin-top: 200px;
+a{
+  text-decoration: none;
 }
 
-/******************************************
-        ESTILOS DE MENU RETRACTIL
-****************************************/
-.menu1{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 120px;
-  width: 100%;
-  background: rgb(255, 255, 255);
-  text-align: center;
-  line-height: 90px;
-  transition: all 700ms;
+a:hover{
+  text-decoration: none;
 }
 
-.menu1.oculto{
-  transform: translateY(-100%);
+ul li{
+  list-style-type: none;
+}
+
+.padding-lateral{
+	padding-right: 2em;
+	padding-left: 2em;
 }
 
 /******************************************
-        ESTILOS DE MENU RESPONSIVE
+          ESTILOS DE HEADER GENERAL
 ****************************************/
-.menu{
-  position: fixed;
-  top: 120px;
-  left: 0;
-  height: 100vh;
-  width: 300px;
-
-  background: rgb(255, 255, 255);
-  box-shadow: 0.23077rem 0 0.38462rem rgb(206, 206, 206);
-  text-align: center;
-
-  transition: transform 700ms;
-  transform: translate(-100%,0);
-}
-
-.menu.abierto{
-  transform: translate(0,0);
-}
-
-.boton-responsive{
-  position: fixed; /*lo coloca en la parte que quiero de la ventana*/
-  right: 40px;
-  top: 20px;
-  font-size: 3em;
-  cursor: pointer;
-  color: #1e045a;
-}
-
-/******************************
-        ESTILOS DE HEADER
-******************************/
 header{
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem .5rem;
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  right: 0;
-  left: 0;
-
-  background: rgb(255, 255, 255);
-  box-shadow: 0 0.23077rem 0.38462rem rgb(206, 206, 206);
-  border-top: .38462rem solid #1e045a;
-}
-
-form{
-  margin: 5em;
-}
-/******************************
-        INPUT BUSCAR
-******************************/
-.cf:before, .cf:after {
-    content:"";
-    display:table;
-}
-
-.cf:after {clear:both; }
-.cf { zoom:1; }
-
-   /* el formulario en si mismo */
-.formulariodemo {
-    border-radius: 20px;
-
-    margin: 0 auto;
-    padding: 15px;
-    width: 450px;
-}
-
-   /* la caja donde se ingresa el texto a buscar */
-.formulariodemo input {
-    background-color: transparent;
-    border: 1px solid rgb(202, 202, 202);
-    border-radius: 15px 0 0 15px ;
-    float: left;
-    font-family: Tahoma;
-    font-size:15px;
-    font-weight: bold;
-    height: 40px;
-    padding: 10px 5px;
-    width: 310px;
-}
-  
-.formulariodemo input:focus {
-    outline: 0;
-    box-shadow: 0 0 2px rgba(236, 236, 236, 0.8) inset;
-}
-
-/* el estilo de del atributo placeholder debe ser declarado para cada navegador de modo separado */
-.formulariodemo input:-moz-placeholder { color: #999; font-weight: normal; font-style: italic; }
-.formulariodemo input::-webkit-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
-.formulariodemo input:-ms-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
-
-/* aquí iría el estilo de del atributo required si es que se desea definirlo */
-.formulariodemo input:required { box-shadow: none; }
-
-  /* el botón de envio */
-.formulariodemo button {
-    background-color: rgb(4, 6, 85);
-    border: none;
-    border-radius: 0 15px 15px 0;
-    color: #FFF;
-    cursor: pointer;
-    float: right;
-    font-family: Tahoma;
-    font-size: 15px;
-    font-weight: bold;
-    height: 40px;
-    overflow: visible;
-    padding: 0;
-    position: relative;
-    text-transform: uppercase;
-    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-    width: 110px;
-}
-
-.formulariodemo button:hover{ background: rgb(31, 7, 168); } 
-.formulariodemo button:active, .formulariodemo button:focus{ background: rgb(8, 3, 78); }
-/* .formulariodemo button:before {  si quiero un detalle del triángulo izquierdo en el boton buscar
-  content: "";
-  border-color: transparent #9099A1 transparent;
-  border-style: solid solid solid none;
-  border-width: 8px 8px 8px 0;
-  left: -6px;
-  position: absolute;
-  top: 12px; 
-*/
-
-/****************************************************
-    ESTILOS BOTONES OFERTAS, CONF, PROM, OUTLET 
-***************************************************/
-div {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  background: #fff;
+  box-shadow: 0 1px 5px 1px rgb(190, 190, 190);
 }
 
-#botones-descuentos{
+/******************************************
+        ESTILOS HEADER LEFT
+****************************************/
+/* contenedor izquierdo */
+.cont-left{
+  display: flex;
+}
+
+/* LOGO AWESOME */
+.sup-left{
+  justify-content: left;
+  margin-left: 0;
+  margin-top: 8px;
+}
+
+.logo{
+  margin-left: 0;
+  color: #4C4C4C;
+  font-size: 2em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+dl, ol, ul {
+  margin-top: 0;
+  margin-left: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.logo:hover{
+  color: #4C4C4C;
+}
+
+/* BOTON RESPONSIVE */
+#bot-res{
+  justify-content: left;
+  background: transparent;
+  border: 1px solid rgb(185, 184, 184);
+  border-radius: 10px;
+  padding: 0 0.8em;
   margin: 10px;
 }
 
+/******************************************
+        ESTILOS HEADER NAV-CENTRO
+****************************************/
+.navegacion{
+  display: flex;
+  margin: 12px 100px 0 100px;
+}
+
+/* BOTON BUSCAR */
+.btn, .btn-secondary{
+  padding: 10px;
+  background: #7a7a7a;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2;
+  letter-spacing: 1px;
+  border: 1px solid  #cacaca;
+  border-radius: 10px 0 0 10px;
+} 
+
+/* ENTRADA DE TEXTO */
+input[type="text"]{
+  padding: 10px;
+
+  width: 400px;
+  border: 1px solid #cacaca;
+  border-radius: 0 10px 10px 0;
+  transition: all 1s Ease-in-out;
+}
+
+input[type="text"]:hover{
+  width: 550px;
+  border: 1px solid #cacaca;
+}
+
+/******************************************
+        ESTILOS HEADER SUP-DERECHA
+****************************************/
+.sup-right{
+  display: flex;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.sup-right > a{
+  display: block;
+  margin: 10px;
+  width: 90px;
+  color: #7a7a7a;
+}
+
+/*******************************************************************
+        SECCIÓN FRANQUICIADOS ESTRUCTURA DE COLUMNAS
+*****************************************************************/
+.contenedorColumnas{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.contenedorColumnas{
+  justify-content: space-around;
+}
+
+.Columna{
+  flex-basis: 20%; /*eb otras zonas variamos la anchura de las columnas*/
+  
+}
+
+/******************************************
+          SECCIÓN FRANQUICIADOS
+****************************************/
+.franquiciados{
+	margin-top: 2em;
+}
+
+.franquiciados .ContendorColumnas{
+	margin-bottom: 6em;
+}
+
+.franquiciados .Columna img{
+	width: 80%; /*la imagen ocupa el 100% de la columna*/
+  border: solid 1px rgba(49, 50, 58, 0.2);
+  transition: all 1s;
+}
+
+.franquiciados .Columna img:hover{
+  transform: scale(1.1);
+  box-shadow: 0 1px 10px 2px rgb(200, 200, 200);
+}
+
+.franquiciados  .Columna figure{
+	margin-bottom: 1em;
+}
+
+.franquiciados  .Columna p{
+  width: 80%; 
+  color: rgb(139, 139, 139);
+  font-weight: 600;
+	line-height: 1.4em;
+}
+
+.franquiciados  h1{
+	font-family: 'open_sansbold', arial, sans-serif;
+}
+
+.franquiciados  h1, section h1+p{
+	text-align: center;
+	line-height: 1.3em;
+}
+
+.franquiciados  h1+p{
+	margin-bottom: 1em;
+	color: #969696;
+	font-size: 1.5em;
+}
+
+.franquiciados  h2{
+	margin: 1em 0 0.5em 0;
+}
+
+.franquiciados  h2 a{
+	color: #4C4C4C;
+}
+
+.franquiciados  h2 a:hover{
+	color: #898989;
+}
+
+.franquiciados  time{
+	color: #C6C6C6;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.franquiciados  time::before{
+	content: url('../img/icono-fecha.svg');
+	margin-right: 0.8em;
+	vertical-align: middle;
+}
 

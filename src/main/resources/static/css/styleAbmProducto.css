@@ -23,59 +23,6 @@ a{
 	display: block;
 }
 
-/****************************************************
-		ESTILOS DE BOTONES ANIMADOS
-**************************************************/
-/* Boton que rota con ok...
-HTML
-<td>
-	<div class="button">
-		<div class="container">
-			<div class="tick">
-		</div>
-	</div>
-</div>
-
-CSS
-.button, .tick {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: sans-serif;
-}
-
-.button {
-	padding: 0.5em;
-	background: rgb(15, 2, 197);
-	border-radius: 6px;
-	transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
-}
-  
-.button svg {
-	transform: rotate(180deg);
-	transition: all .5s;
-}
-  
-.button__circle {
-	width: 80px;
-	height: 50px;
-	background: rgb(21, 201, 102);
-	border-radius: 90%;
-	transform: rotate(-180deg);
-}
-  
-.button:hover {
-	cursor: pointer;
-}
-  
-.tick {
-	color: white;
-	font-size: 1em;
-	transition: all .9s;
-}
-
-*/
-
 /* ****************************** 
 			TABLA
 ****************************** */
@@ -170,21 +117,18 @@ table tbody tr:nth-child(odd){
 	background: rgb(235, 235, 235);
 }
 
+/**************************************************** 
+		BOTON NUEVO PRODUCTO VENTANA MODAL
+**************************************************/
+.btn .btn-primary{
+	display: flex;
+	justify-content: flex-end;
+}
+
 /******************************* 
 		VENTANA MODAL
 *******************************/
-.fondoModal{
-	position: fixed;
-	display: none;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(0,0,0,0.8);
-}
 .contenedorModal{
-	min-height: 90vh;
-	margin: 2% 30%; 
 	background: rgb(241, 241, 241);
 	border-radius: 5px;
 }
@@ -212,29 +156,13 @@ table tbody tr:nth-child(odd){
 	color: rgb(11, 0, 156);
 }
 
-/************************************ 
-		BOTON CERRAR MODAL
-***********************************/
-
-#bot-cerrar-modal{
-	cursor: pointer;
-	justify-content: flex-end;
-
-	transform: scale(1);
-}
-
-#bot-cerrar-modal:hover{
-	transform: scale(1.1);
-	transition: 1s;
-}
-
 /***************************************************** 
         BOTONES DE PRODUCTOS VENTANA EMERGENTE
 ***************************************************/
 .opciones{
 	display: flex;
 	justify-content: center;
-	margin-left: 25px;
+	margin-left: 10px;
 	margin-top: 16px;
 	margin-bottom: 30px;
 	text-align: center;
@@ -248,7 +176,7 @@ table tbody tr:nth-child(odd){
 .bot-opcion{
 	justify-content: center;
 	width: -webkit-fill-available; 
-	padding: 0.5em;
+	padding: 5PX;
 	cursor: pointer;
 
 	background: rgb(36, 39, 221);
@@ -265,9 +193,8 @@ table tbody tr:nth-child(odd){
 	border-radius: 0 10px 10px 0;
 }
 
-.bot-opcion:hover,
-.bot-opcion.activa{
-	background: rgb(11, 0, 156);
+.bot-opcion:hover{
+	background: rgb(13, 5, 124);
 	color: rgb(245, 245, 245);
 }
 
@@ -275,7 +202,6 @@ table tbody tr:nth-child(odd){
 .opcion.activa{
 	display: block;
 }
-
 
 /************************************ 
 			FORMULARIO 
@@ -295,7 +221,7 @@ table tbody tr:nth-child(odd){
 
 .campoFormulario label{
 	display: inline-block;
-	width: 280px;
+	width: 200px;
 	margin: 2em 1em 0;
 
 	color: rgb(18, 1, 51);
@@ -335,56 +261,6 @@ table tbody tr:nth-child(odd){
 
 .campoFormulario textarea{
 	height: 7em;
-}
-
-/*******************************************
-		 BOTON GUARDAR Y CANCELAR 
-******************************************/
-
-#botonGuarda{
-	margin-top: 15px;
-	margin-left: 8px;
-}
-
-.bot-guardar{
-	justify-content: flex-end;
-	min-width: 5em;
-	cursor: pointer;
-	padding: 0.5em;
-	margin-right: 0.5em;
-	border: none;
-	border-radius: 0.5em;
-	background: rgb(36, 39, 221);
-	color: #FFF;
-	font-size: 1em;
-	font-weight: 500;
-	letter-spacing: 1px;
-
-}
-
-.bot-guardar:hover{
-	transition: all ease 1s;
-	box-shadow: inset 0 70px 0 0 rgb(36, 4, 139);
-}
-
-.bot-cancelar{
-	justify-content: flex-end;
-	min-width: 5em;
-	cursor: pointer;
-	padding: 0.5em;
-	margin-right: 0.5em;
-	border: none;
-	border-radius: 0.5em;
-	background: rgb(233, 9, 9);
-	color: #FFF;
-	font-size: 1em;
-	font-weight: 500;
-	letter-spacing: 1px;
-}
-
-.bot-cancelar:hover{
-	transition: all ease 1s;
-	box-shadow: inset 0 70px 0 0 rgb(173, 6, 6);
 }
 
 /* ****************************** 

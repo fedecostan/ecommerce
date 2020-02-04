@@ -1,74 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/normalize.css">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styleIndex.css">
-    <link rel="stylesheet" href="sass/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="css/styleIndex.css">
 
-    <title>Awesome</title>
-</head>
+        <title>Awesome</title>
+    </head>
 
-<body>
-    <header class="menu1">
-        <div id="header-position">
-            <form class="formulariodemo cf">
-                <input type="text" placeholder="Buscar en Awesome...">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
-        <div class="menu">
-        </div>
-        <span class="boton-responsive">
-            &equiv;
-            <!-- pone las lineas para el menu -->
-        </span>
-    </header>
-
-    <main>
-        <div id="botones-descuentos">
-            <div class="bot-descuentos">
-                <button class="button">
-                    Ofertas
-                    <div class="button__horizontal"></div>
-                    <div class="button__vertical"></div>
+    <body>
+        <header>
+            <div class="cont-left">
+                <button id="bot-res" type="button">
+                    &equiv;
                 </button>
+                <div class="sup-left">
+                    <ul>
+                        <li>
+                            <a class="logo" href="#">Awesome</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="bot-descuentos">
-                <button class="button">
-                    Configurador
-                    <div class="button__horizontal"></div>
-                    <div class="button__vertical"></div>
-                </button>
+            <div>
+                <nav class="navegacion">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Buscar
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Componentes</a>
+                            <a class="dropdown-item" href="#">Ordenadores</a>
+                            <a class="dropdown-item" href="#">Smartphone/Telefonia</a>
+                            <a class="dropdown-item" href="#">Audio/Foto/video</a>
+                            <a class="dropdown-item" href="#">Periféricos</a>
+                            <a class="dropdown-item" href="#">Televisores</a>
+                            <a class="dropdown-item" href="#">Tablets/Ebooks</a>
+                            <a class="dropdown-item" href="#">Consolas/Gaming</a>
+                        </div>
+                    </div>
+
+                    <!-- <button type="submit" name="submit_mult" value="buscar" title="Buscar en Awesome" class="bot-buscador">Buscar</button> -->
+                    <input type="text" title="Buscar" placeholder="Buscar en Awesome...">
+                </nav>
             </div>
-            <div class="bot-descuentos">
-                <button class="button">
-                    Promociones
-                    <div class="button__horizontal"></div>
-                    <div class="button__vertical"></div>
-                </button>
+            <div class="sup-right">
+                <a href="">Ingresar</a>
+                <a href="">Registrarse</a>
+                <a href="">Mi carrito</a>
             </div>
-            <div class="bot-descuentos">
-                <button class="button">
-                    Outlet
-                    <div class="button__horizontal"></div>
-                    <div class="button__vertical"></div>
-                </button>
-            </div>
-        </div>
-    </main>
+           
+        </header>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/index.js"></script>
+        <main>
+            <section class="franquiciados padding-lateral">
+                <!-- fila con columnas -->
+                <div class="contenedorColumnas">
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-01.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            Asus ZenBook UX433FA(New)-A5243T Intel Core i7-8565U/8GB/256GB SSD/14"
+                        </p>
+                    </div>
 
-</body>
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-02.jpg" alt="Inauguración local">
+                        </figure>
+                        
+                        <p>
+                            Newskill Kitsune Silla Gaming 
+                        </p>
+                    </div>
 
-<footer>
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-03.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            Xiaomi Mi Electric Scooter Patinete Eléctrico Negro
+                        </p>
 
-</footer>
+                    </div>
 
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-04.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            LG OLED55B9PLA 55" OLED UltraHD 4K HDR
+                        </p>
+                    </div>
+
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-05.jpg" alt="Inauguración local">
+                        </figure>
+                        
+                        <p>
+                            HP Omen 25 24.5" LED Full HD 144Hz FreeSync
+                        </p>
+                    </div>
+
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-06.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            Logitech G432 Auriculares Gaming 7.1
+                        </p>
+                    </div>
+
+                    <div class="Columna">
+                        <figure>
+                            <img src="img/img-07.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            HP Omen 600 Ratón Gaming 12000 DPI Negro
+                        </p>
+                   </div>
+
+                   <div class="Columna">
+                        <figure>
+                            <img src="img/img-08.jpg" alt="Inauguración local">
+                        </figure>
+                         
+                        <p>
+                            Newskill Kitsune Silla Gaming 
+                       </p>
+                   </div>
+
+                   <div class="Columna">
+                        <figure>
+                            <img src="img/img-09.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            HP OMEN 15-DC1036NS Intel Core i7-9750H/16GB/1TB SSD/GTX 1660Ti/15.6"
+                       </p>
+
+                   </div>
+
+                   <div class="Columna">
+                        <figure>
+                            <img src="img/img-10.jpg" alt="Inauguración local">
+                        </figure>
+                        <p>
+                            Samsung UE50NU7025 50" LED UltraHD 4K
+                       </p>
+                   </div>
+                </div>  <!-- fin fila con columnas -->
+            </section> <!-- fin seccion --> 
+        </main>
+    </body>
 </html>
