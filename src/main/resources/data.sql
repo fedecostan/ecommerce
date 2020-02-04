@@ -47,3 +47,16 @@ INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, laptop_in
 VALUES ('5', '5', '3', '1');
 INSERT INTO ecommerce.product_detail (id, product_id, product_type_id, laptop_info_id)
 VALUES ('6', '6', '3', '2');
+
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (1, 1, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (2, 1, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (3, 2, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (4, 2, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (5, 3, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (6, 3, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (7, 4, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (8, 4, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (9, 5, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (10, 5, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (11, 6, 'http://localhost:8080/img/chuwi-herobook-header.jpg');
+INSERT INTO ecommerce.product_image (id, product_id, url) VALUES (12, 6, 'http://localhost:8080/img/chuwi-herobook-header.jpg');

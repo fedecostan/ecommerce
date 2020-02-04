@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html ng-app="app" xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta charset="UTF 8">
+    <title>ABM PRODUCTO</title>
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/styleAbmProducto.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/sass/style.css}" type="text/css">
+</head>
+<body>
+<div id="padre" ng-controller="ProductCrudController">
+    <div class="boton-mensaje">
+        <button class="btn">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="text">Nuevo producto</span>
+        </button>
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Descuento</th>
+                <th>Stock</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="product in products">
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.discount}}</td>
+                <td>{{product.stock}}</td>
+                <td>
+                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
+                            type="submit"
+                            value="detalle">Detalle
+                    </button>
+                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
+                            value="editar">Editar
+                    </button>
+                    <button class="bot-borrar" name="reset_mult" title="Borrar producto" type="reset"
+                            value="borrar">Borrar
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Informacion ventana emergente modal -->
+<div class="fondoModal">
+    <div class="contenedorModal">
+        <div class="zonaSuperiorVentana">
+            <span id="textoIzquierda">Nuevo producto</span>
+            <span id="bot-cerrar-modal">Cerrar</span>
+        </div>
+        <div class="contenidoModal">
+            <form action="procesar_formulario.php">
+                <div class="cajaCamposFormulario">
+                    <div class="opciones">
+                                <span class="bot-opcion activa" id="bot-uno">
+                                    TV
+                                </span>
+                        <span class="bot-opcion" id="bot-dos">
+                                    Smartphone
+                                </span>
+                        <span class="bot-opcion" id="bot-tres">
+                                    Laptop
+                                </span>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="type">Tipe</label>
+                        <select id="type" name="type" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="Tipo">Price</label>
+                        <input id="Tipo" name="Tipo" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="discount">Discount</label>
+                        <input id="discount" name="discount" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="stock">Stock</label>
+                        <input id="stock" name="stock" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="description">Description</label>
+                        <input id="description" name="description" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="screensize">ScreenSize</label>
+                        <input id="screensize" name="screensize" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="screentechnology">ScreenTechnology</label>
+                        <input id="screentechnology" name="screentechnology" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="screentype">ScreenType</label>
+                        <input id="screentype" name="screentype" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="screenresolution">ScreenResolution</label>
+                        <input id="screenresolution" name="screenresolution" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="Screenrefreshrate">ScreenRefreshRate</label>
+                        <input id="Screenrefreshrate" name="Screenrefreshrate" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="ScreenadditionaiInfo">ScreenAdditionalInfo</label>
+                        <input id="ScreenadditionaiInfo" name="ScreenadditionaiInfo" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="manufacturername">ManufacturerName</label>
+                        <input id="manufacturername" name="manufacturername" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="manufacturermodel">ManufacturerModel</label>
+                        <input id="manufacturermodel" name="manufacturermodel" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="manufacturercode">ManufacturerCode</label>
+                        <input id="manufacturercode" name="manufacturercode" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="smarttv">SmartTv</label>
+                        <select id="smarttv" name="smarttv" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="years">Years</label>
+                        <select id="years" name="years" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="operatingsystem">OperatingSystem</label>
+                        <select id="operatingsystem" name="operatingsystem" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="harddrivesize">HardDriveSize</label>
+                        <input id="harddrivesize" name="harddrivesize" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="ramsize">RamSize</label>
+                        <input id="ramsize" name="ramsize" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="battery">Battery</label>
+                        <input id="battery" name="battery" required type="number">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="backCamera">BackCamera</label>
+                        <input id="backCamera" name="backCamera" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="frontcamera">FrontCamera</label>
+                        <input id="frontcamera" name="frontcamera" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="simtype">SimType</label>
+                        <select id="simtype" name="simtype" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="videorecorder">VideoRecorder</label>
+                        <input id="videorecorder" name="videorecorder" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="nfccapable">NfcCapable</label>
+                        <select id="nfccapable" name="nfccapable" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="processor">Processor</label>
+                        <input id="processor" name="processor" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="graphics">Graphics</label>
+                        <input id="graphics" name="graphics" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="size">Size</label>
+                        <input id="size" name="size" required type="text">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label for="weight">Weight</label>
+                        <select id="weight" name="weight" required>
+                            <option value="">Elija una opción</option>
+                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                            <option value="29">29"</option>
+                            <option value="32"> 32"</option>
+                            <option value="40">40"</option>
+                            <option value="49">49"</option>
+                            <option value="50">50"</option>
+                            <option value="55">55"</option>
+                            <option value="60">60"</option>
+                        </select>
+                    </div>
+
+                    <div class="zonaSuperiorVentana" id="botonGuarda">
+                        <input class="bot-cancelar" type="submit" value="Cancelar">
+                        <input class="bot-guardar" type="submit" value="Guardar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> <!-- fin ventana modal -->
+
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/abmProducto.js}"></script>
+<script th:src="@{/js/lib/angular.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/controllers/productCrudController.js}"></script>
+
+</body>
+</html>
+
+
+
+
+
+

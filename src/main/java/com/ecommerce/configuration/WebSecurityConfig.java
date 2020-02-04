@@ -28,7 +28,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/index").permitAll()
+                .antMatchers(
+                        "/",
+                        "/index",
+                        "/productCrud"
+                ).permitAll()
                 .anyRequest().permitAll()
                 .and().csrf().disable();
     }
