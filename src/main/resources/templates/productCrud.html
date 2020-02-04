@@ -1,22 +1,14 @@
-<!doctype html>
-<html ng-app="myApp" xmlns:th="http://www.springframework.org/schema/mvc">
+<!DOCTYPE html>
+<html ng-app="app" xmlns:th="http://www.springframework.org/schema/mvc">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF 8">
+    <title>ABM PRODUCTO</title>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/css/styleAbmProducto.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/sass/style.css}" type="text/css">
-    <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-    <script th:src="@{/js/mostrar-ocultar-boton.js}"></script>
-    <script th:src="@{/js/ventana-modal.js}"></script>
-    <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-    <title>ABM PRODUCTO</title>
-    <link href="#" rel="shortcut icon"/>
 </head>
-<script th:src="@{/js/lib/angular.min.js}"></script>
-<script th:src="@{/js/app.js}"></script>
-<script th:src="@{/js/controllers/productCrudController.js}"></script>
 <body>
-<div id="padre">
+<div id="padre" ng-controller="ProductCrudController">
     <div class="boton-mensaje">
         <button class="btn">
             <span class="dot"></span>
@@ -41,13 +33,12 @@
                 <th>Stock</th>
                 <th></th>
             </tr>
-
-            <tr>
-                <td>Ordenador</td>
-                <td>Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</td>
-                <td>45.110€</td>
-                <td>12,34</td>
-                <td>5</td>
+            <tr ng-repeat="product in products">
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.discount}}</td>
+                <td>{{product.stock}}</td>
                 <td>
                     <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
                             type="submit"
@@ -57,346 +48,6 @@
                             value="editar">Editar
                     </button>
                     <button class="bot-borrar" name="reset_mult" title="Borrar producto" type="reset"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Movil</td>
-                <td>Realme 5 4/128GB Crystal Purple Libre</td>
-                <td>440€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Portatil</td>
-                <td>MSI Modern 14 A10M-600XES Intel Core I5-10210U/16GB/512GB SSD/14"</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>3</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Reloj</td>
-                <td>Apple Watch Series 5 GPS 44mm + Cellular Gris Espacial con Correa Deportiva Negra</td>
-                <td>44.10€</td>
-                <td>12,34</td>
-                <td>11</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Impresora</td>
-                <td>HP Officejet 3833 Multifunción Color Wifi</td>
-                <td>32.440€</td>
-                <td>12,34</td>
-                <td>7</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>TV</td>
-                <td>Samsung LU32R590CWUXEN 31.5" LED UltraHD 4K Curva</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>5</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>SSD</td>
-                <td>Toshiba OCZ TR200 SSD 240GB SATA3</td>
-                <td>42.110€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Impresora</td>
-                <td>HP Officejet 3833 Multifunción Color Wifi</td>
-                <td>12.440€</td>
-                <td>12,34</td>
-                <td>1</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Movil</td>
-                <td>Samsung Galaxy M20 4/64GB Ocean Blue Libre</td>
-                <td>21.250€</td>
-                <td>12,34</td>
-                <td>3</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Portatil</td>
-                <td>MSI GF63 Thin 9SC-047XES Intel Corei7-9750H/16GB/512GB SSD/GTX 1650/15.6"</td>
-                <td>32.410€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>SSD</td>
-                <td>Toshiba OCZ TR200 SSD 240GB SATA3</td>
-                <td>21.440€</td>
-                <td>12,34</td>
-                <td>4</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>PC</td>
-                <td>PcCom Silver AMD Ryzen 5 2600/16GB/240GB SSD+1TB/GTX1650</td>
-                <td>71.250€</td>
-                <td>12,34</td>
-                <td>2</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Tablet</td>
-                <td>Lenovo Tab 4 10 TB-X304F 16Gb Negra</td>
-                <td>21.410€</td>
-                <td>12,34</td>
-                <td>34</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Camara fotografica</td>
-                <td>Nikon D5300 24 MP + AF-P 18-55 VR</td>
-                <td>440€</td>
-                <td>12,34</td>
-                <td>54</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Altavoz</td>
-                <td>Google Home Altavoz Inteligente y Asistente Blanco</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>32</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>PS 4</td>
-                <td>Sony PlayStation 4 Pro 1TB + Horizon Zero Dawn Complete Edition + God of War</td>
-                <td>76.410€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>PS</td>
-                <td>Sony PlayStation 4 Slim 500GB Blanca</td>
-                <td>440€</td>
-                <td>12,34</td>
-                <td>2</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Xbox</td>
-                <td>Xbox One X 1TB + Forza Horizon 4 + DLC Lego Speed Champions</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>3</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
                             value="borrar">Borrar
                     </button>
                 </td>
@@ -656,5 +307,18 @@
         </div>
     </div>
 </div> <!-- fin ventana modal -->
+
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/abmProducto.js}"></script>
+<script th:src="@{/js/lib/angular.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/controllers/productCrudController.js}"></script>
+
 </body>
 </html>
+
+
+
+
+
+
