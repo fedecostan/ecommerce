@@ -55,6 +55,7 @@ button{
 
 .bot-borrar{
 	background: red;
+	margin-right: 1em;
 }
 
 .bot-borrar:hover{
@@ -77,6 +78,8 @@ button{
 }
 
 table{
+	display: flex;
+	justify-content: center;
 	border-spacing: 0px;
 }
 
@@ -89,6 +92,7 @@ th, td{
 th{
 	background: rgb(8, 1, 90);
 	color: #fff;
+	letter-spacing: 1px;
 }
 
 table td:nth-child(3), table td:nth-child(4), table td:nth-child(5), th{
@@ -120,14 +124,80 @@ table tbody tr:nth-child(odd){
 /**************************************************** 
 		BOTON NUEVO PRODUCTO VENTANA MODAL
 **************************************************/
-.btn .btn-primary{
+.bot-produ{
 	display: flex;
 	justify-content: flex-end;
+}
+
+.btn{
+	margin: 20px 70px 40px 0;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	display: flex;
+	justify-content: flex-end;
+	background: rgb(8, 1, 90);
+	border: rgb(8, 1, 90);
+}
+
+.bot-produ > .btn-primary{
+	display: flex;
+	justify-content: flex-end;
+	transition: all 1s;
+}
+
+.bot-produ >  .btn-primary:hover{
+	background: blue;
 }
 
 /******************************* 
 		VENTANA MODAL
 *******************************/
+.modal-dialog{
+	margin-right: 55em;
+}
+
+.modal-content {
+	width: 45vw;
+	height: 55em;
+}
+
+.modal-title{
+	color: rgb(116, 116, 117);
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.modal-header .close span{
+	color: rgb(0, 0, 17);
+}
+
+.modal-footer{
+	padding: 0;
+	justify-content: space-between;
+	margin-left: 20px;
+}
+
+.modal-footer > .btn-primary{
+	margin-right: 20px;
+	background: rgb(34, 21, 221);
+	border: rgb(34, 21, 221);
+	transition: all 1s;
+}
+
+.modal-footer > .btn-primary:hover{
+	box-shadow: inset 0 70px 0 0 rgb(14, 3, 112);
+}
+
+.modal-footer > .btn-secondary{
+	background: red;
+	border: red;
+	transition: all 1s;
+}
+
+.modal-footer > .btn-secondary:hover{
+	box-shadow: inset 0 70px 0 0 rgb(161, 5, 5);
+}
+
 .contenedorModal{
 	background: rgb(241, 241, 241);
 	border-radius: 5px;
@@ -135,11 +205,9 @@ table tbody tr:nth-child(odd){
 
 .contenidoModal{
 	overflow: auto; /* auto, scroll, hidden, visible, */ 
-	padding: 0;
-	height: 80vh;/* define el alto del elemento */
 	background: rgb(241, 241, 241);
 	border-radius: 5px;
-	
+	height: 43em;
 }
 
 .zonaSuperiorVentana{
@@ -161,12 +229,9 @@ table tbody tr:nth-child(odd){
 ***************************************************/
 .opciones{
 	display: flex;
-	justify-content: center;
-	margin-left: 10px;
-	margin-top: 16px;
-	margin-bottom: 30px;
+	align-items: center;
+	margin: 20px 20px;
 	text-align: center;
-	max-width: 35vw;
 }
   
 .opcion{
@@ -176,13 +241,14 @@ table tbody tr:nth-child(odd){
 .bot-opcion{
 	justify-content: center;
 	width: -webkit-fill-available; 
-	padding: 5PX;
+	padding: 5px;
 	cursor: pointer;
 
 	background: rgb(36, 39, 221);
 	color: rgb(233, 233, 233);
 	font-size: 1.2em;
 	letter-spacing: 2px;
+	transition: all 1s;
 }
 
 #bot-uno{
@@ -209,12 +275,11 @@ table tbody tr:nth-child(odd){
 .cajaCamposFormulario{
 	display: list-item;
 	list-style: none;
-	margin: 0 1em;
+	margin: 1em 1em;
 	background: rgb(241, 241, 241);
 }
 	
 .campoFormulario{
-	/* margin-bottom: 1em; */
 	display: flex;
 	justify-content: space-around;
 }
@@ -222,7 +287,7 @@ table tbody tr:nth-child(odd){
 .campoFormulario label{
 	display: inline-block;
 	width: 200px;
-	margin: 2em 1em 0;
+	margin: 2em 0 0;
 
 	color: rgb(18, 1, 51);
 	font-size: 0.8em;
@@ -233,7 +298,7 @@ table tbody tr:nth-child(odd){
 
 .campoFormulario input:not([type="checkbox"]), .campoFormulario textarea, select {
 	display: inline-block;
-	width: 30vw;
+	width: 25vw;
 	height: 5vh;
 	padding-left: 0.5em;
 	margin-top: 0.3em;

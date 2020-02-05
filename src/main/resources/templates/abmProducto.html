@@ -1,659 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" href="css/normalize.css">
 
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/styleAbmProducto.css" rel="stylesheet">
-    <link href="sass/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="css/styleAbmProducto.css">
+        <title>Awesome</title>
+    </head>
 
-    <title>Gifeline</title>
-</head>
-
-<body>
-<div id="padre">
-    <div class="boton-mensaje">
-        <button class="btn">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="text">Nuevo producto</span>
-        </button>
-    </div>
-
-    <div>
-        <table>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Descuento</th>
-                <th>Stock</th>
-                <th></th>
-            </tr>
-
-            <tr>
-                <td>Ordenador</td>
-                <td>Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</td>
-                <td>45.110€</td>
-                <td>12,34</td>
-                <td>5</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="reset_mult" title="Borrar producto" type="reset"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Movil</td>
-                <td>Realme 5 4/128GB Crystal Purple Libre</td>
-                <td>440€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Portatil</td>
-                <td>MSI Modern 14 A10M-600XES Intel Core I5-10210U/16GB/512GB SSD/14"</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>3</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Reloj</td>
-                <td>Apple Watch Series 5 GPS 44mm + Cellular Gris Espacial con Correa Deportiva Negra</td>
-                <td>44.10€</td>
-                <td>12,34</td>
-                <td>11</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Impresora</td>
-                <td>HP Officejet 3833 Multifunción Color Wifi</td>
-                <td>32.440€</td>
-                <td>12,34</td>
-                <td>7</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>TV</td>
-                <td>Samsung LU32R590CWUXEN 31.5" LED UltraHD 4K Curva</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>5</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>SSD</td>
-                <td>Toshiba OCZ TR200 SSD 240GB SATA3</td>
-                <td>42.110€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Impresora</td>
-                <td>HP Officejet 3833 Multifunción Color Wifi</td>
-                <td>12.440€</td>
-                <td>12,34</td>
-                <td>1</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Movil</td>
-                <td>Samsung Galaxy M20 4/64GB Ocean Blue Libre</td>
-                <td>21.250€</td>
-                <td>12,34</td>
-                <td>3</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Portatil</td>
-                <td>MSI GF63 Thin 9SC-047XES Intel Corei7-9750H/16GB/512GB SSD/GTX 1650/15.6"</td>
-                <td>32.410€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>SSD</td>
-                <td>Toshiba OCZ TR200 SSD 240GB SATA3</td>
-                <td>21.440€</td>
-                <td>12,34</td>
-                <td>4</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>PC</td>
-                <td>PcCom Silver AMD Ryzen 5 2600/16GB/240GB SSD+1TB/GTX1650</td>
-                <td>71.250€</td>
-                <td>12,34</td>
-                <td>2</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Tablet</td>
-                <td>Lenovo Tab 4 10 TB-X304F 16Gb Negra</td>
-                <td>21.410€</td>
-                <td>12,34</td>
-                <td>34</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Camara fotografica</td>
-                <td>Nikon D5300 24 MP + AF-P 18-55 VR</td>
-                <td>440€</td>
-                <td>12,34</td>
-                <td>54</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Altavoz</td>
-                <td>Google Home Altavoz Inteligente y Asistente Blanco</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>32</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>PS 4</td>
-                <td>Sony PlayStation 4 Pro 1TB + Horizon Zero Dawn Complete Edition + God of War</td>
-                <td>76.410€</td>
-                <td>12,34</td>
-                <td>12</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>PS</td>
-                <td>Sony PlayStation 4 Slim 500GB Blanca</td>
-                <td>440€</td>
-                <td>12,34</td>
-                <td>2</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Xbox</td>
-                <td>Xbox One X 1TB + Forza Horizon 4 + DLC Lego Speed Champions</td>
-                <td>1.250€</td>
-                <td>12,34</td>
-                <td>3</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="submit_mult" title="Borrar producto" type="submit"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<!-- Informacion ventana emergente modal -->
-<div class="fondoModal">
-    <div class="contenedorModal">
-        <div class="zonaSuperiorVentana">
-            <span id="textoIzquierda">Nuevo producto</span>
-            <span id="bot-cerrar-modal">Cerrar</span>
+    <body>
+        <div class="bot-produ">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Nuevo producto
+            </button>
         </div>
-        <div class="contenidoModal">
-            <form action="procesar_formulario.php">
-                <div class="cajaCamposFormulario">
-                    <div class="opciones">
-                            <span class="bot-opcion activa" id="bot-uno">
-                                TV
-                            </span>
-                        <span class="bot-opcion" id="bot-dos">
-                                Smartphone
-                            </span>
-                        <span class="bot-opcion" id="bot-tres">
-                                Laptop
-                            </span>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <!-- Informacion ventana emergente modal -->
+                        <div class="fondoModal">
+                            <div class="contenedorModal">
+                                <div class="contenidoModal">
+                                    <form action="procesar_formulario.php">
+                                        <div class="cajaCamposFormulario">
+                                            <div class="opciones">
+                                                <span id="bot-uno" class="bot-opcion activa">
+                                                    TV
+                                                </span>
+                                                <span id="bot-dos" class="bot-opcion">
+                                                    Smartphone
+                                                </span>
+                                                <span id="bot-tres" class="bot-opcion">
+                                                    Laptop
+                                                </span>
+                                            </div>
 
-                    <div class="campoFormulario">
-                        <label for="type">Tipe</label>
-                        <select id="type" name="type" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
+                                            <div class="campoFormulario">
+                                                <label for="type">Tipe</label>
+                                                <select name="type" id="type" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="Tipo">Price</label>
+                                                <input type="number" name="Tipo" id="Tipo" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="discount">Discount</label>
+                                                <input type="number" name="discount" id="discount" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="stock">Stock</label>
+                                                <input type="number" name="stock" id="stock" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="name">Name</label>
+                                                <input type="text" name="name" id="name" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="description">Description</label>
+                                                <input type="text" name="description" id="description" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="screensize">ScreenSize</label>
+                                                <input type="number" name="screensize" id="screensize" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="screentechnology">ScreenTechnology</label>
+                                                <input type="text" name="screentechnology" id="screentechnology" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="screentype">ScreenType</label>
+                                                <input type="text" name="screentype" id="screentype" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="screenresolution">ScreenResolution</label>
+                                                <input type="text" name="screenresolution" id="screenresolution" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="Screenrefreshrate">ScreenRefreshRate</label>
+                                                <input type="number" name="Screenrefreshrate" id="Screenrefreshrate" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="ScreenadditionaiInfo">ScreenAdditionalInfo</label>
+                                                <input type="text" name="ScreenadditionaiInfo" id="ScreenadditionaiInfo" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="manufacturername">ManufacturerName</label>
+                                                <input type="text" name="manufacturername" id="manufacturername" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="manufacturermodel">ManufacturerModel</label>
+                                                <input type="text" name="manufacturermodel" id="manufacturermodel" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="manufacturercode">ManufacturerCode</label>
+                                                <input type="text" name="manufacturercode" id="manufacturercode" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="smarttv">SmartTv</label>
+                                                <select name="smarttv" id="smarttv" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="years">Years</label>
+                                                <select name="years" id="years" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="operatingsystem">OperatingSystem</label>
+                                                <select name="operatingsystem" id="operatingsystem" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="harddrivesize">HardDriveSize</label>
+                                                <input type="number" name="harddrivesize" id="harddrivesize" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="ramsize">RamSize</label>
+                                                <input type="number" name="ramsize" id="ramsize" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="battery">Battery</label>
+                                                <input type="number" name="battery" id="battery" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="backCamera">BackCamera</label>
+                                                <input type="text" name="backCamera" id="backCamera" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="frontcamera">FrontCamera</label>
+                                                <input type="text" name="frontcamera" id="frontcamera" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="simtype">SimType</label>
+                                                <select name="simtype" id="simtype" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="videorecorder">VideoRecorder</label>
+                                                <input type="text" name="videorecorder" id="videorecorder" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="nfccapable">NfcCapable</label>
+                                                <select name="nfccapable" id="nfccapable" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="processor">Processor</label>
+                                                <input type="text" name="processor" id="processor" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="graphics">Graphics</label>
+                                                <input type="text" name="graphics" id="graphics" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="size">Size</label>
+                                                <input type="text" name="size" id="size" required>
+                                            </div>
+
+                                            <div class="campoFormulario">
+                                                <label for="weight">Weight</label>
+                                                <select name="weight" id="weight" required>
+                                                    <option value="">Elija una opción</option>
+                                                    <!-- si no tengo value el navegador interpreta que no hay una opción -->
+                                                    <option value="29">29"</option>
+                                                    <option value="32"> 32"</option>
+                                                    <option value="40">40"</option>
+                                                    <option value="49">49"</option>
+                                                    <option value="50">50"</option>
+                                                    <option value="55">55"</option>
+                                                    <option value="60">60"</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> <!-- fin ventana modal -->
                     </div>
-
-                    <div class="campoFormulario">
-                        <label for="Tipo">Price</label>
-                        <input id="Tipo" name="Tipo" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="discount">Discount</label>
-                        <input id="discount" name="discount" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="stock">Stock</label>
-                        <input id="stock" name="stock" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="description">Description</label>
-                        <input id="description" name="description" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="screensize">ScreenSize</label>
-                        <input id="screensize" name="screensize" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="screentechnology">ScreenTechnology</label>
-                        <input id="screentechnology" name="screentechnology" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="screentype">ScreenType</label>
-                        <input id="screentype" name="screentype" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="screenresolution">ScreenResolution</label>
-                        <input id="screenresolution" name="screenresolution" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="Screenrefreshrate">ScreenRefreshRate</label>
-                        <input id="Screenrefreshrate" name="Screenrefreshrate" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="ScreenadditionaiInfo">ScreenAdditionalInfo</label>
-                        <input id="ScreenadditionaiInfo" name="ScreenadditionaiInfo" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="manufacturername">ManufacturerName</label>
-                        <input id="manufacturername" name="manufacturername" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="manufacturermodel">ManufacturerModel</label>
-                        <input id="manufacturermodel" name="manufacturermodel" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="manufacturercode">ManufacturerCode</label>
-                        <input id="manufacturercode" name="manufacturercode" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="smarttv">SmartTv</label>
-                        <select id="smarttv" name="smarttv" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="years">Years</label>
-                        <select id="years" name="years" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="operatingsystem">OperatingSystem</label>
-                        <select id="operatingsystem" name="operatingsystem" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="harddrivesize">HardDriveSize</label>
-                        <input id="harddrivesize" name="harddrivesize" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="ramsize">RamSize</label>
-                        <input id="ramsize" name="ramsize" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="battery">Battery</label>
-                        <input id="battery" name="battery" required type="number">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="backCamera">BackCamera</label>
-                        <input id="backCamera" name="backCamera" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="frontcamera">FrontCamera</label>
-                        <input id="frontcamera" name="frontcamera" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="simtype">SimType</label>
-                        <select id="simtype" name="simtype" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="videorecorder">VideoRecorder</label>
-                        <input id="videorecorder" name="videorecorder" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="nfccapable">NfcCapable</label>
-                        <select id="nfccapable" name="nfccapable" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="processor">Processor</label>
-                        <input id="processor" name="processor" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="graphics">Graphics</label>
-                        <input id="graphics" name="graphics" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="size">Size</label>
-                        <input id="size" name="size" required type="text">
-                    </div>
-
-                    <div class="campoFormulario">
-                        <label for="weight">Weight</label>
-                        <select id="weight" name="weight" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="zonaSuperiorVentana" id="botonGuarda">
-                        <input class="bot-cancelar" type="submit" value="Cancelar">
-                        <input class="bot-guardar" type="submit" value="Guardar">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
-</div> <!-- fin ventana modal -->
-</body>
 
+        <div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Descuento</th>
+                        <th>Stock</th>
+                        <th></th>
+                    </tr>
+
+                    <tr>
+                        <td>Ordenador</td>
+                        <td>Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</td>
+                        <td>45.110€</td>
+                        <td>12,34</td>
+                        <td>5</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="reset" name="reset_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Movil</td>
+                        <td>Realme 5 4/128GB Crystal Purple Libre</td>
+                        <td>440€</td>
+                        <td>12,34</td>
+                        <td>12</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Portatil</td>
+                        <td>MSI Modern 14 A10M-600XES Intel Core I5-10210U/16GB/512GB SSD/14"</td>
+                        <td>1.250€</td>
+                        <td>12,34</td>
+                        <td>3</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Reloj</td>
+                        <td>Apple Watch Series 5 GPS 44mm + Cellular Gris Espacial con Correa Deportiva Negra</td>
+                        <td>44.10€</td>
+                        <td>12,34</td>
+                        <td>11</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Impresora</td>
+                        <td>HP Officejet 3833 Multifunción Color Wifi</td>
+                        <td>32.440€</td>
+                        <td>12,34</td>
+                        <td>7</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>TV</td>
+                        <td>Samsung LU32R590CWUXEN 31.5" LED UltraHD 4K Curva</td>
+                        <td>1.250€</td>
+                        <td>12,34</td>
+                        <td>5</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>SSD</td>
+                        <td>Toshiba OCZ TR200 SSD 240GB SATA3</td>
+                        <td>42.110€</td>
+                        <td>12,34</td>
+                        <td>12</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Impresora</td>
+                        <td>HP Officejet 3833 Multifunción Color Wifi</td>
+                        <td>12.440€</td>
+                        <td>12,34</td>
+                        <td>1</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Movil</td>
+                        <td>Samsung Galaxy M20 4/64GB Ocean Blue Libre</td>
+                        <td>21.250€</td>
+                        <td>12,34</td>
+                        <td>3</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Portatil</td>
+                        <td>MSI GF63 Thin 9SC-047XES Intel Corei7-9750H/16GB/512GB SSD/GTX 1650/15.6"</td>
+                        <td>32.410€</td>
+                        <td>12,34</td>
+                        <td>12</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>SSD</td>
+                        <td>Toshiba OCZ TR200 SSD 240GB SATA3</td>
+                        <td>21.440€</td>
+                        <td>12,34</td>
+                        <td>4</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PC</td>
+                        <td>PcCom Silver AMD Ryzen 5 2600/16GB/240GB SSD+1TB/GTX1650</td>
+                        <td>71.250€</td>
+                        <td>12,34</td>
+                        <td>2</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Tablet</td>
+                        <td>Lenovo Tab 4 10 TB-X304F 16Gb Negra</td>
+                        <td>21.410€</td>
+                        <td>12,34</td>
+                        <td>34</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Camara fotografica</td>
+                        <td>Nikon D5300 24 MP + AF-P 18-55 VR</td>
+                        <td>440€</td>
+                        <td>12,34</td>
+                        <td>54</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Altavoz</td>
+                        <td>Google Home Altavoz Inteligente y Asistente Blanco</td>
+                        <td>1.250€</td>
+                        <td>12,34</td>
+                        <td>32</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PS 4</td>
+                        <td>Sony PlayStation 4 Pro 1TB + Horizon Zero Dawn Complete Edition + God of War</td>
+                        <td>76.410€</td>
+                        <td>12,34</td>
+                        <td>12</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PS</td>
+                        <td>Sony PlayStation 4 Slim 500GB Blanca</td>
+                        <td>440€</td>
+                        <td>12,34</td>
+                        <td>2</td>
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Xbox</td>
+                        <td>Xbox One X 1TB + Forza Horizon 4 + DLC Lego Speed Champions</td>
+                        <td>1.250€</td>
+                        <td>12,34</td>
+                        <td>3</td>   
+                        <td>
+                            <button type="submit" name="submit_mult" value="detalle" title="Detalle del producto"
+                                class="bot-detalle boton-mensaje">Detalle</button>
+                            <button type="submit" name="submit_mult" value="editar" title="Editar producto"
+                                class="bot-editar boton-mensaje">Editar</button>
+                            <button type="submit" name="submit_mult" value="borrar" title="Borrar producto"
+                                class="bot-borrar">Borrar</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
 </html>
