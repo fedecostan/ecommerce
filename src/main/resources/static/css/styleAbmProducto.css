@@ -149,11 +149,12 @@ table tbody tr:nth-child(odd){
 .contenedor-bot{
 	display: inline-table;
 	margin-top: 20px;
-	margin-left: 55px;
+	margin-left: 67px;
 }
 
 /* boton buscar producto */
 .bot-buscador{
+	display: inline;
 	padding: 0.5em;
 	margin-right: 0;
 	font-size: 1em;
@@ -270,7 +271,7 @@ table tbody tr:nth-child(odd){
         BOTONES DE PRODUCTOS VENTANA EMERGENTE
 ***************************************************/
 .btn-group, .btn-group-vertical {
-    width: 38.7vw;
+    width: 38vw;
     margin-left: 1.6em;
     letter-spacing: 1px;
 }
