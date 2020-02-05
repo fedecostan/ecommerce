@@ -26,6 +26,7 @@ a{
 /* ****************************** 
 			TABLA
 ****************************** */
+/* estilos generales de botones */
 button{
 	padding: 5px;
 	margin: 0 5px;
@@ -35,6 +36,11 @@ button{
 	cursor: pointer;
 }
 
+.boton-mensaje{
+	margin: 1em;
+}
+
+/* boton detalle */
 .bot-detalle{
 	background: rgb(0, 0, 255);
 }
@@ -44,6 +50,7 @@ button{
 	box-shadow: inset 0 70px 0 0 rgb(36, 4, 139);
 }
 
+/* boton editar */
 .bot-editar{
 	background: rgb(204, 201, 17);
 }
@@ -53,6 +60,7 @@ button{
 	box-shadow: inset 0 70px 0 0 rgb(171, 173, 5);
 }
 
+/* boton borrar */
 .bot-borrar{
 	background: red;
 	margin-right: 1em;
@@ -63,6 +71,7 @@ button{
 	box-shadow: inset 0 70px 0 0 rgb(161, 5, 5);
 }
 
+/* estilos de tabla */
 #padre {
 	display: flex;
 	justify-content: flex-end;
@@ -71,10 +80,6 @@ button{
 	padding: 2em;
 	margin: 1em auto;
 	width: 80vw;
-}
-
-.boton-mensaje{
-	margin: 1em;
 }
 
 table{
@@ -117,17 +122,51 @@ table th:nth-child(6){
 	border-radius: 0 10px 0 0;
 }
 
+/* background salteado de la tabla */
 table tbody tr:nth-child(odd){
 	background: rgb(235, 235, 235);
 }
 
-/**************************************************** 
-		BOTON NUEVO PRODUCTO VENTANA MODAL
-**************************************************/
+/************************************************** 
+	CONTENEDOR DE BUSQUEDA Y NUEVO PRODUCTO
+************************************************/
 .bot-produ{
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 }
+/************************************************** 
+	BOTON e INPUT de BUSCADOR DE PRODUCTOS
+************************************************/
+.contenedor-bot{
+	display: inline-table;
+	margin-top: 20px;
+	margin-left: 55px;
+}
+/* boton buscar producto */
+.bot-buscador{
+	padding: 0.5em;
+	margin-right: 0;
+	font-size: 1em;
+	font-weight: 600;
+	letter-spacing: 1px;
+	background: rgb(8, 1, 90);
+	border: 1px solid rgb(8, 1, 90);
+	border-radius: 10px 0 0 10px;
+}
+
+/* input buscar producto */
+.in-busc{
+	padding: 0.5em;
+	margin-left: 0;
+	width: 40em;
+	border: 1px solid rgb(189, 189, 189);
+	border-radius: 0 10px 10px 0;
+}
+
+/**************************************************** 
+	BOTON NUEVO PRODUCTO QUE ABRE VENTANA MODAL
+**************************************************/
+
 
 .btn{
 	margin: 20px 70px 40px 0;
@@ -142,7 +181,7 @@ table tbody tr:nth-child(odd){
 .bot-produ > .btn-primary{
 	display: flex;
 	justify-content: flex-end;
-	transition: all 1s;
+	transition: background 1s;
 }
 
 .bot-produ >  .btn-primary:hover{
@@ -215,10 +254,7 @@ table tbody tr:nth-child(odd){
 	justify-content: space-between;
 	font-weight: bold;
 	padding: 1em;
-	/* border-bottom: 1px solid gray;
-	border-radius: 0 0 120px 120px / 0 0 6px 6px;
-	box-shadow:0 1px 4px rgba(1, 0, 66, 0.5), 0 0 40px rgba(15, 2, 116, 0.1) inset; */
-
+	
 	letter-spacing: 1px;
 	font-size: 1.1em;
 	color: rgb(11, 0, 156);
