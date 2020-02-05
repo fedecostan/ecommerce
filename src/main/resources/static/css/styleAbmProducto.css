@@ -26,8 +26,13 @@ a{
 /* ****************************** 
 			TABLA
 ****************************** */
+.dis{
+	display: flex;
+	justify-content: space-around;
+}
 /* estilos generales de botones */
 button{
+	display: flex;
 	padding: 5px;
 	margin: 0 5px;
 	border: none;
@@ -53,10 +58,12 @@ button{
 /* boton editar */
 .bot-editar{
 	background: rgb(204, 201, 17);
+	border: 1px solid rgb(171, 173, 5);
 }
 
 .bot-editar:hover{
 	transition: all ease 1.5s;
+	border: 1px solid rgb(171, 173, 5);
 	box-shadow: inset 0 70px 0 0 rgb(171, 173, 5);
 }
 
@@ -64,10 +71,12 @@ button{
 .bot-borrar{
 	background: red;
 	margin-right: 1em;
+	border: 1px solid red;
 }
 
 .bot-borrar:hover{
 	transition: all ease 1.5s;
+	border: 1px solid red;
 	box-shadow: inset 0 70px 0 0 rgb(161, 5, 5);
 }
 
@@ -142,6 +151,7 @@ table tbody tr:nth-child(odd){
 	margin-top: 20px;
 	margin-left: 55px;
 }
+
 /* boton buscar producto */
 .bot-buscador{
 	padding: 0.5em;
@@ -166,9 +176,7 @@ table tbody tr:nth-child(odd){
 /**************************************************** 
 	BOTON NUEVO PRODUCTO QUE ABRE VENTANA MODAL
 **************************************************/
-
-
-.btn{
+.bton{
 	margin: 20px 70px 40px 0;
 	font-size: 1.2em;
 	letter-spacing: 1px;
@@ -238,14 +246,12 @@ table tbody tr:nth-child(odd){
 }
 
 .contenedorModal{
-	background: rgb(241, 241, 241);
-	border-radius: 5px;
+	background: #fff;
 }
 
 .contenidoModal{
 	overflow: auto; /* auto, scroll, hidden, visible, */ 
-	background: rgb(241, 241, 241);
-	border-radius: 5px;
+	background: #fff;
 	height: 43em;
 }
 
@@ -263,46 +269,10 @@ table tbody tr:nth-child(odd){
 /***************************************************** 
         BOTONES DE PRODUCTOS VENTANA EMERGENTE
 ***************************************************/
-.opciones{
-	display: flex;
-	align-items: center;
-	margin: 20px 20px;
-	text-align: center;
-}
-  
-.opcion{
-	display: none;
-}
-
-.bot-opcion{
-	justify-content: center;
-	width: -webkit-fill-available; 
-	padding: 5px;
-	cursor: pointer;
-
-	background: rgb(36, 39, 221);
-	color: rgb(233, 233, 233);
-	font-size: 1.2em;
-	letter-spacing: 2px;
-	transition: all 1s;
-}
-
-#bot-uno{
-	border-radius: 10px 0 0 10px;
-}
-
-#bot-tres{
-	border-radius: 0 10px 10px 0;
-}
-
-.bot-opcion:hover{
-	background: rgb(13, 5, 124);
-	color: rgb(245, 245, 245);
-}
-
-.bot-opcion.activa,
-.opcion.activa{
-	display: block;
+.btn-group, .btn-group-vertical {
+    width: 38.7vw;
+    margin-left: 1.6em;
+    letter-spacing: 1px;
 }
 
 /************************************ 
@@ -312,7 +282,7 @@ table tbody tr:nth-child(odd){
 	display: list-item;
 	list-style: none;
 	margin: 1em 1em;
-	background: rgb(241, 241, 241);
+	background: #fff;
 }
 	
 .campoFormulario{
@@ -323,7 +293,7 @@ table tbody tr:nth-child(odd){
 .campoFormulario label{
 	display: inline-block;
 	width: 200px;
-	margin: 2em 0 0;
+	margin: 1.5em 0 0;
 
 	color: rgb(18, 1, 51);
 	font-size: 0.8em;
