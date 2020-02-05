@@ -36,37 +36,11 @@ header{
 }
 
 /******************************************
-        ESTILOS HEADER LEFT
+       ESTILOS HEADER SUP-IZQUIERDA
 ****************************************/
-/* contenedor izquierdo */
+/* CONTENEDOR IZQUIERDO */
 .cont-left{
   display: flex;
-}
-
-/* LOGO AWESOME */
-.sup-left{
-  justify-content: left;
-  margin-left: 0;
-  margin-top: 8px;
-}
-
-.logo{
-  margin-left: 15px;
-  color: #4C4C4C;
-  font-size: 2em;
-  font-weight: lighter;
-  letter-spacing: 1px;
-}
-
-dl, ol, ul {
-  margin-top: 0;
-  margin-left: 0;
-  padding: 0;
-  margin-bottom: 1rem;
-}
-
-.logo:hover{
-  color: #4C4C4C;
 }
 
 /* BOTON RESPONSIVE */
@@ -79,16 +53,12 @@ dl, ol, ul {
 }
 
 .bot-res{
-  font-size: 1.5em;
-
-  padding: 0;
-  margin: 0;
+  font-size: 1.8em;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
   cursor: pointer;
-  padding: 10px;
-  margin: 0;
+  padding: 15px;
   color: #5a6268;
   background-color: #fff;
   border-top: none;
@@ -99,9 +69,31 @@ dl, ol, ul {
 }
 
 .btn-secondary:hover {
-  color: #5a6268;
-  background-color: #fff;
-  border: 1px solid rgb(190, 189, 189);
+  color: #f6f6f6;
+  background-color: rgb(98, 97, 97);
+  border:  none;
+}
+
+/* LOGO AWESOME */
+.sup-left{
+  display: flex;
+}
+
+.sup-left ul li{
+  margin-top: 10px;
+}
+
+.logo{
+  margin-left: 10px;
+  color: #4C4C4C;
+  font-size: 2em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+.logo:hover{
+  color: rgb(92, 91, 91);
+  text-shadow: 2px 1px rgb(194, 194, 194);
 }
 
 /******************************************
@@ -113,8 +105,9 @@ dl, ol, ul {
 }
 
 /* BOTON BUSCAR */
-.btn, .btn-secondary{
+.bscr{
   padding: 10px;
+  margin-top: 3px;
   background: #7a7a7a;
   color: #fff;
   font-weight: bold;
@@ -127,7 +120,7 @@ dl, ol, ul {
 /* ENTRADA DE TEXTO */
 input[type="text"]{
   padding: 10px;
-
+  margin-top: 3px;
   width: 430px;
   border: 1px solid #cacaca;
   border-radius: 10px 0 0 10px;
@@ -145,11 +138,11 @@ input[type="text"]{
 
 .sup-right > a{
   display: block;
-  margin: 10px;
+  margin-top: 16px;
+  margin-right: 15px;
   width: 90px;
   color: #7a7a7a;
 }
-
 /*******************************************************************
         SECCIÓN FRANQUICIADOS ESTRUCTURA DE COLUMNAS
 *****************************************************************/
