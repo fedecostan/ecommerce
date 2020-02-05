@@ -51,7 +51,7 @@ header{
 }
 
 .logo{
-  margin-left: 0;
+  margin-left: 15px;
   color: #4C4C4C;
   font-size: 2em;
   font-weight: lighter;
@@ -70,13 +70,38 @@ dl, ol, ul {
 }
 
 /* BOTON RESPONSIVE */
-#bot-res{
-  justify-content: left;
-  background: transparent;
-  border: 1px solid rgb(185, 184, 184);
-  border-radius: 10px;
-  padding: 0 0.8em;
-  margin: 10px;
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown, .dropleft, .dropright, .dropup {
+  display: flex;
+}
+
+.bot-res{
+  font-size: 1.5em;
+
+  padding: 0;
+  margin: 0;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+  color: #5a6268;
+  background-color: #fff;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  border-right: 1px solid rgb(190, 189, 189);
+  border-radius: 1px;
+}
+
+.btn-secondary:hover {
+  color: #5a6268;
+  background-color: #fff;
+  border: 1px solid rgb(190, 189, 189);
 }
 
 /******************************************
@@ -96,22 +121,17 @@ dl, ol, ul {
   font-size: 1.2;
   letter-spacing: 1px;
   border: 1px solid  #cacaca;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0 10px 10px 0;
 } 
 
 /* ENTRADA DE TEXTO */
 input[type="text"]{
   padding: 10px;
 
-  width: 400px;
+  width: 430px;
   border: 1px solid #cacaca;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 0 0 10px;
   transition: all 1s Ease-in-out;
-}
-
-input[type="text"]:hover{
-  width: 550px;
-  border: 1px solid #cacaca;
 }
 
 /******************************************
