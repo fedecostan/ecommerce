@@ -1,429 +1,180 @@
- /******************************************** 
- 			ESTILOS GENERALES
+/********************************************
+            ESTILOS GENERALES
 *******************************************/
 *{
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body{
-	font-family: cooper_hewittbook, Arial, Helvetica,sans-serif;
+/********************************************
+            CONTENEDOR SUPERIOR
+*******************************************/
+/* contenedor general superior  */
+.contenedor-sup{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
-ul{
-	margin: 0;
-	padding: 0;
+/* contenedor del input y boton buscar */
+.cont-sup{
+    display: flex;
 }
 
-a{
-	justify-content: flex-end;
-	text-decoration: none;
-	list-style: none;
-	color: black;
-	font-weight: 700;
-	display: block;
-}
-
-/* ****************************** 
-			TABLA
-****************************** */
-.dis{
-	display: flex;
-	justify-content: space-around;
-}
-/* estilos generales de botones */
-button{
-	display: flex;
-	padding: 5px;
-	margin: 0 5px;
-	border: none;
-	border-radius: 5px;
-	color: rgb(221, 247, 250);
-	cursor: pointer;
-}
-
-.boton-mensaje{
-	margin: 1em;
-}
-
-/* boton detalle */
-.bot-detalle{
-	background: rgb(0, 0, 255);
-}
-
-.bot-detalle:hover{
-	transition: all ease 1.5s;
-	box-shadow: inset 0 70px 0 0 rgb(36, 4, 139);
-}
-
-/* boton editar */
-.bot-editar{
-	background: rgb(204, 201, 17);
-	border: 1px solid rgb(171, 173, 5);
-}
-
-.bot-editar:hover{
-	transition: all ease 1.5s;
-	border: 1px solid rgb(171, 173, 5);
-	box-shadow: inset 0 70px 0 0 rgb(171, 173, 5);
-}
-
-/* boton borrar */
-.bot-borrar{
-	background: red;
-	margin-right: 1em;
-	border: 1px solid red;
-}
-
-.bot-borrar:hover{
-	transition: all ease 1.5s;
-	border: 1px solid red;
-	box-shadow: inset 0 70px 0 0 rgb(161, 5, 5);
-}
-
-/* estilos de tabla */
-#padre {
-	display: flex;
-	justify-content: flex-end;
-	flex-wrap: wrap;
-
-	padding: 2em;
-	margin: 1em auto;
-	width: 80vw;
-}
-
-table{
-	display: flex;
-	justify-content: center;
-	border-spacing: 0px;
-}
-
-th, td{
-	width: 30em;
-	text-align: left;
-	padding: 0.7em;
-}
-
-th{
-	background: rgb(8, 1, 90);
-	color: #fff;
-	letter-spacing: 1px;
-}
-
-table td:nth-child(3), table td:nth-child(4), table td:nth-child(5), th{
-	text-align: center;
-}
-
-table th:nth-child(3), table th:nth-child(4), table th:nth-child(5), table td:nth-child(3), table td:nth-child(4), table td:nth-child(5){
-	width: 10em;
-} 
-
-table th:nth-child(6), table td:nth-child(6){
-	padding: 0;
-	width: 20em;
-	text-align: end;
-}
-
-table th:nth-child(1){
-	border-radius: 10px 0 0 0;
-}
-
-table th:nth-child(6){
-	border-radius: 0 10px 0 0;
-}
-
-/* background salteado de la tabla */
-table tbody tr:nth-child(odd){
-	background: rgb(235, 235, 235);
-}
-
-/************************************************** 
-	CONTENEDOR DE BUSQUEDA Y NUEVO PRODUCTO
-************************************************/
-.bot-produ{
-	display: flex;
-	justify-content: space-between;
-}
-/************************************************** 
-	BOTON e INPUT de BUSCADOR DE PRODUCTOS
-************************************************/
-.contenedor-bot{
-	display: inline-table;
-	margin-top: 20px;
-	margin-left: 67px;
-}
-
-/* boton buscar producto */
-.bot-buscador{
-	display: inline;
-	padding: 0.5em;
-	margin-right: 0;
-	font-size: 1em;
-	font-weight: 600;
-	letter-spacing: 1px;
-	background: rgb(8, 1, 90);
-	border: 1px solid rgb(8, 1, 90);
-	border-radius: 10px 0 0 10px;
-}
-
-/* input buscar producto */
-.in-busc{
-	padding: 0.5em;
-	margin-left: 0;
-	width: 40em;
-	border: 1px solid rgb(189, 189, 189);
-	border-radius: 0 10px 10px 0;
-}
-
-/**************************************************** 
-	BOTON NUEVO PRODUCTO QUE ABRE VENTANA MODAL
-**************************************************/
-.bton{
-	margin: 20px 70px 40px 0;
-	font-size: 1.2em;
-	letter-spacing: 1px;
-	display: flex;
-	justify-content: flex-end;
-	background: rgb(8, 1, 90);
-	border: rgb(8, 1, 90);
-}
-
-.bot-produ > .btn-primary{
-	display: flex;
-	justify-content: flex-end;
-	transition: background 1s;
-}
-
-.bot-produ >  .btn-primary:hover{
-	background: blue;
-}
-
-/******************************* 
-		VENTANA MODAL
-*******************************/
-.modal-dialog{
-	margin-right: 55em;
-}
-
-.modal-content {
-	width: 45vw;
-	height: 55em;
-}
-
-.modal-title{
-	color: rgb(116, 116, 117);
-	font-weight: bold;
-	letter-spacing: 1px;
-}
-
-.modal-header .close span{
-	color: rgb(0, 0, 17);
-}
-
-.modal-footer{
-	padding: 0;
-	justify-content: space-between;
-	margin-left: 20px;
-}
-
-.modal-footer > .btn-primary{
-	margin-right: 20px;
-	background: rgb(34, 21, 221);
-	border: rgb(34, 21, 221);
-	transition: all 1s;
-}
-
-.modal-footer > .btn-primary:hover{
-	box-shadow: inset 0 70px 0 0 rgb(14, 3, 112);
-}
-
-.modal-footer > .btn-secondary{
-	background: red;
-	border: red;
-	transition: all 1s;
-}
-
-.modal-footer > .btn-secondary:hover{
-	box-shadow: inset 0 70px 0 0 rgb(161, 5, 5);
-}
-
-.contenedorModal{
-	background: #fff;
-}
-
-.contenidoModal{
-	overflow: auto; /* auto, scroll, hidden, visible, */ 
-	background: #fff;
-	height: 43em;
-}
-
-.zonaSuperiorVentana{
-	display: flex;
-	justify-content: space-between;
-	font-weight: bold;
-	padding: 1em;
-	
-	letter-spacing: 1px;
-	font-size: 1.1em;
-	color: rgb(11, 0, 156);
-}
-
-/***************************************************** 
-        BOTONES DE PRODUCTOS VENTANA EMERGENTE
-***************************************************/
-.btn-group, .btn-group-vertical {
-    width: 38vw;
-    margin-left: 1.6em;
+/*************************************************
+        ESTILOS INPUT y BOT-BUSCAR PRODUCTOS
+***********************************************/
+/* ordenar */
+.ord-produ{
+    margin-left: 35px;
+    background: rgb(90, 89, 89);
+    font-size: 1em;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
-/************************************ 
-			FORMULARIO 
-***********************************/
-.cajaCamposFormulario{
-	display: list-item;
-	list-style: none;
-	margin: 1em 1em;
-	background: #fff;
-}
-	
-.campoFormulario{
-	display: flex;
-	justify-content: space-around;
+/* input buscar producto */
+.busc-pro{
+    padding: 5px;
+    width: 30vw;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 3px 0 0 3px;
 }
 
-.campoFormulario label{
-	display: inline-block;
-	width: 200px;
-	margin: 1.5em 0 0;
-
-	color: rgb(18, 1, 51);
-	font-size: 0.8em;
-	text-transform: uppercase;
-	letter-spacing: 0.2em;
-	font-weight: 700;
+/* boton buscar */
+.btn-light{
+    color: rgb(105, 105, 105);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 0 3px 3px 0;
 }
 
-.campoFormulario input:not([type="checkbox"]), .campoFormulario textarea, select {
-	display: inline-block;
-	width: 25vw;
-	height: 5vh;
-	padding-left: 0.5em;
-	margin-top: 0.3em;
-	border: 1px solid rgb(163, 163, 163);
-	border-radius: 3px;
-	
-	background: rgba(255,255,255,0.8);
-	color:rgb(18, 1, 51);
-	font-family: 'cooper_hewittsemibold';
-	font-size: 1.2em;
+/********************************************
+        ESTILOS BOT NUEVO PRODUCTO
+*******************************************/
+/* estilos del boton */
+.bot-nvo-pro{
+    margin-right: 35px;
+    background: rgb(90, 89, 89);
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-.campoFormulario.condiciones input{
-	margin-left: 0.5em;
-	transform: scale(3);
+/********************************************
+            ESTILOS LA TABLA
+*******************************************/
+/* estilos de cada fila */
+.relleno{ 
+    min-height: 65px;
+} 
+
+.relleno:nth-child(1){
+    min-height: 55px;
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
+    background: rgb(90, 90, 90)!important;
+    border-radius: 10px 10px 0 0;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-.campoFormulario.condiciones{
-	margin-top: 2em;
+/* estilos de botones cancelar-editar-borrar */
+.botones{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
 }
 
-.campoFormulario input:focus, .campoFormulario textarea:focus {
-	background: rgba(255,255,255,1);
+/* margen que separa los 3 botones */
+.btn-rig{
+    margin-right: 10px;
 }
 
-.campoFormulario textarea{
-	height: 7em;
+/* columna th */
+.relleno > .row-style{
+    margin-top: 12px;
 }
 
-/* ****************************** 
-        media queries
-****************************** */
-@media screen and (max-width: 900px){
-	/*cabecera*/
-	.header-top{
-		padding-right: 0;
-		padding-left: 0;
-		display: block;
-		text-align: center;
-	}
-	
-	.header-top ul{		 
-		justify-content: center;	 
-	}
-
-	.logo{
-		margin-top: 1em;
-	}
-
-	.header-bottom{
-		min-height: auto;
-		padding: 1em 1.5em;
-	}
-
-	.header-bottom h1{
-		font-size: 1.6em;
-	}
-
-	.header-bottom p{
-		width: 100%;
-		font-size: 1.3em;
-	}
-
-	/*seccion, contenido principal del main*/
-	section {
-		padding: 1em;
-	}
-
-	section h1{
-		font-size: 1.8em;
-	}
-
-	section h2{
-			padding: 0.5em;
-	}
-
-	section p{
-		font-size: 0.9em;
-	}
-
-	/*footer*/
-	footer {		   
-		padding: 1em;
-	}
-
-	footer p{
-		margin:0;
-	}
-
-	/* formulario*/
-		.contacto{
-		width: 100%;	
-	}
+/* columnas td */
+.relleno > .row-style-2{
+    margin-top: 15px;
 }
-@media screen and (max-width: 390px){
 
-	section h2{
-		font-size: 1.2em;
-		padding:   0.5em;
-	}
+/* alineación de columnas */
+.relleno > div:nth-child(3){
+    text-align: center;
+}
 
-	/*formulario*/
+.relleno > div:nth-child(4){
+    text-align: center;
+}
 
-	.cajaCamposFormulario{
-		padding:1em;
-	}
+.relleno > div:nth-child(5){
+    text-align: center;
+}
+    
+/* colores intercalados por filas */
+.row:nth-child(odd){
+    background-color:#f2f2f2;
+}
 
-	.contacto h2 {
-		padding:1em;
-		font-size: 0.9em;
-	}
-	.campoFormulario label {
-		font-size: 0.7em;
-	}
+/********************************************
+        ESTILOS del MODAL de BOTONES
+*******************************************/
+/* modal-body */
+.body-botones{
+    display: flex;
+    justify-content: space-around;
+}
 
-	.campoFormulario label[for="condiciones"]{
-		display: block;
-		margin-top: 1em;
-		font-size: 0.8em;
-	}
+/* texto de cabecera del modal */
+#edi-det-bo{
+    color: rgb(98, 98, 98);
+}
+
+/********************************************
+    ESTILOS del MODAL de NUEVO PRODUCTO
+*******************************************/
+/* texto de cabecera del modal */
+#modal-produ{
+    color: rgb(98, 98, 98);
+}
+
+/* display para los 3 botones principales */
+.btn-group{
+    display: flex;
+}
+/********************************************
+            ESTILOS MEDIA QUERY
+*******************************************/
+@media screen and (min-width: 1200px){
+	.oculto{
+        display: none !important;
+    }
+}
+
+
+@media screen and (max-width: 1200px){
+	.visible{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 1154px){
+	.botones{
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 771px){
+	*{
+        text-align: center;
+    }
+
+    .row{
+        padding: 1em;
+    }
 }
