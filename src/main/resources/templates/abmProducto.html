@@ -5,12 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="css/styleAbmProducto.css">
         <title>Awesome</title>
     </head>
@@ -20,13 +27,15 @@
         <div class="contenedor-sup">
             <!-- ordenar -->
             <div class="dropdown">
-                <button class="btn btn-secondary ord-produ dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ordenar
+                <button class="btn btn-secondary ord-produ dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ordenar
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Precio ASC</a>
+                    <a class="dropdown-item" href="#">Precio DESC</a>
+                    <a class="dropdown-item" href="#">Nombre ASC</a>
+                    <a class="dropdown-item" href="#">Nombre DESC</a>
                 </div>
             </div>
 
@@ -41,13 +50,336 @@
                 Nuevo producto
             </button>
         </div>
-        
-        <!-- MODAL -->
-        <div id="modal-nvo-produc" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+        <!-- TABLA DE PRODUCTOS -->
+        <div class="container-fluid px-3">
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Nombre</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style">Descripcion</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Precio</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Descuento</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style">Stock</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                </div>
+            </div>
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-3 relleno">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD
+                    A9-9425/8GB/512GB SSD/15.6"</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                    <div>
+                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Detalle
+                        </button>
+                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
+                            Borrar
+                        </button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary oculto" data-toggle="modal"
+                            data-target="#bot-opciones-modal">
+                            Opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  <!-- Fin de tabla productos -->
+
+        <!-- MODAL NUEVO PRODUCTO -->
+        <div id="modal-nvo-produc" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo producto</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -56,528 +388,355 @@
                     <div class="modal-body">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary active">
-                                <input type="radio" name="options" id="option1"> Active
+                                <input type="radio" name="options" id="option1"> Televisor
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option2"> Radio
+                                <input type="radio" name="options" id="option2"> Laptop
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option3"> Radio
+                                <input type="radio" name="options" id="option3"> Ordenador
                             </label>
                         </div>
 
                         <div>
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Código</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Precio</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Descuento</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Stock</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Nombre</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Descripcion</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tamaño de pantalla</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tecnología de pantalla</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tipo de pantalla</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Resolución de pantalla</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tasa de refresco de la pantalla</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Info adicional de la pantalla</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Nombre del fabricante</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Modelo del fabricante</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Código del fabricante</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">SmartTv</label>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">Año</label>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">Sistema operativo</label>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Windows</option>
+                                    <option value="1">Linux</option>
+                                    <option value="2">IOS</option>
+                                    <option value="3">Android</option>
+                                    <option value="4">Sin sistema operativo</option>
+
+                                </select>
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tamaño del disco duro</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tamaño de RAM</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Batería</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Camara trasera</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">CAmara frontal</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">Tipo de SIM</label>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Normal</option>
+                                    <option value="1">MiniSIM</option>
+                                    <option value="2">MicroSIM</option>
+                                    <option value="3">NanoSIM</option>
+                                </select>
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Grabadora de video</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">Capacidad de nfc</label>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Si</option>
+                                    <option value="1">No</option>
+                                </select>
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Procesador</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Gráficos</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group my-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Precio</span>
+                                    <span class="input-group-text" id="basic-addon1">Tamaño</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="input-group my-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Peso</span>
+                                </div>
+                                <input type="number" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </div>
                         </div>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-cargando">Guardar</button>
                     </div>
                 </div>
             </div>
-        </div>
-          
-        <!-- TABLA DE PRODUCTOS -->
-        <div class="container-fluid px-3">
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Nombre</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style">Descripcion</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Precio</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Descuento</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style">Stock</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                </div>
-            </div>
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
+        </div> <!-- Fin modal nuevo producto -->
 
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                    <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                    <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <div class="row mx-3 relleno">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">Ordenador</div>   
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">Lenovo Ideapad S145-15AST AMD A9-9425/8GB/512GB SSD/15.6"</div>   
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">45.543€</div>
-                <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">12,32</div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">12</div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
-                   <div>
-                        <button type="button" class="btn btn-rig btn-primary bot-detalle  visible"  data-toggle="modal" data-target="#modal-producto">
-                            Detalle
-                        </button>
-                        <button type="button" class="btn btn-rig btn-warning bot-editar visible" data-toggle="modal" data-target="#modal-producto">
-                            Editar
-                        </button>
-                        <button type="button" class="btn btn-rig btn-danger bot-borrar visible" data-toggle="modal" data-target="#modal-cerrar">
-                            Borrar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary oculto" data-toggle="modal" data-target="#bot-opciones-modal">
-                            Opciones
-                        </button>
-                   </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="bot-opciones-modal" tabindex="-1" role="dialog" aria-labelledby="edi-det-bo" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+        <!-- MODAL BOTONES DE OPCIONES-->
+        <div class="modal fade" id="bot-opciones-modal" tabindex="-1" role="dialog" aria-labelledby="edi-det-bo"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="edi-det-bo">Opciones de la tabla</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                        <h5 class="modal-title" id="edi-det-bo">Opciones de la tabla</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body body-botones">
-                        <button type="button" class="btn btn-primary bot-detalle  oculto"  data-toggle="modal" data-target="#modal-producto">
+                        <button type="button" class="btn btn-primary bot-detalle  oculto" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
                             Detalle
                         </button>
-                        <button type="button" class="btn btn-warning bot-editar oculto" data-toggle="modal" data-target="#modal-producto">
+                        <button type="button" class="btn btn-warning bot-editar oculto" data-toggle="modal"
+                            data-target="#modal-nvo-produc">
                             Editar
                         </button>
-                        <button type="button" class="btn btn-danger bot-borrar oculto" data-toggle="modal" data-target="#modal-cerrar">
+                        <button type="button" class="btn btn-danger bot-borrar oculto" data-toggle="modal"
+                            data-target="#modal-bot-borrar">
                             Borrar
                         </button>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- MODAL BOTON BORRAR -->
+        <div class="modal fade" id="modal-bot-borrar" tabindex="-1" role="dialog" aria-labelledby="mod-bot-borr"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Borrar producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-borrar">
+                        ¿Seguro que desea borrar el producto?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger">Borrar</button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>
+
+        <!-- MODAL CARGANDO -->
+          <div class="modal fade" id="modal-cargando" tabindex="-1" role="dialog" aria-labelledby="ModalCarga" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">  
+                    <ul class="loading">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+              </div>
+            </div>
+        </div>
     </body>
+
 </html>
