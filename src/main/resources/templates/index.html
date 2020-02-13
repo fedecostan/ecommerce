@@ -2,403 +2,642 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/normalize.css">
+  <!-- normalize -->
+  <link rel="stylesheet" href="css/normalize.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+  <!-- links bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/styleIndex.css">
+  <!-- iconos font awesome -->
+  <script src="https://kit.fontawesome.com/ad52221b48.js" crossorigin="anonymous"></script>
 
-    <title>Awesome</title>
+  <!-- mis estilos -->
+  <link rel="stylesheet" href="css/styleIndex.css">
+
+  <title>Awesome</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <!-- Lista izquierda -->
-            <a class="nav-link dropdown-toggle equiv" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                &equiv;
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Componentes</a>
-                <a class="dropdown-item" href="#">Ordenadores</a>
-                <a class="dropdown-item" href="#">Smartphone/Telefonia</a>
-                <a class="dropdown-item" href="#">Audio/Foto/video</a>
-                <a class="dropdown-item" href="#">Periféricos</a>
-                <a class="dropdown-item" href="#">Televisores</a>
-                <a class="dropdown-item" href="#">Tablets/Ebooks</a>
-                <a class="dropdown-item" href="#">Consolas/Gaming</a>
-                <a class="dropdown-item" href="#">Componentes</a>
-                <a class="dropdown-item" href="#">Ordenadores</a>
-                <a class="dropdown-item" href="#">Smartphone/Telefonia</a>
-                <a class="dropdown-item" href="#">Audio/Foto/video</a>
-                <a class="dropdown-item" href="#">Periféricos</a>
-                <a class="dropdown-item" href="#">Televisores</a>
-                <a class="dropdown-item" href="#">Tablets/Ebooks</a>
-                <a class="dropdown-item" href="#">Consolas/Gaming</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Ofertas</a>
-            </div>
-        
-            <!-- Buscar -->
-            <div class="ml-4">
-                <form class="form-inline">
-                  <button class="btn btn-busc my-2 my-sm-0" type="submit">Q</button>
-                  <input class="form-control in-busc mr-sm-2" type="search" placeholder="Buscar en Awesome..." aria-label="Search">
-                </form>
-            </div>
-        
-            <!-- Logo Awesome-->
-            <a class="navbar-brand ml-auto logo" href="pruebas.html">Awesome</a>
-            
-            <!-- Carrito-->
-            <div class="d-flex-end ml-auto">
-                <a class="btn carrito" href="carrito.html" role="button">Carrito</a>        
-            </div>
-        
-            <!-- Boton mi cuenta-->
-            <div>
-                <a class="nav-link ndropdown-toggle cuenta" href="#" id="navbarCuenta" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Mi cuenta
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarCuenta">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block mx-auto mt-2 mb-1 py-1 px-3">Iniciar sesión</button>
-                    <div class="d-flex">
-                        <a class="dropdown-item item-reg" href="#">Para registrarse click aquí</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item item-reg" href="#">Contacto</a>
-                    <a class="dropdown-item item-reg" href="#">Mi cuenta</a>
-                    <a class="dropdown-item item-reg" href="#">Mis pedidos</a>
-                    <a class="dropdown-item item-reg" href="#">Mis Devoluciones</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <!-- Lista izquierda -->
+      <a class="nav-link dropdown-toggle equiv" href="#" id="navbarLista" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bars list-ra"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarLista">
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-save"></i> Componentes</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-laptop"></i> Ordenadores</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-desktop"></i> Monitores</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-mobile-alt"></i> Smartphone/Telefonía</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-icons"></i> Audio/Foto/video</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-mouse"></i> Periféricos</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-tv"></i> Televisores</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-tablet-alt"></i> Tablets/Ebooks</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas  fa-gamepad"></i> Consolas/Gaming</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-headset"></i></i> Headset</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-ghost"></i> Videojuegos</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-chess"></i> Juegos de mesa</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-battery-quarter"></i> Baterías</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-microphone-alt"></i> Microfonos</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-biking"></i> Deporte</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-robot"></i> Robótica</a>
+        <a class="dropdown-item it-list" href="#"><i class="fas fa-sd-card"></i> Compañias</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item it-list" href="#"><i class="fab fa-apple"></i> Productos Apple</a>
+      </div>
 
-    <main>
-        <section class="container">
-            <div class="row ofertas">
-                <div class="col-sm-3">
-                  <div class="card">
-                    <div class="card-body a-back">  
-                      <a href="#" class="a-cen">Ofertas</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="card">
-                    <div class="card-body a-back">
-                      <a href="#" class="a-cen">Outlet</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                      <div class="card-body a-back">
-                        <a href="#" class="a-cen">San Valentín</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="card">
-                      <div class="card-body a-back">
-                        <a href="#" class="a-cen">Medios de pago</a>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Lupa oculta -->
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle equiv lupa-oc mostrar" type="button" id="dropdownLupa" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-search"></i> Buscar
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownLupa">
+          <input class="form-control in-busc-oc mr-sm-2" type="search" placeholder="Buscar en Awesome..."
+            aria-label="Search">
+        </div>
+      </div>
 
-        <section class="container">
-            <h3>Categorías <strong>Relevantes</strong></h3>
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-01.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-02.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-03.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-01.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-02.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="img/img-03.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Buscar -->
+      <div class="ml-4">
+        <form class="form-inline ocultar">
+          <button class="btn btn-busc my-2 my-sm-0" type="submit"><i class="fas fa-search lupa-m"></i></button>
+          <input class="form-control in-busc mr-sm-2" type="search" placeholder="Buscar en Awesome..."
+            aria-label="Search">
+        </form>
+      </div>
 
-        <section class="container">
-            <h3>Artículos <strong>Recomendados</strong></h3>
-            <div class="card-group">
-                <div class="card">
-                  <img src="img/img-04.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Logitech G332 Special Edition Auriculares Gaming</p>
-                    <p class="card-text"><small class="text-muted">39,45€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-07.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Logitech G332 Special Edition Auriculares Gaming</p>
-                    <p class="card-text"><small class="text-muted">39,45€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-02.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">Logitech G332 Special Edition Auriculares Gaming</p>
-                    <p class="card-text"><small class="text-muted">39,45€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-10.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Logitech G332 Special Edition Auriculares Gaming</p>
-                      <p class="card-text"><small class="text-muted">39,45€</small></p>
-                    </div>
-                  </div>
-            </div>
-        </section>
+      <!-- Logo Awesome-->
+      <a class="navbar-brand ml-auto logo ocultar-a" href="pruebas.html">Awesome</a>
 
+      <!-- Logo Awesome oculto -->
+      <a class="navbar-brand mx-auto mostrar-a" href="pruebas.html">A</a>
 
-        <section class="container">
-            <h3>Más vistos en <strong>Awesome</strong></h3>
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-01.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-02.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-03.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-04.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                      <p class="card-text"><small class="text-muted">139€</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-05.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-06.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-07.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-08.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                      <p class="card-text"><small class="text-muted">139€</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-01.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-02.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-03.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-04.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                      <p class="card-text"><small class="text-muted">139€</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-05.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-06.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-07.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-08.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                      <p class="card-text"><small class="text-muted">139€</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-01.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-02.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-03.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-04.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                      <p class="card-text"><small class="text-muted">139€</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="card-deck">
-                <div class="card">
-                  <img src="img/img-05.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-06.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="img/img-07.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                    <p class="card-text"><small class="text-muted">139€</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                    <img src="img/img-08.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
-                      <p class="card-text"><small class="text-muted">139€</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Carrito-->
+      <div class="d-flex-end ml-auto">
+        <a class="btn carrito" href="carrito.html" role="button"><i class="fas fa-shopping-cart"></i> Carrito</a>
+      </div>
 
-        <section>
-            
-        </section>
-    </main>
+      <!-- Boton mi cuenta-->
+      <div>
+        <a class="nav-link ndropdown-toggle cuenta" href="#" id="navbarCuenta" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-astronaut"></i>
+          <!--<i class="fas fa-user"></i>-->
+          Mi cuenta
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarCuenta">
+          <button type="button" class="btn btn-outline-secondary btn-lg btn-block mx-auto mt-2 mb-1 py-1 px-3"
+            data-toggle="modal" data-target="#modalSesion">Iniciar
+            sesión</button>
+          <div class="d-flex">
+            <a class="dropdown-item item-reg" href="#" data-toggle="modal" data-target="#modalRegistro">Para registrarse
+              click aquí</a>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item item-reg" href="#"><i class="fas fa-address-card"></i> Contacto</a>
+          <a class="dropdown-item item-reg" href="#"><i class="fas fa-user-check"></i> Mi cuenta</a>
+          <a class="dropdown-item item-reg" href="#"><i class="fas fa-cart-arrow-down"></i> Mis pedidos</a>
+          <a class="dropdown-item item-reg" href="#"><i class="fas fa-thumbs-down"></i> Mis Devoluciones</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="data:image/jpeg;base64,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"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://lh3.googleusercontent.com/proxy/NcZnCInfezdU4efT7ISJwv6t8WQpfy9lKnXopuWNDlrZ62pfUVUbz5YfWt0sNpObBcIS32z_yhoeWrfDeNcWiTxi-q5FZoFfATGWWAcDSMhyR5sMemnIyHRnZi5LriOJRR3DxjpzVCyBSPBHK_YHzeg-WG6EtSVLIPkZMA"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://lh3.googleusercontent.com/proxy/NcZnCInfezdU4efT7ISJwv6t8WQpfy9lKnXopuWNDlrZ62pfUVUbz5YfWt0sNpObBcIS32z_yhoeWrfDeNcWiTxi-q5FZoFfATGWWAcDSMhyR5sMemnIyHRnZi5LriOJRR3DxjpzVCyBSPBHK_YHzeg-WG6EtSVLIPkZMA"
+              class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Ofertas -->
+    <section class="container">
+      <div class="row ofertas">
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <div class="card-body a-back">
+              <a href="#" class="a-cen"><i class="fas fa-tag"></i> Ofertas</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <div class="card-body a-back">
+              <a href="#" class="a-cen"><i class="fas fa-shipping-fast"></i> Envio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <div class="card-body a-back">
+              <a href="#" class="a-cen"><i class="fas fa-gift"></i> San Valentín</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <div class="card-body a-back">
+              <a href="#" class="a-cen"><i class="fas fa-hand-holding-usd"></i> Medios de pago</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Relevantes -->
+    <section class="container">
+      <h3>Categorías <strong>Relevantes</strong></h3>
+      <div class="row">
+        <div class="col-4 col-sm-4 col-lg-2 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back relevantes">
+              <a href="#" class="card-title text-relev">Cascos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back relevantes">
+              <a href="#" class="card-title text-relev">Sillas</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back relevantes">
+              <a href="#" class="card-title text-relev">Portatil</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back relevantes">
+              <a href="#" class="card-title text-relev">TV</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back relevantes">
+              <a href="#" class="card-title text-relev">Patinete</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back relevantes">
+              <a href="#" class="card-title text-relev">Mouse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recomendados -->
+    <section class="container">
+      <h3>Artículos <strong>Recomendados</strong></h3>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-3 p-0">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <a href="#" class="card-title">Owlotech Boom Mini Altavoz Bluetooth 5W</a>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 p-0">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <a href="#" class="card-title">Owlotech Boom Mini Altavoz Bluetooth 5W</a>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 p-0">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <a href="#" class="card-title">Owlotech Boom Mini Altavoz Bluetooth 5W</a>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 p-0">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <a href="#" class="card-title">Owlotech Boom Mini Altavoz Bluetooth 5W</a>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Más vistos -->
+    <section class="container">
+      <h3>Más vistos en <strong>Awesome</strong></h3>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 px-1 py-2">
+          <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body a-back recomendados">
+              <p class="card-text">MSI GS63 Stealth 8RD-062XES Intel Core i7-8750H/16GB/512SSD/GTX1050Ti/15.6"</p>
+              <p class="card-text"><small class="text-muted text-muted-p">139€</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETER -->
+    <section class="newsletter">
+      <div class="container card cont-news mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/245191_00_1.jpg" class="card-img"
+              alt="Imagen de promocion">
+          </div>
+          <div class="col-md-8 ">
+            <div class="card-body news">
+              <h5 class="card-title title-news">¡Suscríbete y participa!</h5>
+              <p class="card-text">Suscríbite a nuestros sorteos y podrás ganar grandes premios</p>
+              <p>Haz click <a href="#">aquí</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL INICIAR SESIÓN -->
+  <div class="modal fade" id="modalSesion" tabindex="-1" role="dialog" aria-labelledby="modalSesionCampos"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSesionCampos">Iniciar sesión</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1"><span class="aste">*</span> Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Ingrese su email..." required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"><span class="aste">*</span> Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1"
+                placeholder="Ingrese su contraseña..." required>
+              <small id="passwordHelpInline" class="text-muted">
+                Debe tener entre 6-20 caracteres.
+              </small>
+            </div>
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                <label class="form-check-label" for="autoSizingCheck2">
+                  Recuerdame
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Iniciar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL REGISTRARSE  -->
+  <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroCampos"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRegistroCampos">Registrarse</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1"><span class="aste">*</span> Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Ingrese su email..." required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"><span class="aste">*</span> Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1"
+                placeholder="Ingrese su contraseña..." required>
+              <small id="passwordHelpInline" class="text-muted">
+                Debe tener entre 6-20 caracteres.
+              </small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"><span class="aste">*</span> Repetir contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1"
+                placeholder="Ingrese su contraseña..." required>
+            </div>
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                <label class="form-check-label" for="autoSizingCheck2">
+                  Aceptar términos y condiciones
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Crear cuenta</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-contenido py-5 px-1">
+          <div class="card-body d-contents">
+            <h5 class="card-title">¿Quienes somos?</h5>
+            <a href="#"><i class="fas fa-question"></i> ¿Quienes somos?</a>
+            <a href="#"><i class="fas fa-business-time"></i> Trabaja con nosotros</a>
+            <a href="#"><i class="fas fa-check-square"></i> Condiciones de compras</a>
+            <a href="#"><i class="fas fa-comment"></i> Opinion de clientes</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-contenido py-5 px-1">
+          <div class="card-body d-contents">
+            <h5 class="card-title">Contactar</h5>
+            <a href="#"><i class="fas fa-phone-volume"></i> Centro de soporte</a>
+            <a href="#"><i class="fas fa-phone-alt"></i> Contacto</a>
+            <a href="#"><i class="fas fa-thumbs-down"></i> Devoluciones</a>
+            <a href="#"><i class="fas fa-clock"></i> Horarios</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-contenido py-5 px-1">
+          <div class="card-body d-contents">
+            <h5 class="card-title">Servicios</h5>
+            <a href="#"><i class="fas fa-shipping-fast"></i> Tipos de entrega</a>
+            <a href="#"><i class="fas fa-check"></i> Garantías</a>
+            <a href="#"><i class="fas fa-search-dollar"></i> Financiación</a>
+            <a href="#"><i class="fas fa-money-check-alt"></i> Tarjeta de regalo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-contenido py-5 px-1">
+          <div class="card-body d-contents">
+            <h5 class="card-title">Otros</h5>
+            <a href="#"><i class="fas fa-tags"></i> Outlet</a>
+            <a href="#"><i class="fas fa-donate"></i> Donaciones</a>
+            <a href="#"><i class="fas fa-file-invoice-dollar"></i> Factura de tienda</a>
+            <a href="#"><i class="fas fa-language"></i> Idiomas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </html>

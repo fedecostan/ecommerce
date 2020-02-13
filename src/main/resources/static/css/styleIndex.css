@@ -1,4 +1,4 @@
-/* Estilos generales */
+/*------------------- Estilos generales --------------------*/
 *{
   box-sizing: border-box;
 }
@@ -28,7 +28,11 @@ strong{
   font-weight: 500;
 }
 
-/* Contenedor header */
+/* Asteriscos requeridos */
+.aste{
+  color: red;
+}
+/*------------------ Contenedor header ----------------*/
 .navbar{
   background: #fff !important;
   text-align: center;
@@ -38,20 +42,28 @@ strong{
   font-size: 1em;
 }
 
-/* Lista */
+/*------------------ Lista ----------------------*/
 .equiv{
-  padding: 0.8em 1em;
-  color: rgb(35, 1, 97);
+  padding: 0.8em ;
   font-size: 1.4em;
   font-weight: bold;
+  border-radius: 0;
   border-right: 1px solid rgb(35, 1, 97);
 }
 
 .equiv:hover{
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255) !important;
   background: rgb(35, 1, 97);
   font-size: 1.4em;
   border-right: 1px solid rgb(35, 1, 97);
+}
+
+.list-ra{
+  color: rgb(53, 57, 235) !important;
+}
+
+.list-ra:hover{
+  color: rgb(255, 255, 255) !important;
 }
 
 .dropdown-menu {
@@ -63,17 +75,61 @@ strong{
   display: none;
 }
 
+/* contenedor de la lista */
+.it-list{
+  padding: 5px;
+  margin-left: 2px;
+}
+
+.it-list > i{
+  padding-right: 5px;
+}
+
+/* ----------------- Lupa buscar Oculta ------------------------ */
+.lupa-oc{
+  padding: 1.4em;
+  font-size: 1em;
+  color: rgb(35, 1, 97) !important;
+  border-right: 1px solid rgb(35, 1, 97);
+}
+
+.lupa-oc:hover{
+  color: rgb(255, 255, 255) !important;
+  background: rgb(35, 1, 97);
+  font-size: 1em;
+  border-right: 1px solid rgb(35, 1, 97);
+}
+
+.fas{
+  color: rgb(14, 186, 238);
+}
+
+.fas:hover{
+  color: #fff !important;
+}
+
+.in-busc-oc{
+  padding: 1em;
+  margin: 0;
+  border: none;
+}
+
+/* ----------------- Lupa buscar ------------------------ */
 /* Boton Buscar */
+.lupa-m{
+  color: rgb(255, 255, 255);
+}
+
 .btn-busc{
   color: rgb(255, 255, 255);
   background: rgb(35, 1, 97);
-  border-color: rgb(35, 1, 97);
+  border: 1px solid rgb(35, 1, 97);
   border-radius: 5px 0 0 5px;
 }
 
 .btn-busc:hover{
   color: #fff;
-  background: rgb(63, 3, 175);
+  background: rgb(35, 1, 97);
   box-shadow: 0 1px 5px 1px rgb(190, 190, 190);
 }
 
@@ -83,7 +139,7 @@ strong{
   border-color: rgb(55, 5, 148);
 }
 
-/* logo */
+/*------------------------ Logo Awesome -------------------------*/
 .logo{
   color: rgb(48, 2, 133) !important;
   font-size: 2em;
@@ -95,7 +151,7 @@ strong{
   margin-right: 6rem;
 }
 
-/* Carrito */
+/*------------------------- Carrito ----------------------*/
 .carrito{
   border: none;
   padding: 1.4em;
@@ -111,7 +167,7 @@ strong{
   background: rgb(35, 1, 97);
 }
 
-/* Boton Mi cuenta */
+/*---------------------- Boton Mi cuenta --------------------*/
 .cuenta{
   padding: 1.4em;
   color: rgb(35, 1, 97);
@@ -124,12 +180,12 @@ strong{
   background: rgb(35, 1, 97);
 }
 
-/* tamaño del menu de items */
+/*------------------- tamaño del menu de items -----------------*/
 .dropdown-menu-right {
   min-width: 13rem;
 }
 
-/* items mi cuenta */
+/*--------------------- items mi cuenta --------------------*/
 .btn-group-lg>.btn, .btn-lg {
   width: 85%;
   font-size: 1em;
@@ -141,7 +197,7 @@ strong{
 }
 
 .btn-block:hover{
-  background: rgb(52, 1, 148);
+  background: rgb(35, 1, 97);
   box-shadow: 0 1px 5px 1px rgb(190, 190, 190);
 }
 
@@ -149,7 +205,7 @@ section{
   margin-top: 1em;
 }
 
-/* sección ofertas */
+/*------------------ sección ofertas -----------------------*/
 .card-body{
   text-align: center;  
 }
@@ -157,7 +213,7 @@ section{
 .card-body > .a-cen{
   text-decoration: none;
   list-style-type: none;
-  color: rgb(5, 12, 110);
+  color: rgb(35, 1, 97);
   font-weight: bold;
   letter-spacing: 1px;   
 }
@@ -171,7 +227,7 @@ section{
   background: rgb(245, 245, 245);
 }
 
-/* Secciones imagenes */
+/*--------------------- Secciones imagenes -------------------*/
 .card-deck .card{
   margin-right: 0;
 }
@@ -182,8 +238,129 @@ section{
   color: rgb(110, 110, 110);
 }
 
-.text-muted{
+/*---------------------- Recomendados -----------------------*/
+.text-muted-p{
   font-size: 1.1em;
   font-weight: bold;
   color: black !important;
+}
+
+/*-------------------- Relevantes -------------------*/
+.relevantes{
+  color: rgb(35, 1, 97);
+}
+
+.text-relev{
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(2, 2, 97);
+}
+
+/* ---------------- NEWSLETTER ---------------------- */
+.newsletter{
+  padding: 3em;
+  background: #fff;
+  border-top: 0.5em solid rgb(35, 1, 97);
+  text-align: center;
+  cursor: inherit;
+}
+
+.cont-news{
+  cursor: inherit;
+  border: none;
+}
+
+.news > p{
+  color: rgb(107, 107, 107);
+  font-size: 1em;
+}
+
+.title-news{
+  color: rgb(35, 1, 97);
+  text-transform: uppercase;
+}
+
+/* ------------------ SECCIÓN FOOTER ------------------*/
+
+footer {
+  padding: 6em;
+  background:  rgb(35, 1, 97);
+}
+
+.card-contenido{
+  background:  rgb(35, 1, 97);
+  color: #fff;
+  border: none;
+}
+
+.d-contents{
+  display: contents;
+  padding: 2em;
+  font-size: 1em;
+  text-align: left;
+}
+
+.d-contents > a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.d-contents > a:hover{
+  color: aqua;
+}
+
+/* ------------------- ----------------- */
+
+@media screen and (max-width: 990px){
+	.ocultar{
+    display: none;
+  }
+
+  .card-recom{
+    flex-basis: 50% !important;
+  }
+
+  .card-vistos{
+    flex-basis: 25% !important;
+  }
+}
+
+@media screen and (min-width: 990px){
+	.mostrar{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 653px){
+  footer, .newsletter{
+    padding: 1em;
+  }
+
+  .d-contents{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 625px){
+	.ocultar-a{
+    display: none;
+  }
+  
+}
+
+@media screen and (min-width: 625px){
+	.mostrar-a{
+    display: none;
+  }
+
+  .navbar-brand {
+    margin-right: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 600px){
+	.it-list{
+    padding: 1px;
+  }
 }
