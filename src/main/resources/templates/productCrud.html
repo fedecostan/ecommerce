@@ -2,316 +2,493 @@
 <html ng-app="app" xmlns:th="http://www.springframework.org/schema/mvc">
 <head>
     <meta charset="UTF 8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>ABM PRODUCTO</title>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" type="text/css">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/styleAbmProducto.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{/sass/style.css}" type="text/css">
+    <link href="#" rel="shortcut icon"/>
 </head>
 <body>
-<div id="padre" ng-controller="ProductCrudController">
-    <div class="boton-mensaje">
-        <button class="btn">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="text">Nuevo producto</span>
+<div ng-controller="ProductCrudController">
+
+    <!-- INPUT y BOTON BUSCAR - BOTON NUEVO PRODUCTO -->
+    <div class="contenedor-sup">
+        <!-- ordenar -->
+        <div class="dropdown">
+            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary ord-produ dropdown-toggle"
+                    data-toggle="dropdown" id="dropdownMenuButton" type="button">
+                Ordenar
+            </button>
+            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+                <a class="dropdown-item" href="#">Precio ASC</a>
+                <a class="dropdown-item" href="#">Precio DESC</a>
+                <a class="dropdown-item" href="#">Nombre ASC</a>
+                <a class="dropdown-item" href="#">Nombre DESC</a>
+            </div>
+        </div>
+
+        <!-- input y buscar -->
+        <div class="cont-sup">
+            <input class="busc-pro" placeholder="Buscar productos..." type="text">
+            <button class="btn btn-light" type="button">Buscar</button>
+        </div>
+
+        <!-- boton nuevo producto -->
+        <button class="btn bot-nvo-pro btn-secondary" data-target="#modal-nvo-produc" data-toggle="modal"
+                ng-click="newProduct()"
+                type="button">
+            Nuevo producto
         </button>
     </div>
 
-    <div>
-        <table>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Descuento</th>
-                <th>Stock</th>
-                <th></th>
-            </tr>
-            <tr ng-repeat="product in products">
-                <td>{{product.name}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.discount}}</td>
-                <td>{{product.stock}}</td>
-                <td>
-                    <button class="bot-detalle boton-mensaje" name="submit_mult" title="Detalle del producto"
-                            type="submit"
-                            value="detalle">Detalle
-                    </button>
-                    <button class="bot-editar boton-mensaje" name="submit_mult" title="Editar producto" type="submit"
-                            value="editar">Editar
-                    </button>
-                    <button class="bot-borrar" name="reset_mult" title="Borrar producto" type="reset"
-                            value="borrar">Borrar
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<!-- Informacion ventana emergente modal -->
-<div class="fondoModal">
-    <div class="contenedorModal">
-        <div class="zonaSuperiorVentana">
-            <span id="textoIzquierda">Nuevo producto</span>
-            <span id="bot-cerrar-modal">Cerrar</span>
+    <!-- TABLA DE PRODUCTOS -->
+    <div class="container-fluid px-3">
+        <div class="row mx-3 relleno">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Nombre</div>
+            <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style">Descripcion</div>
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Precio</div>
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style">Descuento</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style">Stock</div>
+            <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            </div>
         </div>
-        <div class="contenidoModal">
-            <form action="procesar_formulario.php">
-                <div class="cajaCamposFormulario">
-                    <div class="opciones">
-                                <span class="bot-opcion activa" id="bot-uno">
-                                    TV
-                                </span>
-                        <span class="bot-opcion" id="bot-dos">
-                                    Smartphone
-                                </span>
-                        <span class="bot-opcion" id="bot-tres">
-                                    Laptop
-                                </span>
+        <div class="row mx-3 relleno" ng-repeat="product in products">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">{{product.name}}</div>
+            <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 col-xs-12 row-style-2">{{product.description}}</div>
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">{{product.price}}</div>
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12 row-style-2">{{product.discount}}</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 row-style-2">{{product.stock}}</div>
+            <div class="col-xl-3 col-lg-2 col-md-2 col-sm-12 col-xs-12 botones">
+                <div>
+                    <button class="btn btn-rig btn-primary bot-detalle visible" data-target="#modal-nvo-produc"
+                            data-toggle="modal"
+                            ng-click="productoDetail(product.id)" type="button">
+                        Detalle
+                    </button>
+                    <button class="btn btn-rig btn-warning bot-editar visible" data-target="#modal-nvo-produc"
+                            data-toggle="modal"
+                            ng-click="productoModal(false)" type="button">
+                        Editar
+                    </button>
+                    <button class="btn btn-rig btn-danger bot-borrar visible" data-target="#modal-bot-borrar"
+                            data-toggle="modal"
+                            type="button">
+                        Borrar
+                    </button>
+
+                    <!-- Button trigger modal -->
+                    <button class="btn btn-primary oculto" data-target="#bot-opciones-modal" data-toggle="modal"
+                            type="button">
+                        Opciones
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>  <!-- Fin de tabla productos -->
+
+    <!-- MODAL NUEVO PRODUCTO -->
+    <div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bd-example-modal-lg"
+         id="modal-nvo-produc"
+         role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-nvo-produc-label">{{productModalTitle}}</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons" ng-show="isNewProduct">
+                        <label class="btn btn-secondary">
+                            <input name="options" ng-click="typeSelected(1)" type="radio">
+                            Televisor
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input name="options" ng-click="typeSelected(2)" type="radio">
+                            Movil
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input name="options" ng-click="typeSelected(3)" type="radio">
+                            Ordenador
+                        </label>
                     </div>
 
-                    <div class="campoFormulario">
-                        <label for="type">Tipe</label>
-                        <select id="type" name="type" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
+                    <div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Código</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.code"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="Tipo">Price</label>
-                        <input id="Tipo" name="Tipo" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Precio</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.price"
+                                   type="number">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="discount">Discount</label>
-                        <input id="discount" name="discount" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descuento</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.discount"
+                                   type="number">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="stock">Stock</label>
-                        <input id="stock" name="stock" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Stock</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.stock"
+                                   type="number">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.name"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="description">Description</label>
-                        <input id="description" name="description" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descripcion</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.description"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="screensize">ScreenSize</label>
-                        <input id="screensize" name="screensize" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tamaño de pantalla</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.screenInches"
+                                   type="number">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="screentechnology">ScreenTechnology</label>
-                        <input id="screentechnology" name="screentechnology" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tecnología de pantalla</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.screenTechnology"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="screentype">ScreenType</label>
-                        <input id="screentype" name="screentype" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de pantalla</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.screenType"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="screenresolution">ScreenResolution</label>
-                        <input id="screenresolution" name="screenresolution" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Resolución de pantalla</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.screenResolution"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="Screenrefreshrate">ScreenRefreshRate</label>
-                        <input id="Screenrefreshrate" name="Screenrefreshrate" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tasa de refresco de la pantalla</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.screenRefreshRate"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="ScreenadditionaiInfo">ScreenAdditionalInfo</label>
-                        <input id="ScreenadditionaiInfo" name="ScreenadditionaiInfo" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Info adicional de la pantalla</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.screenAdditionalInfo"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="manufacturername">ManufacturerName</label>
-                        <input id="manufacturername" name="manufacturername" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre del fabricante</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.manufacturerName"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="manufacturermodel">ManufacturerModel</label>
-                        <input id="manufacturermodel" name="manufacturermodel" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Modelo del fabricante</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.manufacturerModel"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="manufacturercode">ManufacturerCode</label>
-                        <input id="manufacturercode" name="manufacturercode" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Código del fabricante</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.manufacturerCode"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="smarttv">SmartTv</label>
-                        <select id="smarttv" name="smarttv" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
+                        <div class="input-group my-3" ng-show="tvInputs">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">SmartTv</label>
+                            </div>
+                            <select class="custom-select" ng-disabled="modalInputsDisabled"
+                                    ng-model="modalProduct.smartTv">
+                                <option disabled value="select">Selección</option>
+                                <option value="true">Si</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="years">Years</label>
-                        <select id="years" name="years" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Año</label>
+                            </div>
+                            <select class="custom-select" ng-disabled="modalInputsDisabled"
+                                    ng-model="modalProduct.year">
+                                <option disabled selected>Selección</option>
+                                <option ng-repeat="year in years" value="{{year}}">{{year}}</option>
+                            </select>
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="operatingsystem">OperatingSystem</label>
-                        <select id="operatingsystem" name="operatingsystem" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Sistema operativo</label>
+                            </div>
+                            <select class="custom-select" ng-disabled="modalInputsDisabled"
+                                    ng-model="modalProduct.operatingSystem">
+                                <option disabled selected>Selección</option>
+                                <option ng-repeat="os in operatingSystems" value="{{os}}">{{os}}</option>
+                            </select>
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="harddrivesize">HardDriveSize</label>
-                        <input id="harddrivesize" name="harddrivesize" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tamaño del disco duro</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.hardDriveSize"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="ramsize">RamSize</label>
-                        <input id="ramsize" name="ramsize" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tamaño de RAM</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.ramSize"
+                                   type="number">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="battery">Battery</label>
-                        <input id="battery" name="battery" required type="number">
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Batería</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.battery"
+                                   type="number">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="backCamera">BackCamera</label>
-                        <input id="backCamera" name="backCamera" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="smartphoneInputs">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Camara trasera</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.backCamera"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="frontcamera">FrontCamera</label>
-                        <input id="frontcamera" name="frontcamera" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Camara frontal</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.frontCamera"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="simtype">SimType</label>
-                        <select id="simtype" name="simtype" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
+                        <div class="input-group my-3" ng-show="smartphoneInputs">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Tipo de SIM</label>
+                            </div>
+                            <select class="custom-select" ng-disabled="modalInputsDisabled"
+                                    ng-model="modalProduct.simType">
+                                <option disabled selected>Selección</option>
+                                <option ng-repeat="sim in sims" value="{{sim}}">{{sim}}</option>
+                            </select>
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="videorecorder">VideoRecorder</label>
-                        <input id="videorecorder" name="videorecorder" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="smartphoneInputs">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Grabadora de video</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.videoRecorder"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="nfccapable">NfcCapable</label>
-                        <select id="nfccapable" name="nfccapable" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
+                        <div class="input-group my-3" ng-show="smartphoneInputs">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Capacidad de nfc</label>
+                            </div>
+                            <select class="custom-select" ng-disabled="modalInputsDisabled"
+                                    ng-model="modalProduct.nfcCapable">
+                                <option disabled selected>Selección</option>
+                                <option value="true">Si</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="processor">Processor</label>
-                        <input id="processor" name="processor" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Procesador</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.processor"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="graphics">Graphics</label>
-                        <input id="graphics" name="graphics" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Gráficos</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.graphics"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="size">Size</label>
-                        <input id="size" name="size" required type="text">
-                    </div>
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tamaño</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.size"
+                                   type="text">
+                        </div>
 
-                    <div class="campoFormulario">
-                        <label for="weight">Weight</label>
-                        <select id="weight" name="weight" required>
-                            <option value="">Elija una opción</option>
-                            <!-- si no tengo value el navegador interpreta que no hay una opción -->
-                            <option value="29">29"</option>
-                            <option value="32"> 32"</option>
-                            <option value="40">40"</option>
-                            <option value="49">49"</option>
-                            <option value="50">50"</option>
-                            <option value="55">55"</option>
-                            <option value="60">60"</option>
-                        </select>
-                    </div>
-
-                    <div class="zonaSuperiorVentana" id="botonGuarda">
-                        <input class="bot-cancelar" type="submit" value="Cancelar">
-                        <input class="bot-guardar" type="submit" value="Guardar">
+                        <div class="input-group my-3" ng-show="(tvInputs || smartphoneInputs || laptopInputs)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Peso</span>
+                            </div>
+                            <input aria-describedby="basic-addon1" aria-label="Username" class="form-control"
+                                   ng-disabled="modalInputsDisabled" ng-model="modalProduct.weight"
+                                   type="number">
+                        </div>
                     </div>
                 </div>
-            </form>
+
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">Cerrar</button>
+                    <button class="btn btn-primary" data-target="#modal-cargando" data-toggle="modal" type="button">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Fin modal nuevo producto -->
+
+    <!-- MODAL BOTONES DE OPCIONES-->
+    <div aria-hidden="true" aria-labelledby="edi-det-bo" class="modal fade" id="bot-opciones-modal" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edi-det-bo">Opciones de la tabla</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body body-botones">
+                    <button class="btn btn-primary bot-detalle  oculto" data-target="#modal-nvo-produc"
+                            data-toggle="modal"
+                            type="button">
+                        Detalle
+                    </button>
+                    <button class="btn btn-warning bot-editar oculto" data-target="#modal-nvo-produc"
+                            data-toggle="modal"
+                            type="button">
+                        Editar
+                    </button>
+                    <button class="btn btn-danger bot-borrar oculto" data-target="#modal-bot-borrar" data-toggle="modal"
+                            type="button">
+                        Borrar
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-</div> <!-- fin ventana modal -->
 
-<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-<script th:src="@{/js/abmProducto.js}"></script>
+    <!-- MODAL BOTON BORRAR -->
+    <div aria-hidden="true" aria-labelledby="mod-bot-borr" class="modal fade" id="modal-bot-borrar" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-bot-borrar-label">Borrar producto</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-borrar">
+                    ¿Seguro que desea borrar el producto?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">Cancelar</button>
+                    <button class="btn btn-danger" type="button">Borrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CARGANDO -->
+    <div aria-hidden="true" aria-labelledby="ModalCarga" class="modal fade" id="modal-cargando" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <ul class="loading">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script th:src="@{/js/lib/angular.min.js}"></script>
-<script th:src="@{/js/app.js}"></script>
 <script th:src="@{/js/controllers/productCrudController.js}"></script>
 
 </body>

@@ -4,13 +4,12 @@ import com.ecommerce.model.*;
 import com.ecommerce.repository.ProductDetailRepository;
 import com.ecommerce.repository.ProductRepository;
 import com.ecommerce.repository.ProductTypeRepository;
-import com.ecommerce.service.dto.ErrorEnum;
-import com.ecommerce.service.dto.FullProductDTO;
-import com.ecommerce.service.dto.GenericResponse;
-import com.ecommerce.service.dto.ProductTypeEnum;
+import com.ecommerce.service.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,6 +94,41 @@ public class ProductServiceImpl implements ProductService {
             updateProductInformation(productDetail, fullProductDTO);
         }
         return new GenericResponse();
+    }
+
+    @Override
+    public ProductTablePageDTO getPage(int page, int size, String order) {
+        ProductTablePageDTO productTablePageDTO = new ProductTablePageDTO();
+        List<Product> allProducts = productRepository.findAll();
+        if (OrderEnum.NAME_ASC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getName));
+        else if (OrderEnum.NAME_DESC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getName).reversed());
+        else if (OrderEnum.PRICE_ASC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getPrice));
+        else if (OrderEnum.PRICE_DESC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getPrice).reversed());
+        int element = size * (page - 1);
+        List<Product> filteredProducts = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            if (element < allProducts.size()) {
+                filteredProducts.add(allProducts.get(element));
+            }
+            element++;
+        }
+        productTablePageDTO.setPage(page);
+        productTablePageDTO.setSize(size);
+        productTablePageDTO.setData(filteredProducts);
+        productTablePageDTO.setHasNextPage(element < allProducts.size());
+        productTablePageDTO.setTotalPages(totalNumberOfPages(size, allProducts.size()));
+        return productTablePageDTO;
+    }
+
+    private int totalNumberOfPages(int size, int totalElements) {
+        if (totalElements % size == 0)
+            return totalElements / size;
+        else
+            return ((totalElements + (size - (totalElements % size))) / size);
     }
 
     private ProductType getProductType(FullProductDTO fullProductDTO) {
