@@ -80,6 +80,7 @@ public class ProductServiceImpl implements ProductService {
             }
             productDetailRepository.save(productDetail);
         } catch (Exception e) {
+            e.printStackTrace();
             return new GenericResponse(ErrorEnum.GENERIC_ERROR.getErrorMessage());
         }
         return new GenericResponse();
