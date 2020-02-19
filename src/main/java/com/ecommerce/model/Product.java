@@ -1,9 +1,15 @@
 package com.ecommerce.model;
 
 import com.ecommerce.service.dto.FullProductDTO;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
@@ -31,8 +37,14 @@ public class Product {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    public Product() {
-    }
+    @Column(name = "YEAR")
+    private Integer year;
+
+    @Column(name = "SIZE")
+    private String size;
+
+    @Column(name = "WEIGHT")
+    private Integer weight;
 
     public Product(FullProductDTO fullProductDTO) {
         this.code = fullProductDTO.getCode();
@@ -41,61 +53,9 @@ public class Product {
         this.stock = fullProductDTO.getStock();
         this.name = fullProductDTO.getName();
         this.description = fullProductDTO.getDescription();
+        this.year = fullProductDTO.getYear();
+        this.size = fullProductDTO.getSize();
+        this.weight = fullProductDTO.getWeight();
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Double discount) {
-        this.discount = discount;
-    }
-
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

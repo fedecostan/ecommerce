@@ -271,7 +271,9 @@
                             </div>
                             <select class="custom-select" ng-disabled="modalInputsDisabled"
                                     ng-model="modalProduct.year">
-                                <option ng-repeat="year in years" value="{{year}}">{{year}}</option>
+                                <option ng-repeat="year in years" ng-selected="year == modalProduct.year"
+                                        value="{{year}}">{{year}}
+                                </option>
                             </select>
                         </div>
 

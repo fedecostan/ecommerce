@@ -1,9 +1,15 @@
 package com.ecommerce.model;
 
 import com.ecommerce.service.dto.FullProductDTO;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "LAPTOP_INFO")
 public class LaptopInfo {
@@ -39,15 +45,6 @@ public class LaptopInfo {
     @Column(name = "OPERATING_SYSTEM")
     private String operatingSystem;
 
-    @Column(name = "SIZE")
-    private String size;
-
-    @Column(name = "WEIGHT")
-    private Integer weight;
-
-    public LaptopInfo() {
-    }
-
     public LaptopInfo(FullProductDTO fullProductDTO) {
         this.processor = fullProductDTO.getProcessor();
         this.hardDriveSize = fullProductDTO.getHardDriveSize();
@@ -55,95 +52,6 @@ public class LaptopInfo {
         this.graphics = fullProductDTO.getGraphics();
         this.camera = fullProductDTO.getFrontCamera();
         this.operatingSystem = fullProductDTO.getOperatingSystem();
-        this.size = fullProductDTO.getSize();
-        this.weight = fullProductDTO.getWeight();
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Screen getScreen() {
-        return screen;
-    }
-
-    public void setScreen(Screen screen) {
-        this.screen = screen;
-    }
-
-    public Manufacturer getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(Manufacturer manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getProcessor() {
-        return processor;
-    }
-
-    public void setProcessor(String processor) {
-        this.processor = processor;
-    }
-
-    public String getHardDriveSize() {
-        return hardDriveSize;
-    }
-
-    public void setHardDriveSize(String hardDriveSize) {
-        this.hardDriveSize = hardDriveSize;
-    }
-
-    public Integer getRamSize() {
-        return ramSize;
-    }
-
-    public void setRamSize(Integer ramSize) {
-        this.ramSize = ramSize;
-    }
-
-    public String getGraphics() {
-        return graphics;
-    }
-
-    public void setGraphics(String graphics) {
-        this.graphics = graphics;
-    }
-
-    public String getCamera() {
-        return camera;
-    }
-
-    public void setCamera(String camera) {
-        this.camera = camera;
-    }
-
-    public String getOperatingSystem() {
-        return operatingSystem;
-    }
-
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
 }

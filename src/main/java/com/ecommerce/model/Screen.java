@@ -1,9 +1,15 @@
 package com.ecommerce.model;
 
 import com.ecommerce.service.dto.FullProductDTO;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "SCREEN")
 public class Screen {
@@ -31,9 +37,6 @@ public class Screen {
     @Column(name = "ADDITIONAL_INFO")
     private String additionalInfo;
 
-    public Screen() {
-    }
-
     public Screen(FullProductDTO fullProductDTO) {
         this.inches = fullProductDTO.getScreenInches();
         this.technology = fullProductDTO.getScreenTechnology();
@@ -43,59 +46,4 @@ public class Screen {
         this.additionalInfo = fullProductDTO.getScreenAdditionalInfo();
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Double getInches() {
-        return inches;
-    }
-
-    public void setInches(Double inches) {
-        this.inches = inches;
-    }
-
-    public String getTechnology() {
-        return technology;
-    }
-
-    public void setTechnology(String technology) {
-        this.technology = technology;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getResolution() {
-        return resolution;
-    }
-
-    public void setResolution(String resolution) {
-        this.resolution = resolution;
-    }
-
-    public String getRefreshRate() {
-        return refreshRate;
-    }
-
-    public void setRefreshRate(String refreshRate) {
-        this.refreshRate = refreshRate;
-    }
-
-    public String getAdditionalInfo() {
-        return additionalInfo;
-    }
-
-    public void setAdditionalInfo(String additionalInfo) {
-        this.additionalInfo = additionalInfo;
-    }
 }

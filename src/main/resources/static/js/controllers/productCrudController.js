@@ -1,4 +1,4 @@
-angular.module('app', []).controller('ProductCrudController', function($scope, $http) {
+angular.module('app', []).controller('ProductCrudController', function($scope, $http, $timeout) {
 
     var self = this;
     $scope.tvInputs = false;
@@ -27,7 +27,9 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     }
 
     hideLoading = function() {
-        $('#modal-cargando').modal('hide');
+        $timeout(function() {
+            $('#modal-cargando').modal('hide');
+        }, 1000);
     }
 
     showLoading();
@@ -188,33 +190,22 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
         $scope.modalProduct.name = p.product.name;
         $scope.modalProduct.description = p.product.description;
         $scope.modalProduct.year = p.product.year;
+        $scope.modalProduct.size = p.product.size;
+        $scope.modalProduct.weight = p.product.weight;
+        var screen;
+        var manufacturer;
         if (p.tvInfo != null) {
             $scope.productModalTitle = "TV";
             $scope.typeSelected(1);
-            $scope.modalProduct.screenInches = p.tvInfo.screen.inches;
-            $scope.modalProduct.screenTechnology = p.tvInfo.screen.technology;
-            $scope.modalProduct.screenType = p.tvInfo.screen.type;
-            $scope.modalProduct.screenResolution = p.tvInfo.screen.resolution;
-            $scope.modalProduct.screenRefreshRate = p.tvInfo.screen.refreshRate;
-            $scope.modalProduct.screenAdditionalInfo = p.tvInfo.screen.additionalInfo;
-            $scope.modalProduct.manufacturerName = p.tvInfo.manufacturer.name;
-            $scope.modalProduct.manufacturerModel = p.tvInfo.manufacturer.model;
-            $scope.modalProduct.manufacturerCode = p.tvInfo.manufacturer.code;
-            $scope.modalProduct.smartTv = p.tvInfo.smartTv;
-            $scope.modalProduct.size = p.tvInfo.size;
-            $scope.modalProduct.weight = p.tvInfo.weight;
+            screen = p.tvInfo.screen;
+            manufacturer = p.tvInfo.manufacturer;
+            $scope.modalProduct.smartTv = p.tvInfo.smartTv?'Y':'N';
         } else if (p.phoneInfo != null) {
             $scope.productModalTitle = "Móvil";
             $scope.typeSelected(2);
+            screen = p.phoneInfo.screen;
+            manufacturer = p.phoneInfo.manufacturer;
             $scope.modalProduct.screenInches = p.phoneInfo.screen.inches;
-            $scope.modalProduct.screenTechnology = p.phoneInfo.screen.technology;
-            $scope.modalProduct.screenType = p.phoneInfo.type;
-            $scope.modalProduct.screenResolution = p.phoneInfo.screen.resolution;
-            $scope.modalProduct.screenRefreshRate = p.phoneInfo.screen.refreshRate;
-            $scope.modalProduct.screenAdditionalInfo = p.phoneInfo.screen.additionalInfo;
-            $scope.modalProduct.manufacturerName = p.phoneInfo.manufacturer.name;
-            $scope.modalProduct.manufacturerModel = p.phoneInfo.manufacturer.model;
-            $scope.modalProduct.manufacturerCode = p.phoneInfo.manufacturer.code;
             $scope.modalProduct.operatingSystem = p.phoneInfo.operatingSystem;
             $scope.modalProduct.hardDriveSize = p.phoneInfo.hardDriveSize;
             $scope.modalProduct.ramSize = p.phoneInfo.ramSize;
@@ -223,23 +214,14 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
             $scope.modalProduct.frontCamera = p.phoneInfo.frontCamera;
             $scope.modalProduct.simType = p.phoneInfo.simType;
             $scope.modalProduct.videoRecorder = p.phoneInfo.videoRecorder;
-            $scope.modalProduct.nfcCapable = p.phoneInfo.nfcCapable;
+            $scope.modalProduct.nfcCapable = p.phoneInfo.nfcCapable?'Y':'N';
             $scope.modalProduct.processor = p.phoneInfo.processor;
             $scope.modalProduct.graphics = p.phoneInfo.graphics;
-            $scope.modalProduct.size = p.phoneInfo.size;
-            $scope.modalProduct.weight = p.phoneInfo.weight;
         } else if (p.laptopInfo != null) {
             $scope.productModalTitle = "Ordenador";
             $scope.typeSelected(3);
-            $scope.modalProduct.screenInches = p.laptopInfo.screen.inches;
-            $scope.modalProduct.screenTechnology = p.laptopInfo.screen.technology;
-            $scope.modalProduct.screenType = p.laptopInfo.type;
-            $scope.modalProduct.screenResolution = p.laptopInfo.screen.resolution;
-            $scope.modalProduct.screenRefreshRate = p.laptopInfo.screen.refreshRate;
-            $scope.modalProduct.screenAdditionalInfo = p.laptopInfo.screen.additionalInfo;
-            $scope.modalProduct.manufacturerName = p.laptopInfo.manufacturer.name;
-            $scope.modalProduct.manufacturerModel = p.laptopInfo.manufacturer.model;
-            $scope.modalProduct.manufacturerCode = p.laptopInfo.manufacturer.code;
+            screen = p.laptopInfo.screen;
+            manufacturer = p.laptopInfo.manufacturer;
             $scope.modalProduct.operatingSystem = p.laptopInfo.operatingSystem;
             $scope.modalProduct.hardDriveSize = p.laptopInfo.hardDriveSize;
             $scope.modalProduct.ramSize = p.laptopInfo.ramSize;
@@ -247,9 +229,16 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
             $scope.modalProduct.frontCamera = p.laptopInfo.frontCamera;
             $scope.modalProduct.processor = p.laptopInfo.processor;
             $scope.modalProduct.graphics = p.laptopInfo.graphics;
-            $scope.modalProduct.size = p.laptopInfo.size;
-            $scope.modalProduct.weight = p.laptopInfo.weight;
         }
+        $scope.modalProduct.screenInches = screen.inches;
+        $scope.modalProduct.screenTechnology = screen.technology;
+        $scope.modalProduct.screenType = screen.type;
+        $scope.modalProduct.screenResolution = screen.resolution;
+        $scope.modalProduct.screenRefreshRate = screen.refreshRate;
+        $scope.modalProduct.screenAdditionalInfo = screen.additionalInfo;
+        $scope.modalProduct.manufacturerName = manufacturer.name;
+        $scope.modalProduct.manufacturerModel = manufacturer.model;
+        $scope.modalProduct.manufacturerCode = manufacturer.code;
     }
 
 });

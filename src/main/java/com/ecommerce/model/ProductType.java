@@ -1,7 +1,14 @@
 package com.ecommerce.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "PRODUCT_TYPE")
 public class ProductType {
@@ -13,24 +20,5 @@ public class ProductType {
 
     @Column(name = "DESCRIPTION")
     private String description;
-
-    public ProductType() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
 }

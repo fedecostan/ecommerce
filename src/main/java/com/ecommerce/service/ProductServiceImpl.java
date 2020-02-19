@@ -150,6 +150,9 @@ public class ProductServiceImpl implements ProductService {
         productDetail.getProduct().setStock(fullProductDTO.getStock());
         productDetail.getProduct().setName(fullProductDTO.getName());
         productDetail.getProduct().setDescription(fullProductDTO.getDescription());
+        productDetail.getProduct().setYear(fullProductDTO.getYear());
+        productDetail.getProduct().setSize(fullProductDTO.getSize());
+        productDetail.getProduct().setWeight(fullProductDTO.getWeight());
         if (productDetail.getProductType().getId() == 1L) {
             productDetail.getTvInfo().getScreen().setInches(fullProductDTO.getScreenInches());
             productDetail.getTvInfo().getScreen().setTechnology(fullProductDTO.getScreenTechnology());
@@ -161,7 +164,6 @@ public class ProductServiceImpl implements ProductService {
             productDetail.getTvInfo().getManufacturer().setModel(fullProductDTO.getManufacturerModel());
             productDetail.getTvInfo().getManufacturer().setCode(fullProductDTO.getManufacturerCode());
             productDetail.getTvInfo().setSmartTv(fullProductDTO.getSmartTv());
-            productDetail.getTvInfo().setYear(fullProductDTO.getYear());
         } else if (productDetail.getProductType().getId() == 2L) {
             productDetail.getPhoneInfo().getScreen().setInches(fullProductDTO.getScreenInches());
             productDetail.getPhoneInfo().getScreen().setTechnology(fullProductDTO.getScreenTechnology());
@@ -197,8 +199,6 @@ public class ProductServiceImpl implements ProductService {
             productDetail.getLaptopInfo().setProcessor(fullProductDTO.getProcessor());
             productDetail.getLaptopInfo().setGraphics(fullProductDTO.getGraphics());
             productDetail.getLaptopInfo().setCamera(fullProductDTO.getFrontCamera());
-            productDetail.getLaptopInfo().setSize(fullProductDTO.getSize());
-            productDetail.getLaptopInfo().setWeight(fullProductDTO.getWeight());
         }
         productDetailRepository.save(productDetail);
     }
