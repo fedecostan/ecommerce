@@ -24,4 +24,6 @@ public interface ProductService {
     GenericResponse editProduct(Long id, FullProductDTO fullProductDTO);
 
     ProductTablePageDTO getPage(int page, int size, String order);
+
+    List<Product> getBySearch(String data);
 }

@@ -21,6 +21,7 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     $scope.modalProduct = [];
     var operation = 0;
     var productToDelete;
+    $scope.searchBox = null;
 
     showLoading = function() {
         $('#modal-cargando').modal('show');
@@ -129,6 +130,28 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
             $('#modal-bot-borrar').modal('hide');
             loadProductTable();
         }, function errorCallback(response) {});
+    }
+
+    $scope.enterSearch = function(keyEvent) {
+      if (keyEvent.which === 13)
+        $scope.doSearch();
+    }
+
+    $scope.doSearch = function() {
+        showLoading();
+        $scope.products = [];
+        if ($scope.searchBox == null || $scope.searchBox == "") {
+            loadProductTable();
+        } else {
+            $http({
+                    method: 'GET',
+                    url: 'http://localhost:8080/productController/search/' + $scope.searchBox
+                })
+                .then(function successCallback(response) {
+                    $scope.products = response.data;
+                    hideLoading();
+                }, function errorCallback(response) {});
+        }
     }
 
     $scope.saveOperation = function() {

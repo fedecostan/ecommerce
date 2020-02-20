@@ -32,8 +32,10 @@
 
         <!-- input y buscar -->
         <div class="cont-sup">
-            <input class="busc-pro" placeholder="Buscar productos..." type="text">
-            <button class="btn btn-light" type="button">Buscar</button>
+            <input class="busc-pro" ng-keypress="enterSearch($event)" ng-model="searchBox"
+                   placeholder="Buscar productos..."
+                   type="text">
+            <button class="btn btn-light" ng-click="doSearch()" type="button">Buscar</button>
         </div>
 
         <!-- boton nuevo producto -->

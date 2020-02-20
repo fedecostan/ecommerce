@@ -43,6 +43,12 @@ public class ProductController {
         return productService.getDetailsById(id);
     }
 
+    @GetMapping(value = "/search/{data}")
+    public @ResponseBody
+    List<Product> getBySearch(@PathVariable String data) {
+        return productService.getBySearch(data);
+    }
+
     @GetMapping(value = "/delete/{id}")
     public @ResponseBody
     GenericResponse deleteById(@PathVariable Long id) {

@@ -125,6 +125,11 @@ public class ProductServiceImpl implements ProductService {
         return productTablePageDTO;
     }
 
+    @Override
+    public List<Product> getBySearch(String data) {
+        return productRepository.findBySearch("%" + data + "%");
+    }
+
     private int totalNumberOfPages(int size, int totalElements) {
         if (totalElements % size == 0)
             return totalElements / size;
