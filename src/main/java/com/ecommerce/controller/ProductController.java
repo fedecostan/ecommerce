@@ -5,7 +5,6 @@ import com.ecommerce.model.ProductDetail;
 import com.ecommerce.service.ProductService;
 import com.ecommerce.service.dto.FullProductDTO;
 import com.ecommerce.service.dto.GenericResponse;
-import com.ecommerce.service.dto.ProductTablePageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,10 +24,10 @@ public class ProductController {
         return productService.getAll();
     }
 
-    @GetMapping(value = "/filter")
+    @GetMapping(value = "/order")
     public @ResponseBody
-    ProductTablePageDTO getPage(@RequestParam int page, @RequestParam int size, @RequestParam String order) {
-        return productService.getPage(page, size, order);
+    List<Product> getOrder(@RequestParam String order) {
+        return productService.getOrder(order);
     }
 
     @GetMapping(value = "/{id}")

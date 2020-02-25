@@ -21,6 +21,7 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     $scope.modalProduct = [];
     var operation = 0;
     var productToDelete;
+    var productIdStored;
     $scope.searchBox = null;
 
     showLoading = function() {
@@ -30,7 +31,7 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     hideLoading = function() {
         $timeout(function() {
             $('#modal-cargando').modal('hide');
-        }, 1000);
+        }, 600);
     }
 
     showLoading();
@@ -71,6 +72,10 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
         }
     }
 
+    $scope.storeProductId = function(id) {
+        productIdStored = id;
+    }
+
     $scope.newProduct = function() {
         $scope.modalInputsDisabled = false;
         $scope.typeSelected(0);
@@ -82,12 +87,14 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     }
 
     $scope.productDetail = function(id) {
+        $('#bot-opciones-modal').modal('hide');
         $scope.modalProduct = [];
         showLoading();
         $scope.isNewProduct = false;
         $scope.modalInputsDisabled = true;
         $scope.showSaveButton = false;
         $scope.typeSelected(0);
+        id = id == 0 ? productIdStored : id;
         $http({
                 method: 'GET',
                 url: 'http://localhost:8080/productController/details/' + id
@@ -99,6 +106,7 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     }
 
     $scope.productEdit = function(id) {
+        $('#bot-opciones-modal').modal('hide');
         $scope.modalProduct = [];
         showLoading();
         $scope.isNewProduct = false;
@@ -106,6 +114,7 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
         $scope.showSaveButton = true;
         $scope.typeSelected(0);
         operation = 2;
+        id = id == 0 ? productIdStored : id;
         $http({
                 method: 'GET',
                 url: 'http://localhost:8080/productController/details/' + id
@@ -117,7 +126,8 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
     }
 
     $scope.productDelete = function(id) {
-        productToDelete = id;
+        $('#bot-opciones-modal').modal('hide');
+        productToDelete = id == 0 ? productIdStored : id;
     }
 
     $scope.confirmDelete = function() {
@@ -152,6 +162,19 @@ angular.module('app', []).controller('ProductCrudController', function($scope, $
                     hideLoading();
                 }, function errorCallback(response) {});
         }
+    }
+
+    $scope.orderTable = function(order) {
+        showLoading();
+        $scope.products = [];
+        $http({
+                method: 'GET',
+                url: 'http://localhost:8080/productController/order?order=' + order
+            })
+            .then(function successCallback(response) {
+                $scope.products = response.data;
+                hideLoading();
+            }, function errorCallback(response) {});
     }
 
     $scope.saveOperation = function() {

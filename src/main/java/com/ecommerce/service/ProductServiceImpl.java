@@ -98,7 +98,21 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductTablePageDTO getPage(int page, int size, String order) {
+    public List<Product> getOrder(String order) {
+        List<Product> allProducts = productRepository.findAll();
+        if (OrderEnum.NAME_ASC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getName));
+        else if (OrderEnum.NAME_DESC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getName).reversed());
+        else if (OrderEnum.PRICE_ASC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getPrice));
+        else if (OrderEnum.PRICE_DESC.name().equals(order))
+            allProducts.sort(Comparator.comparing(Product::getPrice).reversed());
+        return allProducts;
+    }
+
+    //@Override
+    public ProductTablePageDTO getOrder(int page, int size, String order) {
         ProductTablePageDTO productTablePageDTO = new ProductTablePageDTO();
         List<Product> allProducts = productRepository.findAll();
         if (OrderEnum.NAME_ASC.name().equals(order))

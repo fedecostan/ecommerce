@@ -23,10 +23,10 @@
                 Ordenar
             </button>
             <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
-                <a class="dropdown-item" href="#">Precio ASC</a>
-                <a class="dropdown-item" href="#">Precio DESC</a>
-                <a class="dropdown-item" href="#">Nombre ASC</a>
-                <a class="dropdown-item" href="#">Nombre DESC</a>
+                <a class="dropdown-item" ng-click="orderTable('PRICE_ASC')">Precio ASC</a>
+                <a class="dropdown-item" ng-click="orderTable('PRICE_DESC')">Precio DESC</a>
+                <a class="dropdown-item" ng-click="orderTable('NAME_ASC')">Nombre ASC</a>
+                <a class="dropdown-item" ng-click="orderTable('NAME_DESC')">Nombre DESC</a>
             </div>
         </div>
 
@@ -83,7 +83,7 @@
 
                     <!-- Button trigger modal responsive -->
                     <button class="btn btn-primary oculto" data-target="#bot-opciones-modal" data-toggle="modal"
-                            type="button">
+                            ng-click="storeProductId(product.id)" type="button">
                         Opciones
                     </button>
                 </div>
@@ -427,18 +427,18 @@
                     </button>
                 </div>
                 <div class="modal-body body-botones">
-                    <button class="btn btn-primary bot-detalle  oculto" data-target="#modal-nvo-produc"
+                    <button class="btn btn-primary bot-detalle oculto" data-target="#modal-nvo-produc"
                             data-toggle="modal"
-                            type="button">
+                            ng-click="productDetail(0)" type="button">
                         Detalle
                     </button>
                     <button class="btn btn-warning bot-editar oculto" data-target="#modal-nvo-produc"
                             data-toggle="modal"
-                            type="button">
+                            ng-click="productEdit(0)" type="button">
                         Editar
                     </button>
                     <button class="btn btn-danger bot-borrar oculto" data-target="#modal-bot-borrar" data-toggle="modal"
-                            type="button">
+                            ng-click="productDelete(0)" type="button">
                         Borrar
                     </button>
                 </div>
@@ -475,14 +475,10 @@
     <div aria-hidden="true" aria-labelledby="ModalCarga" class="modal fade" id="modal-cargando" role="dialog"
          tabindex="-1">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <ul class="loading">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-primary" role="status" style="width: 10rem; height: 10rem;">
+                    <span class="sr-only">Loading...</span>
+                </div>
             </div>
         </div>
     </div>
